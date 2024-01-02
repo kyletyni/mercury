@@ -1,0 +1,43 @@
+The system is: Windows - 10.0.22621 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/msys64/mingw64/bin/cc.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is GNU, found in "C:/Users/kyle/Documents/GitHub/mercury/code/main/build/CMakeFiles/3.24.0-rc4/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/msys64/mingw64/bin/c++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "C:/Users/kyle/Documents/GitHub/mercury/code/main/build/CMakeFiles/3.24.0-rc4/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/kyle/Documents/GitHub/mercury/code/main/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Espressif/tools/ninja/1.10.2/ninja.exe cmTC_67606 && [1/2] Building C object CMakeFiles/cmTC_67606.dir/testCCompiler.c.obj
+[2/2] Linking C executable cmTC_67606.exe
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/kyle/Documents/GitHub/mercury/code/main/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Espressif/tools/ninja/1.10.2/ninja.exe cmTC_12d91 && [1/2] Building CXX object CMakeFiles/cmTC_12d91.dir/testCXXCompiler.cxx.obj
+[2/2] Linking CXX executable cmTC_12d91.exe
+
+
+
