@@ -1,0 +1,487 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM9 instead...[0m
+[0;33m--- esp-idf-monitor 1.3.4 on \\.\COM9 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x403757b6: panic_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/panic.c:452
+[0m
+[0;33m0x40379a29: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:84
+[0m
+[0;33m0x4037f20e: abort at C:/Espressif/frameworks/esp-idf-v5.1.2/components/newlib/abort.c:38
+[0m
+[0;33m0x42009c7b: adc_ll_vref_output at C:/Espressif/frameworks/esp-idf-v5.1.2/components/hal/esp32s3/include/hal/adc_ll.h:818
+ (inlined by) adc_vref_to_gpio at C:/Espressif/frameworks/esp-idf-v5.1.2/components/driver/deprecated/adc_legacy.c:640
+[0m
+[0;33m0x420085e5: initialize_adc at C:/Users/kyle/Documents/GitHub/mercury/code/main/include/receiver.h:32
+[0m
+[0;33m0x42008647: app_main at C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c:25
+[0m
+[0;33m0x42019553: main_task at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x4037bed1: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.1.2/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40375638: esp_restart_noos_dig at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/esp_system_chip.c:57 (discriminator 1)
+[0m
+[0;33m0x4037526c: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.1.2/components/esp_system/port/cpu_start.c:157
+[0m
+[0m

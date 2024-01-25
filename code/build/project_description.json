@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "mercury",
-    "project_version":    "0b8d35b-dirty",
+    "project_version":    "a7aadd5-dirty",
     "project_path":       "C:/Users/kyle/Documents/GitHub/mercury/code",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.1.2",
     "build_dir":          "C:/Users/kyle/Documents/GitHub/mercury/code/build",
@@ -821,7 +821,7 @@
             "managed_priv_reqs": [],
             "file": "C:/Users/kyle/Documents/GitHub/mercury/code/build/esp-idf/main/libmain.a",
             "sources": [ "C:/Users/kyle/Documents/GitHub/mercury/code/main/mercury.c" ],
-            "include_dirs": [ "." ]
+            "include_dirs": [ "include" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",

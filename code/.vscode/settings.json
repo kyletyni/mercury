@@ -1,0 +1,6 @@
+{
+    "idf.adapterTargetName": "esp32s3",
+    "files.associations": {
+        "freertos.h": "c"
+    }
+}

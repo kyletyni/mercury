@@ -1,0 +1,17 @@
+-- The C compiler identification is GNU 11.3.0
+-- The CXX compiler identification is GNU 11.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/msys64/mingw64/bin/cc.exe
+-- Check for working C compiler: C:/msys64/mingw64/bin/cc.exe - works
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Check for working CXX compiler: C:/msys64/mingw64/bin/c++.exe
+-- Check for working CXX compiler: C:/msys64/mingw64/bin/c++.exe - works
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/kyle/Documents/GitHub/mercury/code/main/build/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/kyle/Documents/GitHub/mercury/code/main/build/CMakeFiles/CMakeError.log".
