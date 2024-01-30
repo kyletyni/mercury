@@ -6,6 +6,7 @@
 #include <freertos/task.h>
 #include "esp_adc/adc_oneshot.h"
 #include "esp_adc/adc_cali.h"
+#include "emitter.h"
 
 #define FL_RECV_CHANNEL ADC_CHANNEL_0  
 #define FR_RECV_CHANNEL ADC_CHANNEL_8  
@@ -26,21 +27,22 @@ adc_cali_handle_t adc_cali_handle_DR_RECV = NULL;
 
 void initialize_adc() {
     /********************** ADC Unit Init **********************/
-    adc_oneshot_unit_init_cfg_t init_config1 = {
-        .unit_id = ADC_UNIT_1,
-    };
+    adc_oneshot_unit_init_cfg_t init_config1;
+    init_config1.unit_id = ADC_UNIT_1;
+    init_config1.clk_src = (adc_oneshot_clk_src_t)0;
+    init_config1.ulp_mode = ADC_ULP_MODE_DISABLE;
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config1, &adc1_handle));
 
-    adc_oneshot_unit_init_cfg_t init_config2 = {
-        .unit_id = ADC_UNIT_2,
-    };
+    adc_oneshot_unit_init_cfg_t init_config2;
+    init_config2.unit_id = ADC_UNIT_2;
+    init_config2.clk_src = (adc_oneshot_clk_src_t)0;
+    init_config2.ulp_mode = ADC_ULP_MODE_DISABLE;
     ESP_ERROR_CHECK(adc_oneshot_new_unit(&init_config2, &adc2_handle));
 
     /********************** ADC Config **********************/
-    adc_oneshot_chan_cfg_t config = {
-        .bitwidth = ADC_BITWIDTH_DEFAULT,
-        .atten = ADC_ATTEN_DB_11,
-    };
+    adc_oneshot_chan_cfg_t config;
+    config.bitwidth = ADC_BITWIDTH_DEFAULT;
+    config.atten = ADC_ATTEN_DB_11;
 
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, FL_RECV_CHANNEL, &config));
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, FR_RECV_CHANNEL, &config));
@@ -67,20 +69,68 @@ void initialize_adc() {
     ESP_ERROR_CHECK(adc_cali_create_scheme_curve_fitting(&cali_config, &adc_cali_handle_DR_RECV));
 }
 
-uint32_t perform_adc_conversion() {
-    ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FL_RECV_CHANNEL, &recv_adc_raw[0]));
-    ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle_FL_RECV, recv_adc_raw[0], &recv_voltage[0]));
+typedef enum {
+    FRONT_LEFT = 0,
+    FRONT_RIGHT,
+    DIAGONAL_RIGHT,
+    DIAGONAL_LEFT
+} ir_dir;
 
-    ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FR_RECV_CHANNEL, &recv_adc_raw[1]));
-    ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle_FR_RECV, recv_adc_raw[1], &recv_voltage[1]));
+void ir_sensor_poll(ir_dir sensor) {
+    // ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle_FL_RECV, recv_adc_raw[FRONT_LEFT], &recv_voltage[0]));
+    uint16_t avg_count = 0;
 
-    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DL_RECV_CHANNEL, &recv_adc_raw[2]));
-    ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle_DL_RECV, recv_adc_raw[2], &recv_voltage[2]));
+    switch (sensor) {
+        case FRONT_LEFT:
+            gpio_set_level(EMIT_FL, 1);
 
-    ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DR_RECV_CHANNEL, &recv_adc_raw[3]));
-    ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle_DR_RECV, recv_adc_raw[3], &recv_voltage[3]));
+            for (uint8_t i = 0; i < 15; i++) {
+                ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FL_RECV_CHANNEL, &recv_adc_raw[FRONT_LEFT]));
+                avg_count = avg_count + recv_adc_raw[FRONT_LEFT];
+            }
+            gpio_set_level(EMIT_FL, 0);
 
-    return 0;
+            recv_adc_raw[FRONT_LEFT] = avg_count / 15;
+            break;
+
+        case FRONT_RIGHT:
+            gpio_set_level(EMIT_FR, 1);
+            for (uint8_t i = 0; i < 15; i++) {
+                ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FR_RECV_CHANNEL, &recv_adc_raw[FRONT_RIGHT]));
+                avg_count = avg_count + recv_adc_raw[FRONT_RIGHT];
+            }
+            gpio_set_level(EMIT_FR, 0);
+
+            recv_adc_raw[FRONT_RIGHT] = avg_count / 15;
+            break;
+
+        case DIAGONAL_LEFT:
+            gpio_set_level(EMIT_DL, 1);
+            for (uint8_t i = 0; i < 15; i++) {
+                ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DL_RECV_CHANNEL, &recv_adc_raw[DIAGONAL_LEFT]));
+                avg_count = avg_count + recv_adc_raw[DIAGONAL_LEFT];
+            }
+            gpio_set_level(EMIT_DL, 0);
+
+            recv_adc_raw[DIAGONAL_LEFT] = avg_count / 15;
+            break;
+
+        case DIAGONAL_RIGHT:
+            gpio_set_level(EMIT_DR, 1);
+            for (uint8_t i = 0; i < 15; i++) {
+                ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DR_RECV_CHANNEL, &recv_adc_raw[DIAGONAL_RIGHT]));
+                avg_count = avg_count + recv_adc_raw[DIAGONAL_RIGHT];
+            }
+            gpio_set_level(EMIT_DR, 0);
+
+            recv_adc_raw[DIAGONAL_RIGHT] = avg_count / 15;
+            break;
+        
+        default:
+            break;
+    }
+
+    return;
 }
 
 #endif

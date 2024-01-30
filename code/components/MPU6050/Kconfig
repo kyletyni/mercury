@@ -1,0 +1,3 @@
+menu "MPU6050"
+
+endmenu

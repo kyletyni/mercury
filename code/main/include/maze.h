@@ -87,13 +87,13 @@ Pos neighbor(Pos pos, Heading heading) {
             neighbor_pos.x = pos.x - 1;
             break;
         default:
-            return (Pos){-1, -1};
+            return (Pos){0b11111111, 0b11111111};
             break;
     }
     if (is_in_maze(neighbor_pos))
         return neighbor_pos;
     else 
-        return (Pos){-1, -1};
+        return (Pos){0b11111111, 0b11111111};
 }
 
 typedef struct {

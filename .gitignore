@@ -33,3 +33,7 @@ fp-info-cache
 code/build/
 code/sdkconfig
 code/sdkconfig.old
+
+*.zip
+pcb_plots/
+pcb/
