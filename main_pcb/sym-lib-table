@@ -1,7 +1,6 @@
 (sym_lib_table
   (version 7)
   (lib (name "Mercury_Symbols")(type "KiCad")(uri "${KIPRJMOD}/symbols.kicad_sym")(options "")(descr ""))
-  (lib (name "CP2102N_A02_GQFN20")(type "KiCad")(uri "${KIPRJMOD}/CP2102N_A02_GQFN20.kicad_sym")(options "")(descr ""))
   (lib (name "LMZ10501SILR")(type "KiCad")(uri "${KIPRJMOD}/LMZ10501SILR.kicad_sym")(options "")(descr ""))
   (lib (name "TPS61088RHLR")(type "KiCad")(uri "${KIPRJMOD}/TPS61088RHLR.kicad_sym")(options "")(descr ""))
 )

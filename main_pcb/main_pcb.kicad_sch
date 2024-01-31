@@ -1208,10 +1208,10 @@
       (property "Value" "LMZ10501SILR" (at -3.81 16.51 0)
         (effects (font (size 1.524 1.524)))
       )
-      (property "Footprint" "SIL0008A" (at 0 0 0)
+      (property "Footprint" "footprint:SIL0008A" (at -3.81 -3.81 0)
         (effects (font (size 1.27 1.27) italic) hide)
       )
-      (property "Datasheet" "LMZ10501SILR" (at 0 0 0)
+      (property "Datasheet" "LMZ10501SILR" (at -5.08 -6.35 0)
         (effects (font (size 1.27 1.27) italic) hide)
       )
       (property "ki_locked" "" (at 0 0 0)
@@ -2387,7 +2387,7 @@
   (junction (at 175.26 219.71) (diameter 0) (color 0 0 0 0)
     (uuid 09d81cee-ea67-415c-abb0-001b72cab0f2)
   )
-  (junction (at 245.11 250.19) (diameter 0) (color 0 0 0 0)
+  (junction (at 242.57 245.11) (diameter 0) (color 0 0 0 0)
     (uuid 0b982cc9-72f1-490c-95ce-bec942ef7c96)
   )
   (junction (at 64.77 231.14) (diameter 0) (color 0 0 0 0)
@@ -2399,7 +2399,7 @@
   (junction (at 205.74 259.08) (diameter 0) (color 0 0 0 0)
     (uuid 10cc4b20-be8f-41cf-ab66-e3186155200e)
   )
-  (junction (at 270.51 105.41) (diameter 0) (color 0 0 0 0)
+  (junction (at 280.67 36.83) (diameter 0) (color 0 0 0 0)
     (uuid 1117531b-67a9-40b4-88d3-f72dff46f224)
   )
   (junction (at 69.85 97.79) (diameter 0) (color 0 0 0 0)
@@ -2432,7 +2432,7 @@
   (junction (at 354.33 147.32) (diameter 0) (color 0 0 0 0)
     (uuid 23f7e74f-de5e-4b69-acc8-a6037385c9d5)
   )
-  (junction (at 256.54 110.49) (diameter 0) (color 0 0 0 0)
+  (junction (at 266.7 41.91) (diameter 0) (color 0 0 0 0)
     (uuid 2407ee94-188c-49ab-a92c-1875fca4c746)
   )
   (junction (at 133.35 218.44) (diameter 0) (color 0 0 0 0)
@@ -2468,7 +2468,7 @@
   (junction (at 142.24 246.38) (diameter 0) (color 0 0 0 0)
     (uuid 4199309a-ce39-4938-a39e-a36c260e7ffa)
   )
-  (junction (at 240.03 46.99) (diameter 0) (color 0 0 0 0)
+  (junction (at 193.04 48.26) (diameter 0) (color 0 0 0 0)
     (uuid 4290705b-a66b-4622-987b-10a59fd7001e)
   )
   (junction (at 184.15 259.08) (diameter 0) (color 0 0 0 0)
@@ -2477,10 +2477,10 @@
   (junction (at 69.85 128.27) (diameter 0) (color 0 0 0 0)
     (uuid 446ebc07-8afb-40f8-b48b-a7dd1e1a909f)
   )
-  (junction (at 259.08 260.35) (diameter 0) (color 0 0 0 0)
+  (junction (at 256.54 255.27) (diameter 0) (color 0 0 0 0)
     (uuid 45279c0e-80de-4f5c-9ca9-7ade9ef69d80)
   )
-  (junction (at 214.63 44.45) (diameter 0) (color 0 0 0 0)
+  (junction (at 167.64 45.72) (diameter 0) (color 0 0 0 0)
     (uuid 46a0d574-ffb2-494e-8c74-b3ce06c95813)
   )
   (junction (at 326.39 201.93) (diameter 0) (color 0 0 0 0)
@@ -2492,7 +2492,7 @@
   (junction (at 113.03 218.44) (diameter 0) (color 0 0 0 0)
     (uuid 4b2bf795-1a03-41c1-9d5f-20218513a5af)
   )
-  (junction (at 222.25 34.29) (diameter 0) (color 0 0 0 0)
+  (junction (at 175.26 35.56) (diameter 0) (color 0 0 0 0)
     (uuid 539ecdb9-516f-4bb9-bdb4-c1d939c4edd3)
   )
   (junction (at 68.58 73.66) (diameter 0) (color 0 0 0 0)
@@ -2510,7 +2510,7 @@
   (junction (at 175.26 229.87) (diameter 0) (color 0 0 0 0)
     (uuid 5b67399d-b158-47c4-9c90-1d3c512309ae)
   )
-  (junction (at 256.54 125.73) (diameter 0) (color 0 0 0 0)
+  (junction (at 266.7 57.15) (diameter 0) (color 0 0 0 0)
     (uuid 5bcc51f6-adb3-4d50-9f4f-84f2c951e121)
   )
   (junction (at 55.88 57.15) (diameter 0) (color 0 0 0 0)
@@ -2534,10 +2534,10 @@
   (junction (at 99.06 30.48) (diameter 0) (color 0 0 0 0)
     (uuid 6d84c282-dc8b-4b8d-87a4-d5fae76c1ef0)
   )
-  (junction (at 283.21 41.91) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 43.18) (diameter 0) (color 0 0 0 0)
     (uuid 6f0cd421-fa7f-431d-9178-1de442d1e577)
   )
-  (junction (at 270.51 120.65) (diameter 0) (color 0 0 0 0)
+  (junction (at 280.67 52.07) (diameter 0) (color 0 0 0 0)
     (uuid 6f69fa28-2691-4abd-a0a6-d2b3e53eebe2)
   )
   (junction (at 325.12 46.99) (diameter 0) (color 0 0 0 0)
@@ -2564,7 +2564,7 @@
   (junction (at 234.95 189.23) (diameter 0) (color 0 0 0 0)
     (uuid 7cc82136-514d-4b0b-9a4e-ff3e1ae46a3f)
   )
-  (junction (at 283.21 31.75) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 33.02) (diameter 0) (color 0 0 0 0)
     (uuid 7f8ee3bc-c9df-46ec-a64a-46d768f9505b)
   )
   (junction (at 171.45 246.38) (diameter 0) (color 0 0 0 0)
@@ -2591,7 +2591,7 @@
   (junction (at 99.06 73.66) (diameter 0) (color 0 0 0 0)
     (uuid 890441d7-7b7f-4a3c-ab65-708183ec0875)
   )
-  (junction (at 283.21 39.37) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 40.64) (diameter 0) (color 0 0 0 0)
     (uuid 89662477-0b4e-42cb-9747-17e0fb48feb5)
   )
   (junction (at 373.38 129.54) (diameter 0) (color 0 0 0 0)
@@ -2600,7 +2600,7 @@
   (junction (at 86.36 231.14) (diameter 0) (color 0 0 0 0)
     (uuid 8aee0776-a723-4d09-aa4d-8f712bab6e79)
   )
-  (junction (at 283.21 44.45) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 45.72) (diameter 0) (color 0 0 0 0)
     (uuid 8c110dab-e46f-4169-a073-63ba74a067c7)
   )
   (junction (at 335.28 215.9) (diameter 0) (color 0 0 0 0)
@@ -2609,7 +2609,7 @@
   (junction (at 327.66 242.57) (diameter 0) (color 0 0 0 0)
     (uuid 91e679c6-d2a6-42f9-af76-74bac664131e)
   )
-  (junction (at 283.21 52.07) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 53.34) (diameter 0) (color 0 0 0 0)
     (uuid 92ba0b4a-df7c-4134-976a-7151f57440de)
   )
   (junction (at 336.55 242.57) (diameter 0) (color 0 0 0 0)
@@ -2618,7 +2618,7 @@
   (junction (at 68.58 30.48) (diameter 0) (color 0 0 0 0)
     (uuid 96be039d-b5f1-4dcb-b865-eea051b87124)
   )
-  (junction (at 283.21 34.29) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 35.56) (diameter 0) (color 0 0 0 0)
     (uuid 9aae3184-a654-4943-8d76-37656db4d48f)
   )
   (junction (at 186.69 229.87) (diameter 0) (color 0 0 0 0)
@@ -2633,10 +2633,10 @@
   (junction (at 74.93 189.23) (diameter 0) (color 0 0 0 0)
     (uuid a03593f0-af02-41bb-a74a-4d46556ac856)
   )
-  (junction (at 214.63 34.29) (diameter 0) (color 0 0 0 0)
+  (junction (at 167.64 35.56) (diameter 0) (color 0 0 0 0)
     (uuid a1582202-a91e-494f-ac86-6328a89d7507)
   )
-  (junction (at 283.21 46.99) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 48.26) (diameter 0) (color 0 0 0 0)
     (uuid a40a6949-ba85-40a4-8a23-887751234624)
   )
   (junction (at 34.29 248.92) (diameter 0) (color 0 0 0 0)
@@ -2699,7 +2699,7 @@
   (junction (at 133.35 66.04) (diameter 0) (color 0 0 0 0)
     (uuid ce86c250-4710-4beb-958f-3f57c52808dd)
   )
-  (junction (at 245.11 265.43) (diameter 0) (color 0 0 0 0)
+  (junction (at 242.57 260.35) (diameter 0) (color 0 0 0 0)
     (uuid d0aa6533-aed2-4b1b-9170-9d75b2f72ce2)
   )
   (junction (at 387.35 204.47) (diameter 0) (color 0 0 0 0)
@@ -2717,7 +2717,7 @@
   (junction (at 287.02 165.1) (diameter 0) (color 0 0 0 0)
     (uuid dfe82791-ef68-476e-b941-4a66fa11c78c)
   )
-  (junction (at 259.08 245.11) (diameter 0) (color 0 0 0 0)
+  (junction (at 256.54 240.03) (diameter 0) (color 0 0 0 0)
     (uuid e47d1c35-a115-487a-95bb-2c46cbf3444c)
   )
   (junction (at 62.23 270.51) (diameter 0) (color 0 0 0 0)
@@ -2729,13 +2729,13 @@
   (junction (at 165.1 170.18) (diameter 0) (color 0 0 0 0)
     (uuid e8125c3a-ab0c-42b9-9dfe-0e390b33e690)
   )
-  (junction (at 283.21 36.83) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 38.1) (diameter 0) (color 0 0 0 0)
     (uuid ec491eed-4fd9-4621-9d1f-f84bf82a2b7d)
   )
   (junction (at 39.37 66.04) (diameter 0) (color 0 0 0 0)
     (uuid ed6feb93-ea83-4099-ab2f-7916d0d4def6)
   )
-  (junction (at 236.22 110.49) (diameter 0) (color 0 0 0 0)
+  (junction (at 278.13 78.74) (diameter 0) (color 0 0 0 0)
     (uuid f21c2781-9fa7-45fe-b0dc-36b79246f3b1)
   )
   (junction (at 339.09 168.91) (diameter 0) (color 0 0 0 0)
@@ -2744,7 +2744,7 @@
   (junction (at 327.66 228.6) (diameter 0) (color 0 0 0 0)
     (uuid f4b19adf-cfea-41f6-b8d9-3f0766513bbe)
   )
-  (junction (at 283.21 49.53) (diameter 0) (color 0 0 0 0)
+  (junction (at 236.22 50.8) (diameter 0) (color 0 0 0 0)
     (uuid f6ecdcb3-97a7-4505-ba25-7b25acf4ffbd)
   )
   (junction (at 39.37 30.48) (diameter 0) (color 0 0 0 0)
@@ -2776,7 +2776,7 @@
   (no_connect (at 342.9 233.68) (uuid 9fac139d-8600-45bc-937e-a3272e416fd7))
   (no_connect (at 276.86 170.18) (uuid a346d2da-ad17-4de9-ba02-426fc745fa9d))
   (no_connect (at 373.38 236.22) (uuid b9b43bf1-ffb6-42f0-807d-865dcb4862b1))
-  (no_connect (at 242.57 69.85) (uuid c3f3a52e-1207-4e03-8ee8-06d40416d970))
+  (no_connect (at 195.58 71.12) (uuid c3f3a52e-1207-4e03-8ee8-06d40416d970))
   (no_connect (at 336.55 68.58) (uuid c6525bb6-07bb-49c4-be1f-81f8bc2d405e))
   (no_connect (at -314.96 54.61) (uuid ec1b044d-b7fc-4f5f-aa44-fa8027243fd0))
 
@@ -2824,7 +2824,7 @@
     (stroke (width 0) (type default))
     (uuid 07fce1e0-066e-418c-829d-b96ccde39591)
   )
-  (wire (pts (xy 240.03 49.53) (xy 240.03 46.99))
+  (wire (pts (xy 193.04 50.8) (xy 193.04 48.26))
     (stroke (width 0) (type default))
     (uuid 086ddebe-e1df-4af8-941e-091e55fc058f)
   )
@@ -2836,7 +2836,7 @@
     (stroke (width 0) (type default))
     (uuid 099ea4b9-228e-4e7d-9ff1-bd02b3393bbc)
   )
-  (wire (pts (xy 240.03 46.99) (xy 242.57 46.99))
+  (wire (pts (xy 193.04 48.26) (xy 195.58 48.26))
     (stroke (width 0) (type default))
     (uuid 09a15049-6398-4090-98b6-f26d91c22d57)
   )
@@ -2860,7 +2860,7 @@
     (stroke (width 0) (type default))
     (uuid 0df4d40b-745c-412b-a5f5-61391afa1eba)
   )
-  (wire (pts (xy 245.11 250.19) (xy 247.65 250.19))
+  (wire (pts (xy 242.57 245.11) (xy 245.11 245.11))
     (stroke (width 0) (type default))
     (uuid 0e075a9f-5391-4e2a-9184-773b0a53b1cb)
   )
@@ -2876,7 +2876,7 @@
     (stroke (width 0) (type default))
     (uuid 0f78dd40-8ac0-4c62-b37b-7fc0a6f47e1d)
   )
-  (wire (pts (xy 283.21 46.99) (xy 283.21 49.53))
+  (wire (pts (xy 236.22 48.26) (xy 236.22 50.8))
     (stroke (width 0) (type default))
     (uuid 10ee3ce9-3d1b-4c74-a79c-c1d6b71163c3)
   )
@@ -2912,7 +2912,7 @@
     (stroke (width 0) (type default))
     (uuid 1310754f-b803-412e-b5a1-5d3691122fcf)
   )
-  (wire (pts (xy 214.63 34.29) (xy 214.63 35.56))
+  (wire (pts (xy 167.64 35.56) (xy 167.64 36.83))
     (stroke (width 0) (type default))
     (uuid 1328893e-8af8-42a5-a997-b521b813fe2a)
   )
@@ -2928,7 +2928,7 @@
     (stroke (width 0) (type default))
     (uuid 143b575a-7e58-44b0-bc6c-442b4538749f)
   )
-  (wire (pts (xy 283.21 36.83) (xy 283.21 39.37))
+  (wire (pts (xy 236.22 38.1) (xy 236.22 40.64))
     (stroke (width 0) (type default))
     (uuid 151f1542-79f9-4bc8-9078-7d057354857b)
   )
@@ -2972,7 +2972,7 @@
     (stroke (width 0) (type default))
     (uuid 1ad0062d-2ab0-4cc3-9985-7481f61d01dc)
   )
-  (wire (pts (xy 259.08 260.35) (xy 259.08 265.43))
+  (wire (pts (xy 256.54 255.27) (xy 256.54 260.35))
     (stroke (width 0) (type default))
     (uuid 1b3006ff-39be-4ee4-8c8d-75f27168b983)
   )
@@ -2984,7 +2984,7 @@
     (stroke (width 0) (type default))
     (uuid 1b9b34a9-37c2-4b42-aaff-b01a05c4e7f7)
   )
-  (wire (pts (xy 223.52 95.25) (xy 224.79 95.25))
+  (wire (pts (xy 194.31 119.38) (xy 195.58 119.38))
     (stroke (width 0) (type default))
     (uuid 1c82abd4-3748-4556-81db-cbe9685cb895)
   )
@@ -3053,7 +3053,7 @@
     (stroke (width 0) (type default))
     (uuid 2822e980-391d-4aa2-9d5d-42888325cec4)
   )
-  (wire (pts (xy 259.08 260.35) (xy 261.62 260.35))
+  (wire (pts (xy 256.54 255.27) (xy 259.08 255.27))
     (stroke (width 0) (type default))
     (uuid 282fdebe-4901-48fc-98f4-fb23ab5207ed)
   )
@@ -3074,7 +3074,7 @@
     (stroke (width 0) (type default))
     (uuid 2a01c691-a599-43c2-bb6c-89f3b46e6c2f)
   )
-  (wire (pts (xy 255.27 265.43) (xy 259.08 265.43))
+  (wire (pts (xy 252.73 260.35) (xy 256.54 260.35))
     (stroke (width 0) (type default))
     (uuid 2a07dc82-f60c-463a-b39c-a8eee3aa675e)
   )
@@ -3082,7 +3082,7 @@
     (stroke (width 0) (type default))
     (uuid 2a4925f2-d9fd-4e61-a359-ae8b2fbb866f)
   )
-  (wire (pts (xy 222.25 46.99) (xy 240.03 46.99))
+  (wire (pts (xy 175.26 48.26) (xy 193.04 48.26))
     (stroke (width 0) (type default))
     (uuid 2a9a92e0-783e-4dc2-8b16-6c01a4ce4a9b)
   )
@@ -3090,7 +3090,7 @@
     (stroke (width 0) (type default))
     (uuid 2acc5381-9f50-4110-b4c1-744c6b0942f6)
   )
-  (wire (pts (xy 214.63 95.25) (xy 215.9 95.25))
+  (wire (pts (xy 185.42 119.38) (xy 186.69 119.38))
     (stroke (width 0) (type default))
     (uuid 2af6569a-878d-42cb-9833-bd587e0e5e8d)
   )
@@ -3098,7 +3098,7 @@
     (stroke (width 0) (type default))
     (uuid 2b3239b5-4cbb-4cdc-9b5b-12caeae76a73)
   )
-  (wire (pts (xy 283.21 41.91) (xy 283.21 44.45))
+  (wire (pts (xy 236.22 43.18) (xy 236.22 45.72))
     (stroke (width 0) (type default))
     (uuid 2b36be68-b09e-4293-9351-4a169a9edf42)
   )
@@ -3135,7 +3135,7 @@
     (stroke (width 0) (type default))
     (uuid 2ea9d84b-2984-43ac-a950-4481fe6c6f88)
   )
-  (wire (pts (xy 270.51 120.65) (xy 273.05 120.65))
+  (wire (pts (xy 280.67 52.07) (xy 283.21 52.07))
     (stroke (width 0) (type default))
     (uuid 2ee7d2a0-4875-4eeb-8b96-794236341289)
   )
@@ -3184,15 +3184,15 @@
     (stroke (width 0) (type default))
     (uuid 35e6773c-a5db-40f2-bb82-eec9131308a9)
   )
-  (wire (pts (xy 255.27 250.19) (xy 259.08 250.19))
+  (wire (pts (xy 252.73 245.11) (xy 256.54 245.11))
     (stroke (width 0) (type default))
     (uuid 360037e7-5709-43f2-bf48-35e8b389e21e)
   )
-  (wire (pts (xy 270.51 105.41) (xy 270.51 110.49))
+  (wire (pts (xy 280.67 36.83) (xy 280.67 41.91))
     (stroke (width 0) (type default))
     (uuid 367d806d-7b89-47ac-9c04-7504506cdea6)
   )
-  (wire (pts (xy 295.91 99.06) (xy 295.91 100.33))
+  (wire (pts (xy 248.92 100.33) (xy 248.92 101.6))
     (stroke (width 0) (type default))
     (uuid 38b88571-5b51-43fe-9f3a-35178d27dfae)
   )
@@ -3212,11 +3212,11 @@
     (stroke (width 0) (type default))
     (uuid 396589cc-991b-4741-8af9-5c6df98c1f12)
   )
-  (wire (pts (xy 222.25 34.29) (xy 222.25 35.56))
+  (wire (pts (xy 175.26 35.56) (xy 175.26 36.83))
     (stroke (width 0) (type default))
     (uuid 397b2d7a-79c7-41d3-9562-0f0a3ef99e11)
   )
-  (wire (pts (xy 245.11 265.43) (xy 247.65 265.43))
+  (wire (pts (xy 242.57 260.35) (xy 245.11 260.35))
     (stroke (width 0) (type default))
     (uuid 3984a49e-28a4-405d-b8a6-ddaf234a6c56)
   )
@@ -3265,7 +3265,7 @@
     (stroke (width 0) (type default))
     (uuid 43c63a0f-41bc-4bc8-8bd9-19cb7af85870)
   )
-  (wire (pts (xy 283.21 52.07) (xy 283.21 54.61))
+  (wire (pts (xy 236.22 53.34) (xy 236.22 55.88))
     (stroke (width 0) (type default))
     (uuid 44163f66-c56a-49bd-9b98-101a348c7974)
   )
@@ -3313,7 +3313,7 @@
     (stroke (width 0) (type default))
     (uuid 4a4ec299-029c-457a-8c68-c0e21d0d4f4e)
   )
-  (wire (pts (xy 283.21 31.75) (xy 283.21 34.29))
+  (wire (pts (xy 236.22 33.02) (xy 236.22 35.56))
     (stroke (width 0) (type default))
     (uuid 4aa45978-5adb-400d-96cc-b066adb82287)
   )
@@ -3369,7 +3369,7 @@
     (stroke (width 0) (type default))
     (uuid 4f90de94-8c3e-4955-b1a9-aedc9a6c4be3)
   )
-  (wire (pts (xy 236.22 107.95) (xy 236.22 110.49))
+  (wire (pts (xy 278.13 76.2) (xy 278.13 78.74))
     (stroke (width 0) (type default))
     (uuid 5014b86a-dfef-4804-b595-e47c458353c3)
   )
@@ -3418,7 +3418,7 @@
     (stroke (width 0) (type default))
     (uuid 572667df-59c8-444b-b07a-4b267ec27366)
   )
-  (wire (pts (xy 210.82 34.29) (xy 214.63 34.29))
+  (wire (pts (xy 163.83 35.56) (xy 167.64 35.56))
     (stroke (width 0) (type default))
     (uuid 5758ffc1-8cb1-46a7-83c5-19bd7a97f9d1)
   )
@@ -3446,7 +3446,7 @@
     (stroke (width 0) (type default))
     (uuid 5cad0ec5-4d2f-42ac-9807-d0a2d8f442a0)
   )
-  (wire (pts (xy 266.7 110.49) (xy 270.51 110.49))
+  (wire (pts (xy 276.86 41.91) (xy 280.67 41.91))
     (stroke (width 0) (type default))
     (uuid 5d9410d8-e6c8-4741-bbf1-25a27aedabaf)
   )
@@ -3458,7 +3458,7 @@
     (stroke (width 0) (type default))
     (uuid 5e82921d-294b-4be5-8c06-81ea28d98435)
   )
-  (wire (pts (xy 245.11 245.11) (xy 245.11 250.19))
+  (wire (pts (xy 242.57 240.03) (xy 242.57 245.11))
     (stroke (width 0) (type default))
     (uuid 5eaf333d-30cd-40f6-95a2-3be88732a93a)
   )
@@ -3470,7 +3470,7 @@
     (stroke (width 0) (type default))
     (uuid 5f625be4-859c-4331-8a17-70b1e0944827)
   )
-  (wire (pts (xy 222.25 44.45) (xy 222.25 43.18))
+  (wire (pts (xy 175.26 45.72) (xy 175.26 44.45))
     (stroke (width 0) (type default))
     (uuid 5f8c8d30-28be-47f7-b9b7-e049e66055e3)
   )
@@ -3507,7 +3507,7 @@
     (stroke (width 0) (type default))
     (uuid 633e9a25-5de6-4bae-bd50-6265c3357f02)
   )
-  (wire (pts (xy 267.97 120.65) (xy 270.51 120.65))
+  (wire (pts (xy 278.13 52.07) (xy 280.67 52.07))
     (stroke (width 0) (type default))
     (uuid 63e99660-d467-4e5d-8749-f2808708b577)
   )
@@ -3523,7 +3523,7 @@
     (stroke (width 0) (type default))
     (uuid 64e37331-7b3f-46d6-8d5b-b6ef57fc49f8)
   )
-  (wire (pts (xy 270.51 120.65) (xy 270.51 125.73))
+  (wire (pts (xy 280.67 52.07) (xy 280.67 57.15))
     (stroke (width 0) (type default))
     (uuid 656dc260-9894-43b3-9d01-c2b817d6095c)
   )
@@ -3531,7 +3531,7 @@
     (stroke (width 0) (type default))
     (uuid 664a52e2-6287-4f20-b925-7436880ed7ba)
   )
-  (wire (pts (xy 256.54 105.41) (xy 256.54 110.49))
+  (wire (pts (xy 266.7 36.83) (xy 266.7 41.91))
     (stroke (width 0) (type default))
     (uuid 66d55fd5-5440-462e-b207-3c703dc1e21c)
   )
@@ -3547,11 +3547,11 @@
     (stroke (width 0) (type default))
     (uuid 67fd560f-0d44-4141-a8af-6c401905da3d)
   )
-  (wire (pts (xy 256.54 105.41) (xy 257.81 105.41))
+  (wire (pts (xy 266.7 36.83) (xy 267.97 36.83))
     (stroke (width 0) (type default))
     (uuid 68746dfa-d687-4a0f-9886-f167d81fde53)
   )
-  (wire (pts (xy 222.25 34.29) (xy 242.57 34.29))
+  (wire (pts (xy 175.26 35.56) (xy 195.58 35.56))
     (stroke (width 0) (type default))
     (uuid 6a063b3f-ea10-4fc7-bdce-e97620332152)
   )
@@ -3603,11 +3603,11 @@
     (stroke (width 0) (type default))
     (uuid 74275d17-b73b-4ec5-a579-f71b7800885d)
   )
-  (wire (pts (xy 266.7 125.73) (xy 270.51 125.73))
+  (wire (pts (xy 276.86 57.15) (xy 280.67 57.15))
     (stroke (width 0) (type default))
     (uuid 74793116-aaf9-4479-87bd-43b4cc77e70a)
   )
-  (wire (pts (xy 214.63 44.45) (xy 214.63 43.18))
+  (wire (pts (xy 167.64 45.72) (xy 167.64 44.45))
     (stroke (width 0) (type default))
     (uuid 74c104c2-772c-4b47-991c-72dde6713fbe)
   )
@@ -3655,7 +3655,7 @@
     (stroke (width 0) (type default))
     (uuid 7a3e9ef2-8373-4c0e-9cf0-6e00a46da7db)
   )
-  (wire (pts (xy 226.06 107.95) (xy 228.6 107.95))
+  (wire (pts (xy 267.97 76.2) (xy 270.51 76.2))
     (stroke (width 0) (type default))
     (uuid 7bc92520-498e-45ad-a4a4-b3b8b641f2a4)
   )
@@ -3667,7 +3667,7 @@
     (stroke (width 0) (type default))
     (uuid 7ceae7c3-5377-4bfc-8cfc-e0ef9931f6d7)
   )
-  (wire (pts (xy 222.25 49.53) (xy 222.25 46.99))
+  (wire (pts (xy 175.26 50.8) (xy 175.26 48.26))
     (stroke (width 0) (type default))
     (uuid 7d7a35ae-4ba6-45e9-9d1c-65bf28be4547)
   )
@@ -3719,7 +3719,7 @@
     (stroke (width 0) (type default))
     (uuid 84fbcdce-c3a9-46a7-adf1-a0f1291e9bcb)
   )
-  (wire (pts (xy 295.91 90.17) (xy 295.91 91.44))
+  (wire (pts (xy 248.92 91.44) (xy 248.92 92.71))
     (stroke (width 0) (type default))
     (uuid 853d8380-4a7f-4478-8f6a-ca2857048a60)
   )
@@ -3747,7 +3747,7 @@
     (stroke (width 0) (type default))
     (uuid 875c25ca-2694-4bde-bb74-46a93a0bc0f1)
   )
-  (wire (pts (xy 236.22 110.49) (xy 238.76 110.49))
+  (wire (pts (xy 278.13 78.74) (xy 280.67 78.74))
     (stroke (width 0) (type default))
     (uuid 879131db-8a8f-49c3-8ef0-1d2a46f7eb60)
   )
@@ -3755,7 +3755,7 @@
     (stroke (width 0) (type default))
     (uuid 885b05d0-cef7-4156-8fb1-1c68e68c8f79)
   )
-  (wire (pts (xy 245.11 260.35) (xy 245.11 265.43))
+  (wire (pts (xy 242.57 255.27) (xy 242.57 260.35))
     (stroke (width 0) (type default))
     (uuid 889c2917-e482-4df4-af4a-b12dba53f29f)
   )
@@ -3787,7 +3787,7 @@
     (stroke (width 0) (type default))
     (uuid 9089dc9c-a70c-42d1-9152-6e1126160f05)
   )
-  (wire (pts (xy 283.21 90.17) (xy 295.91 90.17))
+  (wire (pts (xy 236.22 91.44) (xy 248.92 91.44))
     (stroke (width 0) (type default))
     (uuid 9090a4fe-6885-4d36-8db7-3970c6c5126d)
   )
@@ -3880,7 +3880,7 @@
     (stroke (width 0) (type default))
     (uuid 9ffefc09-55fe-4d6e-9228-bf4a83c19c4d)
   )
-  (wire (pts (xy 222.25 57.15) (xy 222.25 58.42))
+  (wire (pts (xy 175.26 58.42) (xy 175.26 59.69))
     (stroke (width 0) (type default))
     (uuid a0d9d4ed-8a50-4a8c-8857-c61021a52c2b)
   )
@@ -3896,7 +3896,7 @@
     (stroke (width 0) (type default))
     (uuid a30d501b-23c5-4eca-b726-beac785fb747)
   )
-  (wire (pts (xy 214.63 44.45) (xy 222.25 44.45))
+  (wire (pts (xy 167.64 45.72) (xy 175.26 45.72))
     (stroke (width 0) (type default))
     (uuid a3afe4b9-58a7-46e4-b7cf-b1ea6e0b4aec)
   )
@@ -3905,7 +3905,7 @@
     (uuid a3c34631-fcbd-416e-859f-f5929b85bcf9)
   )
 
-  (wire (pts (xy 256.54 125.73) (xy 259.08 125.73))
+  (wire (pts (xy 266.7 57.15) (xy 269.24 57.15))
     (stroke (width 0) (type default))
     (uuid a3d53573-fea6-4a93-903f-54d7c70a2e73)
   )
@@ -3917,7 +3917,7 @@
     (stroke (width 0) (type default))
     (uuid a5fff8c0-b722-4297-97ff-06a186cb4446)
   )
-  (wire (pts (xy 283.21 34.29) (xy 283.21 36.83))
+  (wire (pts (xy 236.22 35.56) (xy 236.22 38.1))
     (stroke (width 0) (type default))
     (uuid a69490d4-2e61-49d8-851f-928144c312e2)
   )
@@ -3946,7 +3946,7 @@
     (stroke (width 0) (type default))
     (uuid aa1e370c-6600-4bed-94a5-79c8510f6acd)
   )
-  (wire (pts (xy 242.57 49.53) (xy 240.03 49.53))
+  (wire (pts (xy 195.58 50.8) (xy 193.04 50.8))
     (stroke (width 0) (type default))
     (uuid aa6a3f6b-eb8b-4180-9e6e-290cc116d8c8)
   )
@@ -3982,7 +3982,7 @@
     (stroke (width 0) (type default))
     (uuid b2de44d3-e91c-46da-a20c-7c521cc7eb15)
   )
-  (wire (pts (xy 283.21 39.37) (xy 283.21 41.91))
+  (wire (pts (xy 236.22 40.64) (xy 236.22 43.18))
     (stroke (width 0) (type default))
     (uuid b32896b6-dc86-425f-881e-7736a9016c48)
   )
@@ -3994,7 +3994,7 @@
     (stroke (width 0) (type default))
     (uuid b401e5da-0ac1-49f9-825c-163be5a2c535)
   )
-  (wire (pts (xy 259.08 245.11) (xy 261.62 245.11))
+  (wire (pts (xy 256.54 240.03) (xy 259.08 240.03))
     (stroke (width 0) (type default))
     (uuid b40efab9-cfc6-4076-8341-4386399cb6a5)
   )
@@ -4010,7 +4010,7 @@
     (stroke (width 0) (type default))
     (uuid b5e0643b-fd1f-4ecc-8756-e88cb91341e1)
   )
-  (wire (pts (xy 245.11 245.11) (xy 246.38 245.11))
+  (wire (pts (xy 242.57 240.03) (xy 243.84 240.03))
     (stroke (width 0) (type default))
     (uuid b5f54973-850b-4d30-a2c3-2a8b00453dd1)
   )
@@ -4038,7 +4038,7 @@
     (stroke (width 0) (type default))
     (uuid b7b969d4-223a-41f5-8955-66760d211868)
   )
-  (wire (pts (xy 283.21 49.53) (xy 283.21 52.07))
+  (wire (pts (xy 236.22 50.8) (xy 236.22 53.34))
     (stroke (width 0) (type default))
     (uuid b8444ca7-0e69-4603-ae2c-f1a27e7a4810)
   )
@@ -4050,7 +4050,7 @@
     (stroke (width 0) (type default))
     (uuid b96f5c7d-341d-4459-bb1a-617111465b6c)
   )
-  (wire (pts (xy 256.54 110.49) (xy 259.08 110.49))
+  (wire (pts (xy 266.7 41.91) (xy 269.24 41.91))
     (stroke (width 0) (type default))
     (uuid ba46538e-7da9-4bd4-aab6-0b55783be416)
   )
@@ -4090,7 +4090,7 @@
     (stroke (width 0) (type default))
     (uuid bea84a03-3dc7-4023-be95-f4d9d4fa7423)
   )
-  (wire (pts (xy 214.63 92.71) (xy 215.9 92.71))
+  (wire (pts (xy 185.42 116.84) (xy 186.69 116.84))
     (stroke (width 0) (type default))
     (uuid beda2322-05c1-490f-87a5-22f73b02bb58)
   )
@@ -4163,7 +4163,7 @@
     (stroke (width 0) (type default))
     (uuid c962e1fe-fbb2-4d7b-9cc6-10cd05cd19a0)
   )
-  (wire (pts (xy 256.54 120.65) (xy 256.54 125.73))
+  (wire (pts (xy 266.7 52.07) (xy 266.7 57.15))
     (stroke (width 0) (type default))
     (uuid ca65dc0b-e47b-4b36-8d0a-5d7acef55448)
   )
@@ -4191,7 +4191,7 @@
     (stroke (width 0) (type default))
     (uuid cec7ff6d-9aea-418f-8ae1-7feeb410769a)
   )
-  (wire (pts (xy 270.51 105.41) (xy 273.05 105.41))
+  (wire (pts (xy 280.67 36.83) (xy 283.21 36.83))
     (stroke (width 0) (type default))
     (uuid cf9f2ff8-762b-4ad6-98fe-570b8a26ca55)
   )
@@ -4211,7 +4211,7 @@
     (stroke (width 0) (type default))
     (uuid d151b508-c57c-40af-b7ca-343858b26a03)
   )
-  (wire (pts (xy 214.63 45.72) (xy 214.63 44.45))
+  (wire (pts (xy 167.64 46.99) (xy 167.64 45.72))
     (stroke (width 0) (type default))
     (uuid d167fdb6-469e-41cd-adef-cb6d542c4f01)
   )
@@ -4223,7 +4223,7 @@
     (stroke (width 0) (type default))
     (uuid d25ff0a0-9d56-4f2d-a1e9-22bdd2b143f1)
   )
-  (wire (pts (xy 256.54 260.35) (xy 259.08 260.35))
+  (wire (pts (xy 254 255.27) (xy 256.54 255.27))
     (stroke (width 0) (type default))
     (uuid d2d7f589-92c9-4f50-b9f7-bce56c63dd54)
   )
@@ -4231,11 +4231,11 @@
     (stroke (width 0) (type default))
     (uuid d353a5aa-63b8-4f65-a342-ffddeabec484)
   )
-  (wire (pts (xy 214.63 34.29) (xy 222.25 34.29))
+  (wire (pts (xy 167.64 35.56) (xy 175.26 35.56))
     (stroke (width 0) (type default))
     (uuid d4a44cd4-8876-478a-b61c-991b20602f75)
   )
-  (wire (pts (xy 236.22 111.76) (xy 236.22 110.49))
+  (wire (pts (xy 278.13 80.01) (xy 278.13 78.74))
     (stroke (width 0) (type default))
     (uuid d4ff71af-29cf-4d94-af2e-814faa50813b)
   )
@@ -4268,7 +4268,7 @@
     (uuid d69bd599-8beb-47ef-857b-dd1596b1f3f4)
   )
 
-  (wire (pts (xy 283.21 31.75) (xy 284.48 31.75))
+  (wire (pts (xy 236.22 33.02) (xy 237.49 33.02))
     (stroke (width 0) (type default))
     (uuid d7a9cd1d-0ea0-4be7-8653-2df5fa830f74)
   )
@@ -4288,7 +4288,7 @@
     (stroke (width 0) (type default))
     (uuid dc01b91d-ccb1-4a15-a5cc-d4ce1de465f5)
   )
-  (wire (pts (xy 245.11 260.35) (xy 246.38 260.35))
+  (wire (pts (xy 242.57 255.27) (xy 243.84 255.27))
     (stroke (width 0) (type default))
     (uuid dc5a5967-9898-4884-8f8f-0db69abfa90c)
   )
@@ -4304,7 +4304,7 @@
     (stroke (width 0) (type default))
     (uuid dfe279d9-dac2-4006-ad15-c4d4712e8e0f)
   )
-  (wire (pts (xy 267.97 105.41) (xy 270.51 105.41))
+  (wire (pts (xy 278.13 36.83) (xy 280.67 36.83))
     (stroke (width 0) (type default))
     (uuid e0e1e1d3-0575-4d1b-836a-2dd05331e972)
   )
@@ -4321,7 +4321,7 @@
     (stroke (width 0) (type default))
     (uuid e2600f77-1da1-4a1b-8fe2-696d8acc4010)
   )
-  (wire (pts (xy 259.08 245.11) (xy 259.08 250.19))
+  (wire (pts (xy 256.54 240.03) (xy 256.54 245.11))
     (stroke (width 0) (type default))
     (uuid e41a6569-91b0-4d6b-9638-eb4b61322b4f)
   )
@@ -4382,7 +4382,7 @@
     (stroke (width 0) (type default))
     (uuid ecabda34-1312-4df3-820c-b7f9155914a2)
   )
-  (wire (pts (xy 256.54 120.65) (xy 257.81 120.65))
+  (wire (pts (xy 266.7 52.07) (xy 267.97 52.07))
     (stroke (width 0) (type default))
     (uuid ecbb9215-aceb-4c0f-8940-c726e7e209f2)
   )
@@ -4410,7 +4410,7 @@
     (stroke (width 0) (type default))
     (uuid f033cf49-8336-4324-b93b-6415032b4f03)
   )
-  (wire (pts (xy 223.52 92.71) (xy 224.79 92.71))
+  (wire (pts (xy 194.31 116.84) (xy 195.58 116.84))
     (stroke (width 0) (type default))
     (uuid f089ca3a-4411-4188-9ccf-7bcd250ed6af)
   )
@@ -4446,7 +4446,7 @@
     (stroke (width 0) (type default))
     (uuid f4ec7ed2-abbb-4dc9-9535-2ac02f46479e)
   )
-  (wire (pts (xy 283.21 44.45) (xy 283.21 46.99))
+  (wire (pts (xy 236.22 45.72) (xy 236.22 48.26))
     (stroke (width 0) (type default))
     (uuid f682bda5-79ef-4d22-9040-4643643bc2a8)
   )
@@ -4454,7 +4454,7 @@
     (stroke (width 0) (type default))
     (uuid f6b50b02-ce47-43db-b183-fb3fa4c7f899)
   )
-  (wire (pts (xy 256.54 245.11) (xy 259.08 245.11))
+  (wire (pts (xy 254 240.03) (xy 256.54 240.03))
     (stroke (width 0) (type default))
     (uuid f74d531b-7387-42d8-ad47-b469860c3324)
   )
@@ -4483,7 +4483,7 @@
     (stroke (width 0) (type default))
     (uuid fa1af57b-b1ac-4115-9f01-8885882cbdcd)
   )
-  (wire (pts (xy 236.22 119.38) (xy 236.22 121.92))
+  (wire (pts (xy 278.13 87.63) (xy 278.13 90.17))
     (stroke (width 0) (type default))
     (uuid faac49da-c660-46c2-8d79-a7daf4847cf8)
   )
@@ -4536,7 +4536,7 @@
     (uuid ff3b40c4-65a5-459c-92a2-b0998e0ff029)
   )
 
-  (text "USBC\n" (at 304.8 121.92 0)
+  (text "USBC\n" (at 306.07 116.84 0)
     (effects (font (size 3.5 3.5)) (justify left bottom))
     (uuid 214fe46c-725d-4d92-b4f7-aeaadc59323e)
   )
@@ -4564,11 +4564,15 @@
     (effects (font (size 3.5 3.5)) (justify left bottom))
     (uuid af109e17-041f-4fd6-939a-16357e2b65d9)
   )
+  (text "Mercury V2.1\nBy: Kyle Tyni\n2024" (at 303.53 266.7 0)
+    (effects (font (size 2.5 2.5)) (justify left bottom))
+    (uuid cf184b67-1e99-46ba-8e05-551a12829315)
+  )
   (text "Gyro\n" (at 209.55 142.24 0)
     (effects (font (size 3.5 3.5)) (justify left bottom))
     (uuid e5dc7155-ce65-4359-a616-763f576bb999)
   )
-  (text "ESP32 MCU" (at 208.28 20.32 0)
+  (text "ESP32 MCU" (at 158.75 21.59 0)
     (effects (font (size 3.5 3.5)) (justify left bottom))
     (uuid eb455e78-1aa9-4d99-bcc0-bceba9d518c9)
   )
@@ -4577,15 +4581,15 @@
     (uuid ec891b8e-6b9a-485d-98a8-378c72aa5224)
   )
 
-  (label "MTDO" (at 283.21 72.39 0) (fields_autoplaced)
+  (label "MTDO" (at 236.22 73.66 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 004039c0-4958-44c1-a9ed-14e06cdf04ee)
   )
-  (label "5V" (at 280.67 241.3 180) (fields_autoplaced)
+  (label "5V" (at 278.13 236.22 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 005ffb08-1c05-4bba-a4e7-36f11ba42222)
   )
-  (label "BTN1" (at 242.57 41.91 180) (fields_autoplaced)
+  (label "BTN1" (at 195.58 43.18 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 017095ae-f605-469b-8459-de95a22046d2)
   )
@@ -4597,23 +4601,23 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 018bb339-604a-4081-9308-f99250893386)
   )
-  (label "MTDI" (at 167.64 72.39 180) (fields_autoplaced)
+  (label "MTDI" (at 224.79 118.11 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 01b8c710-c925-40f6-b6ee-9e821615810b)
   )
-  (label "FR_EMIT" (at 242.57 67.31 180) (fields_autoplaced)
+  (label "FR_EMIT" (at 195.58 68.58 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0696495f-3557-48e9-aa33-071194014fb7)
   )
-  (label "MR_PWMB" (at 242.57 59.69 180) (fields_autoplaced)
+  (label "MR_PWMB" (at 195.58 60.96 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0932b527-c221-48ff-a7eb-b4bcd59df366)
   )
-  (label "UART_TX" (at 280.67 248.92 180) (fields_autoplaced)
+  (label "UART_TX" (at 278.13 243.84 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 09ae3c55-373e-470d-850d-303757dd3c15)
   )
-  (label "UART_RX" (at 280.67 246.38 180) (fields_autoplaced)
+  (label "UART_RX" (at 278.13 241.3 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0a2fa452-e4da-44e3-a70c-39267ba3e142)
   )
@@ -4621,7 +4625,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0abc0811-cb4c-42db-a149-46d003e86ec0)
   )
-  (label "3.3V" (at 280.67 255.27 180) (fields_autoplaced)
+  (label "3.3V" (at 278.13 250.19 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0ad78817-b132-49c2-8216-87d7767d7fee)
   )
@@ -4629,11 +4633,11 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0f24126d-b0d2-4e58-9bea-48e0a537d203)
   )
-  (label "3.3V" (at 224.79 95.25 0) (fields_autoplaced)
+  (label "3.3V" (at 195.58 119.38 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 10590549-112e-4e0d-9b8e-18c6a44d27a1)
   )
-  (label "UART_TX" (at 283.21 62.23 0) (fields_autoplaced)
+  (label "UART_TX" (at 236.22 63.5 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 10f02ffc-0171-4dcf-be3b-5d9f8a6e8cd9)
   )
@@ -4653,11 +4657,11 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 168d37c5-e2b9-45e8-b0e5-543eb97b8c4f)
   )
-  (label "MR_PWMA" (at 283.21 77.47 0) (fields_autoplaced)
+  (label "MR_PWMA" (at 236.22 78.74 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 16c34aa1-2a65-47ce-a4d0-5b415bf3d998)
   )
-  (label "BATT_DIV" (at 242.57 39.37 180) (fields_autoplaced)
+  (label "BATT_DIV" (at 195.58 40.64 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 17cba472-e75a-490d-94ae-b19e90f0e85f)
   )
@@ -4669,7 +4673,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1b3dc1bc-5589-440b-980d-3eba5736fe87)
   )
-  (label "3.3V" (at 280.67 270.51 180) (fields_autoplaced)
+  (label "3.3V" (at 278.13 265.43 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 1b400df5-8b5d-4cc5-87d6-2da0b9a357c1)
   )
@@ -4677,11 +4681,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1c777ca3-3a55-47d4-86ff-8209e396de34)
   )
-  (label "GND" (at 167.64 69.85 180) (fields_autoplaced)
+  (label "GND" (at 224.79 115.57 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 1e186420-8aa2-460d-96ca-2ca93604a2ce)
   )
-  (label "MTCK" (at 184.15 69.85 0) (fields_autoplaced)
+  (label "MTCK" (at 241.3 115.57 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1f1ae79f-e170-4a50-ad13-d68a28bd5ab7)
   )
@@ -4689,7 +4693,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1f8b235c-75e5-4a7f-b56c-cb1e37244657)
   )
-  (label "FL_RECV" (at 283.21 57.15 0) (fields_autoplaced)
+  (label "FL_RECV" (at 236.22 58.42 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1fd624f9-cc29-4903-b9c5-10479367bbc0)
   )
@@ -4697,7 +4701,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 2110f980-ace0-494d-9bed-b91b2e60105b)
   )
-  (label "SCL_0" (at 214.63 95.25 180) (fields_autoplaced)
+  (label "SCL_0" (at 185.42 119.38 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 21ccffb4-52f0-4ee2-9084-4051397e2194)
   )
@@ -4713,7 +4717,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 2860797d-2c0c-4d51-ae88-96ae4653aa19)
   )
-  (label "GND" (at 280.67 262.89 180) (fields_autoplaced)
+  (label "GND" (at 278.13 257.81 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 28f9e18e-3dac-4878-8892-afc42518b658)
   )
@@ -4721,31 +4725,31 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2a008982-5edd-4d26-9039-3f8b2c4992db)
   )
-  (label "SDA_1" (at 280.67 260.35 180) (fields_autoplaced)
+  (label "SDA_1" (at 278.13 255.27 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 2ca0bcbe-d08f-4116-8712-3fa7e7404983)
   )
-  (label "RST" (at 242.57 36.83 180) (fields_autoplaced)
+  (label "RST" (at 195.58 38.1 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 2de393e6-f65b-40c3-b82f-139a62acc2fd)
   )
-  (label "SCL_0" (at 242.57 57.15 180) (fields_autoplaced)
+  (label "SCL_0" (at 195.58 58.42 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 30e0e951-0cb2-4d9d-9854-1fb52fbec8ad)
   )
-  (label "SDA_0" (at 214.63 92.71 180) (fields_autoplaced)
+  (label "SDA_0" (at 185.42 116.84 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 314c0349-0f07-4ce3-9e6e-a2b4c31e9e3e)
   )
-  (label "V_BATTERY" (at 271.78 229.87 180) (fields_autoplaced)
+  (label "V_BATTERY" (at 274.32 223.52 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 33bab820-c587-4535-bdac-5369fe9768a1)
   )
-  (label "MTMS" (at 283.21 67.31 0) (fields_autoplaced)
+  (label "MTMS" (at 236.22 68.58 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 33cb6fef-9cc1-4f8a-ac96-40a1690bcbe7)
   )
-  (label "GND" (at 280.67 278.13 180) (fields_autoplaced)
+  (label "GND" (at 278.13 273.05 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 366c9a55-182a-47d7-a6c9-1c9508e71129)
   )
@@ -4765,11 +4769,11 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 42ceb4cd-aa35-41ed-940c-8ed8bb0753b7)
   )
-  (label "SDA_0" (at 242.57 54.61 180) (fields_autoplaced)
+  (label "SDA_0" (at 195.58 55.88 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 4377d217-47a8-4d4f-aa39-3f9c23fec04b)
   )
-  (label "BTN1" (at 261.62 245.11 0) (fields_autoplaced)
+  (label "BTN1" (at 259.08 240.03 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 43eaab00-8a84-4b63-9e28-7c1ae0e363b5)
   )
@@ -4785,7 +4789,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4e76dc64-2de0-4146-9479-ed0d3d87c74e)
   )
-  (label "SDA_0" (at 280.67 275.59 180) (fields_autoplaced)
+  (label "SDA_0" (at 278.13 270.51 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 4f5a71fa-fd83-4c06-b93f-cfc9f1ef9ab1)
   )
@@ -4801,7 +4805,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 54e49525-ebb7-4225-955c-46c638399fa2)
   )
-  (label "ML_PWMA" (at 283.21 82.55 0) (fields_autoplaced)
+  (label "ML_PWMA" (at 236.22 83.82 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 57a287c2-e756-473a-a1e0-06200d7bf595)
   )
@@ -4813,15 +4817,15 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 5d02ff04-bf27-4598-a46c-91401493f171)
   )
-  (label "BTN2" (at 242.57 44.45 180) (fields_autoplaced)
+  (label "BTN2" (at 195.58 45.72 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6061584f-f791-4454-a005-57cdcf1a479e)
   )
-  (label "FL_EMIT" (at 283.21 59.69 0) (fields_autoplaced)
+  (label "FL_EMIT" (at 236.22 60.96 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 614324eb-29b3-4f87-9fd1-db6bd3992549)
   )
-  (label "DL_RECV" (at 242.57 85.09 180) (fields_autoplaced)
+  (label "DL_RECV" (at 195.58 86.36 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 616da00a-5d16-4091-8158-8218eadc127e)
   )
@@ -4833,19 +4837,19 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 6e7f2300-d38a-4630-9918-5c83eb591de6)
   )
-  (label "UART_RX" (at 283.21 64.77 0) (fields_autoplaced)
+  (label "UART_RX" (at 236.22 66.04 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 6ec2fd05-5224-41a1-b589-bfb006052737)
   )
-  (label "SCL_1" (at 280.67 257.81 180) (fields_autoplaced)
+  (label "SCL_1" (at 278.13 252.73 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6ee4aea3-b4a4-4711-8dad-f282389ee572)
   )
-  (label "SDA_1" (at 242.57 77.47 180) (fields_autoplaced)
+  (label "SDA_1" (at 195.58 78.74 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6efe5f7e-7a02-4658-b621-0c95a2ecd742)
   )
-  (label "FAN_PWM" (at 242.57 52.07 180) (fields_autoplaced)
+  (label "FAN_PWM" (at 195.58 53.34 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6f0fbf4b-f0d1-43f0-bbd6-ee6e71a726c0)
   )
@@ -4853,7 +4857,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 6f1f9423-9dc2-4300-a081-554853736290)
   )
-  (label "DR_RECV" (at 242.57 80.01 180) (fields_autoplaced)
+  (label "DR_RECV" (at 195.58 81.28 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6fc363d7-fa47-4371-b7f2-f1f2da190bb3)
   )
@@ -4861,7 +4865,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 6ffaa59c-cafd-4a9e-ad0d-0bde22bdc712)
   )
-  (label "RST" (at 238.76 110.49 0) (fields_autoplaced)
+  (label "RST" (at 280.67 78.74 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 71ce891b-3adc-439c-bff5-1c9c492b4b7e)
   )
@@ -4877,7 +4881,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 755d1778-5eb1-4c4b-b68e-aa3a4441253a)
   )
-  (label "GND" (at 184.15 74.93 0) (fields_autoplaced)
+  (label "GND" (at 241.3 120.65 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 75dcde60-ae7c-4bff-ba55-77594df3607a)
   )
@@ -4901,7 +4905,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 811a07bb-9353-4d78-a82c-b78c06d71b4f)
   )
-  (label "DL_EMIT" (at 242.57 87.63 180) (fields_autoplaced)
+  (label "DL_EMIT" (at 195.58 88.9 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 81692be1-d539-408a-b44f-f11558451396)
   )
@@ -4921,7 +4925,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 90263ece-8a47-4597-9774-a2e958785d9b)
   )
-  (label "RED_LED" (at 283.21 85.09 0) (fields_autoplaced)
+  (label "RED_LED" (at 236.22 86.36 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 94f54018-6ea6-4d24-b0ef-014da81c3bc9)
   )
@@ -4933,7 +4937,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 96fb1944-0fdb-4f14-8665-286725ff50df)
   )
-  (label "3.3V" (at 210.82 34.29 180) (fields_autoplaced)
+  (label "3.3V" (at 163.83 35.56 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 97b2dbc8-9d20-4ccc-9526-2017208d66b9)
   )
@@ -4953,15 +4957,15 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid a4df16d7-c91c-4046-99f7-02ff085a19f8)
   )
-  (label "SCL_1" (at 242.57 74.93 180) (fields_autoplaced)
+  (label "SCL_1" (at 195.58 76.2 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid a715dcd4-e2d0-454d-bd4b-cf8915b125a0)
   )
-  (label "BOOT" (at 283.21 87.63 0) (fields_autoplaced)
+  (label "BOOT" (at 236.22 88.9 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid a8a30111-c445-4e13-bc48-b72978b57846)
   )
-  (label "GND" (at 280.67 243.84 180) (fields_autoplaced)
+  (label "GND" (at 278.13 238.76 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid a9030753-a450-451b-bd54-51141b5aa9c2)
   )
@@ -4973,19 +4977,19 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid b1adea84-5f52-467e-8ddb-db57e7c2bb1b)
   )
-  (label "USB_D-" (at 242.57 62.23 180) (fields_autoplaced)
+  (label "USB_D-" (at 195.58 63.5 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid b2cf1797-022c-4ae2-9e14-2d568f0e257f)
   )
-  (label "DR_EMIT" (at 242.57 82.55 180) (fields_autoplaced)
+  (label "DR_EMIT" (at 195.58 83.82 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid b3549ec4-213c-4356-aa2d-98261b19d687)
   )
-  (label "GREEN_LED" (at 242.57 90.17 180) (fields_autoplaced)
+  (label "GREEN_LED" (at 195.58 91.44 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid b41f12dc-d395-4e21-8d45-a35af50f6c2f)
   )
-  (label "FR_RECV" (at 242.57 72.39 180) (fields_autoplaced)
+  (label "FR_RECV" (at 195.58 73.66 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid b4962a47-907d-423b-9476-f20f602f27fe)
   )
@@ -4997,11 +5001,11 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid b719f0c9-34c7-4204-8c03-d4b4b1a7d7d6)
   )
-  (label "ML_PWMB" (at 283.21 80.01 0) (fields_autoplaced)
+  (label "ML_PWMB" (at 236.22 81.28 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid b75bb4b1-0461-418f-99b5-eb5dd714a7c3)
   )
-  (label "BTN2" (at 261.62 260.35 0) (fields_autoplaced)
+  (label "BTN2" (at 259.08 255.27 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid bc812731-7eec-48ea-bbbf-1ecb61f6d941)
   )
@@ -5013,7 +5017,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid c19d8b84-b5d1-4a71-9cdd-e786a5d3e5ef)
   )
-  (label "RST" (at 273.05 120.65 0) (fields_autoplaced)
+  (label "RST" (at 283.21 52.07 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid c1f52e58-c94f-4c50-b67e-e7fa608c1a6c)
   )
@@ -5037,7 +5041,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid c621f121-5167-4444-81c4-c6d20b72f042)
   )
-  (label "FAN_PWM" (at 271.78 227.33 180) (fields_autoplaced)
+  (label "FAN_PWM" (at 274.32 220.98 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid cc014d35-f547-479e-9040-4797d49dcefc)
   )
@@ -5077,7 +5081,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid dba51dbc-75ba-4ff5-9556-6aef175cb9a2)
   )
-  (label "MTMS" (at 184.15 72.39 0) (fields_autoplaced)
+  (label "MTMS" (at 241.3 118.11 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid dc58dd43-05ee-4ca5-876d-09f16233fc69)
   )
@@ -5085,7 +5089,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid ddcf655f-4648-4de3-93c7-db1eb7e15951)
   )
-  (label "USB_D+" (at 242.57 64.77 180) (fields_autoplaced)
+  (label "USB_D+" (at 195.58 66.04 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid dff03c11-4bcc-4df7-adec-102f1773ba49)
   )
@@ -5093,19 +5097,19 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e1640b24-94ae-4004-861b-3815505a9a03)
   )
-  (label "3.3V" (at 226.06 107.95 180) (fields_autoplaced)
+  (label "3.3V" (at 267.97 76.2 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid e41f7a31-30aa-46b7-b57b-9d3acc8f64c0)
   )
-  (label "GND" (at 271.78 224.79 180) (fields_autoplaced)
+  (label "GND" (at 274.32 218.44 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid e5c8924f-845c-421c-b5cf-89badad91f33)
   )
-  (label "MTCK" (at 283.21 74.93 0) (fields_autoplaced)
+  (label "MTCK" (at 236.22 76.2 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e6b65891-b61b-41d3-86e3-1336eccf50df)
   )
-  (label "MTDI" (at 283.21 69.85 0) (fields_autoplaced)
+  (label "MTDI" (at 236.22 71.12 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid eaffab26-904d-426f-bebf-ee15bd18e727)
   )
@@ -5113,7 +5117,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid ebb2153d-497d-4d1f-a86b-4f0450caf4f9)
   )
-  (label "3.3V" (at 224.79 92.71 0) (fields_autoplaced)
+  (label "3.3V" (at 195.58 116.84 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ee63eef2-a41c-41d8-a734-8fe700f30b73)
   )
@@ -5129,19 +5133,19 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f43bc985-5dc2-451d-9b26-cadffd13e36a)
   )
-  (label "MTDO" (at 167.64 74.93 180) (fields_autoplaced)
+  (label "MTDO" (at 224.79 120.65 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid f5cb46b5-c629-451d-9e52-c66558661c92)
   )
-  (label "BOOT" (at 273.05 105.41 0) (fields_autoplaced)
+  (label "BOOT" (at 283.21 36.83 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f6603901-115d-4e58-9b8f-919a4c5c7184)
   )
-  (label "SCL_0" (at 280.67 273.05 180) (fields_autoplaced)
+  (label "SCL_0" (at 278.13 267.97 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid f9fb4cf4-904f-4ca8-a98d-eae8fc95c233)
   )
-  (label "BLUE_LED" (at 283.21 92.71 0) (fields_autoplaced)
+  (label "BLUE_LED" (at 236.22 93.98 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fc1bf55b-7160-4213-be37-db1f4b51f818)
   )
@@ -5172,7 +5176,7 @@
     (pin "1" (uuid 34071763-f17d-449f-a08a-c0e0f8831d45))
     (pin "2" (uuid 11fd370e-51ea-4ae0-8be1-cf6f4cadb43c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R40") (unit 1)
         )
@@ -5180,25 +5184,25 @@
     )
   )
 
-  (symbol (lib_id "Switch:SW_Push") (at 251.46 245.11 0) (unit 1)
+  (symbol (lib_id "Switch:SW_Push") (at 248.92 240.03 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 047f8bfa-f530-4207-bbc3-be61e9528b90)
-    (property "Reference" "SW3" (at 245.11 240.03 0)
+    (property "Reference" "SW3" (at 242.57 234.95 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 245.11 242.57 0)
+    (property "Value" "SW_Push" (at 242.57 237.49 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 251.46 240.03 0)
+    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 248.92 234.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 251.46 240.03 0)
+    (property "Datasheet" "~" (at 248.92 234.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 7d2619ae-1cba-46ee-828d-1bf5f9d14009))
     (pin "1" (uuid 2d09bad8-5f1c-4582-8500-c5d4e6de95eb))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "SW3") (unit 1)
         )
@@ -5224,7 +5228,7 @@
     (pin "1" (uuid 0cbf2ad9-b3e1-495f-b688-21a151e0bf73))
     (pin "2" (uuid 9d703015-157b-4aaa-9420-3dd5c66d1e73))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C42") (unit 1)
         )
@@ -5251,7 +5255,7 @@
     (pin "3" (uuid 889a5a44-c6e3-4d1f-92ee-b7e1952ab3e0))
     (pin "2" (uuid d7c98d73-2347-4b46-ae25-e19592901b70))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U8") (unit 1)
         )
@@ -5277,7 +5281,7 @@
     (pin "1" (uuid 8c6ec74f-c72b-4aa6-b8eb-1d4868f7c210))
     (pin "2" (uuid 44a0c02f-85d7-4e0a-922e-6cee35657319))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R45") (unit 1)
         )
@@ -5303,7 +5307,7 @@
     (pin "1" (uuid 06ed1453-1126-47a9-ba33-4400d49cc40b))
     (pin "2" (uuid 1ab66fe8-7728-4f4e-879e-cf06f1d05d66))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D8") (unit 1)
         )
@@ -5329,7 +5333,7 @@
     (pin "1" (uuid 21050181-ca60-4903-b6ed-7bbcd1d8b90d))
     (pin "2" (uuid a354c6e3-2d6e-4e36-99f7-9546d34dbfe9))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C9") (unit 1)
         )
@@ -5337,25 +5341,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 251.46 250.19 270) (unit 1)
+  (symbol (lib_id "Device:C") (at 248.92 245.11 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0b162324-c7d6-41fa-8f32-78d14ba5cea2)
-    (property "Reference" "C14" (at 255.27 248.92 90)
+    (property "Reference" "C14" (at 252.73 243.84 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "0.1uF" (at 255.27 251.46 90)
+    (property "Value" "0.1uF" (at 252.73 246.38 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 247.65 251.1552 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 245.11 246.0752 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 251.46 250.19 0)
+    (property "Datasheet" "~" (at 248.92 245.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid d8f15972-8abe-46de-b306-f72fe612fa9a))
     (pin "2" (uuid 943a3912-85df-4456-9aa0-567fce74e2eb))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C14") (unit 1)
         )
@@ -5363,25 +5367,25 @@
     )
   )
 
-  (symbol (lib_id "Device:R_US") (at 219.71 92.71 90) (unit 1)
+  (symbol (lib_id "Device:R_US") (at 190.5 116.84 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0bca1b67-1c13-4054-8bff-5b4ad03b0606)
-    (property "Reference" "R19" (at 219.71 87.63 90)
+    (property "Reference" "R19" (at 190.5 111.76 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 219.71 90.17 90)
+    (property "Value" "10k" (at 190.5 114.3 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 219.964 91.694 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 190.754 115.824 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 219.71 92.71 0)
+    (property "Datasheet" "~" (at 190.5 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid aefc43de-6bb7-4eeb-8c67-c45f31b6c161))
     (pin "2" (uuid 3094b322-34df-4b03-883d-4598834bb2fd))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R19") (unit 1)
         )
@@ -5407,7 +5411,7 @@
     (pin "2" (uuid dca9aee8-2f31-40d2-b479-fc99e2ba4885))
     (pin "1" (uuid 29d1afac-0e96-46ed-9859-d45dc4594231))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R7") (unit 1)
         )
@@ -5490,7 +5494,7 @@
     (pin "5" (uuid f833b7e7-6285-4b4f-b053-e1fee7050206))
     (pin "7" (uuid 98069b5e-9c88-4168-b538-2a4b88760440))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "IC2") (unit 1)
         )
@@ -5516,7 +5520,7 @@
     (pin "1" (uuid 1ef7fac2-4871-44b3-85f9-76bf3892dcdf))
     (pin "2" (uuid e4f3a4bb-40aa-46ff-ae46-1333298aa059))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C31") (unit 1)
         )
@@ -5524,25 +5528,25 @@
     )
   )
 
-  (symbol (lib_id "Device:R_US") (at 219.71 95.25 90) (unit 1)
+  (symbol (lib_id "Device:R_US") (at 190.5 119.38 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0e3ccc10-a8e6-492b-aefb-9073ddc983c6)
-    (property "Reference" "R28" (at 218.44 97.79 90)
+    (property "Reference" "R28" (at 189.23 121.92 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 218.44 100.33 90)
+    (property "Value" "10k" (at 189.23 124.46 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 219.964 94.234 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 190.754 118.364 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 219.71 95.25 0)
+    (property "Datasheet" "~" (at 190.5 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 560c3251-f79c-423a-9287-57be7e6647ea))
     (pin "2" (uuid cd5885d1-93b1-4082-bfb3-4e110524a4da))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R28") (unit 1)
         )
@@ -5567,7 +5571,7 @@
     )
     (pin "1" (uuid 4ae45469-0930-49e6-a962-074f2bb80615))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR05") (unit 1)
         )
@@ -5608,7 +5612,7 @@
     (pin "B5" (uuid c574745e-c580-4070-9b07-15289319d9f3))
     (pin "B7" (uuid aa85aec8-1b92-4885-9129-eebfd8be29be))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J3") (unit 1)
         )
@@ -5616,25 +5620,25 @@
     )
   )
 
-  (symbol (lib_id "Switch:SW_Push") (at 262.89 105.41 0) (unit 1)
+  (symbol (lib_id "Switch:SW_Push") (at 273.05 36.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 15546d4d-b91f-4a64-a897-d917981da14d)
-    (property "Reference" "SW2" (at 256.54 100.33 0)
+    (property "Reference" "SW2" (at 266.7 31.75 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 256.54 102.87 0)
+    (property "Value" "SW_Push" (at 266.7 34.29 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 262.89 100.33 0)
+    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 273.05 31.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 262.89 100.33 0)
+    (property "Datasheet" "~" (at 273.05 31.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 7b1865a8-6f54-4151-8ddc-01b33747c624))
     (pin "1" (uuid 5f61ca56-33af-4c73-a471-a68630e9d48a))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "SW2") (unit 1)
         )
@@ -5660,7 +5664,7 @@
     (pin "1" (uuid 1f41ad75-b81b-4221-857f-c3bc900c26a7))
     (pin "2" (uuid 549ade01-b901-44b7-a5bf-91fa8c66b269))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J4") (unit 1)
         )
@@ -5685,7 +5689,7 @@
     )
     (pin "1" (uuid f572ae61-1e56-43cc-aa6c-4a220c99a91c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR09") (unit 1)
         )
@@ -5711,7 +5715,7 @@
     (pin "1" (uuid 1ad47ee9-4a0c-4b28-88e1-6470541a36c5))
     (pin "2" (uuid 6d6088e2-6b04-4aed-91ae-b93028c30379))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R20") (unit 1)
         )
@@ -5719,19 +5723,19 @@
     )
   )
 
-  (symbol (lib_name "ESP32-S3-WROOM-1U-N16R8_1") (lib_id "Mercury_Symbols:ESP32-S3-WROOM-1U-N16R8") (at 242.57 31.75 0) (unit 1)
+  (symbol (lib_name "ESP32-S3-WROOM-1U-N16R8_1") (lib_id "Mercury_Symbols:ESP32-S3-WROOM-1U-N16R8") (at 195.58 33.02 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 19191c4b-6d6d-4aa1-86fc-d90cefdadc8c)
-    (property "Reference" "U9" (at 262.89 21.59 0)
+    (property "Reference" "U9" (at 215.9 22.86 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Value" "ESP32-S3-WROOM-1U-N16R8" (at 262.89 24.13 0)
+    (property "Value" "ESP32-S3-WROOM-1U-N16R8" (at 215.9 25.4 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "footprint:ESP32­S3­WROOM­1U_EXP" (at 242.57 31.75 0)
+    (property "Footprint" "footprint:ESP32­S3­WROOM­1U_EXP" (at 195.58 33.02 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
-    (property "Datasheet" "ESP32-S3-WROOM-1U-N16R8" (at 262.89 97.79 0)
+    (property "Datasheet" "ESP32-S3-WROOM-1U-N16R8" (at 215.9 99.06 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (pin "10" (uuid 648a3a2c-9e4e-4839-9462-8c037f19d2b4))
@@ -5784,7 +5788,7 @@
     (pin "8" (uuid f50cd01a-e479-4cd8-b492-b2e47afb6256))
     (pin "7" (uuid e472e247-ddf6-44f7-b1da-1315554093d9))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U9") (unit 1)
         )
@@ -5792,19 +5796,19 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 285.75 257.81 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 283.21 252.73 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1e138c57-7b07-4155-894a-c6619faa4d1b)
-    (property "Reference" "J6" (at 287.02 257.81 0)
+    (property "Reference" "J6" (at 284.48 252.73 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "Encoder_L" (at 287.02 260.35 0)
+    (property "Value" "Encoder_L" (at 284.48 255.27 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 285.75 257.81 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 283.21 252.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 285.75 257.81 0)
+    (property "Datasheet" "~" (at 283.21 252.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "3" (uuid 360e525f-55be-4a7f-ad75-ed4a30e9feb9))
@@ -5812,7 +5816,7 @@
     (pin "1" (uuid 7f9012f5-0d63-48b9-84dc-bb8f6de4db32))
     (pin "4" (uuid 1caa6675-96ea-4ff2-b0d9-17a91872f485))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J6") (unit 1)
         )
@@ -5838,7 +5842,7 @@
     (pin "1" (uuid 90365b5c-c924-40fe-8572-e4959ef3821d))
     (pin "2" (uuid 1a9cbce8-8af2-4644-93d7-6fa4b3965ec7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "L1") (unit 1)
         )
@@ -5864,7 +5868,7 @@
     (pin "1" (uuid f32c7aa0-a319-4177-9b79-982bc11a61b0))
     (pin "2" (uuid 78220549-78d3-4d03-87d3-18c286a3886c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C6") (unit 1)
         )
@@ -5872,24 +5876,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 236.22 121.92 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 278.13 90.17 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2188025a-b45f-47dd-8a9b-433a1a01822d)
-    (property "Reference" "#PWR011" (at 236.22 128.27 0)
+    (property "Reference" "#PWR011" (at 278.13 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 236.22 127 0)
+    (property "Value" "GND" (at 278.13 95.25 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 236.22 121.92 0)
+    (property "Footprint" "" (at 278.13 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 236.22 121.92 0)
+    (property "Datasheet" "" (at 278.13 90.17 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 7926276f-7d8e-49e7-a6ab-c042ad71ca6a))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR011") (unit 1)
         )
@@ -5921,7 +5925,7 @@
     (pin "5" (uuid 10d80a40-52a3-4409-ae71-ccd988d0eb16))
     (pin "3" (uuid 06ba7cfe-20d4-49b9-9a7d-3598a2f291a1))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U1") (unit 1)
         )
@@ -5947,7 +5951,7 @@
     (pin "2" (uuid c75c99c9-927a-467b-9f71-d3150994f657))
     (pin "1" (uuid f1f2b893-fb3f-4e0c-b1eb-c91714bd50f0))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R10") (unit 1)
         )
@@ -5964,10 +5968,10 @@
     (property "Value" "LMZ10501SILR" (at 87.63 248.92 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "footprint:SIL0008A" (at 91.44 265.43 0)
+    (property "Footprint" "footprint:SIL0008A" (at 87.63 269.24 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
-    (property "Datasheet" "LMZ10501SILR" (at 91.44 265.43 0)
+    (property "Datasheet" "LMZ10501SILR" (at 86.36 271.78 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (pin "1" (uuid a25330a2-dee4-451e-a97b-0ab7631f1d8c))
@@ -5980,7 +5984,7 @@
     (pin "3" (uuid a6514aea-1c97-40ff-8cad-29e0ed49a0b1))
     (pin "8" (uuid 68d6eab1-ab44-45c9-9f62-978478b384bf))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U12") (unit 1)
         )
@@ -6006,7 +6010,7 @@
     (pin "1" (uuid e56efd6d-f18e-40b8-9e7f-0f5343277e05))
     (pin "2" (uuid 60238d40-a930-482c-a5d7-243973e16be5))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C50") (unit 1)
         )
@@ -6032,7 +6036,7 @@
     (pin "2" (uuid a25b1db4-413c-4673-8f3b-c28e9d12f160))
     (pin "1" (uuid 77ba6f74-8f9b-4847-bde0-3176e2ed820c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R31") (unit 1)
         )
@@ -6057,7 +6061,7 @@
     )
     (pin "1" (uuid b7e1f248-009b-4527-89d5-9b0d8188168f))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR033") (unit 1)
         )
@@ -6082,7 +6086,7 @@
     )
     (pin "1" (uuid 2996058f-df32-41b2-9f8c-2d1a8ea76c40))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR06") (unit 1)
         )
@@ -6108,7 +6112,7 @@
     (pin "1" (uuid 3b72a6f5-0fd8-45cb-92a8-7c7f2f077788))
     (pin "2" (uuid 4c6282a5-1806-4a0f-87f6-8e08e379fcbd))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C1") (unit 1)
         )
@@ -6134,7 +6138,7 @@
     (pin "1" (uuid f3817118-53f0-466f-be0f-36bb79b617e8))
     (pin "2" (uuid c15ace15-8ccf-416a-a5b8-52194cd24e33))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "L2") (unit 1)
         )
@@ -6142,19 +6146,19 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 285.75 273.05 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 283.21 267.97 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 31e246f5-6422-4f59-9172-4b8894aff2fe)
-    (property "Reference" "J7" (at 287.02 273.05 0)
+    (property "Reference" "J7" (at 284.48 267.97 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "Encoder_R" (at 287.02 275.59 0)
+    (property "Value" "Encoder_R" (at 284.48 270.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 285.75 273.05 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 283.21 267.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 285.75 273.05 0)
+    (property "Datasheet" "~" (at 283.21 267.97 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "3" (uuid 6cc0b678-7045-42d5-bd3a-a4c4732a4bc7))
@@ -6162,7 +6166,7 @@
     (pin "1" (uuid 4d423839-5af3-48b4-b3b5-f21ea077d0d4))
     (pin "4" (uuid 4b7d0fa8-e335-4b46-b2a9-756defb08ce1))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J7") (unit 1)
         )
@@ -6170,26 +6174,26 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 179.07 72.39 180) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 236.22 118.11 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3200dc42-b4bf-45f2-991f-2aa71e41f788)
-    (property "Reference" "J10" (at 181.61 66.04 0)
+    (property "Reference" "J10" (at 238.76 111.76 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "JTAG_Conn2" (at 184.15 77.47 0)
+    (property "Value" "JTAG_Conn2" (at 241.3 123.19 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 179.07 72.39 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 236.22 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 179.07 72.39 0)
+    (property "Datasheet" "~" (at 236.22 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid b8c0699c-c048-4980-b15b-e1610bb30d88))
     (pin "2" (uuid 5fba57dd-bbc2-47f5-acf6-feb92d192f7e))
     (pin "3" (uuid 7a2f1d52-5c71-4883-be36-06c5cf2432f4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J10") (unit 1)
         )
@@ -6214,7 +6218,7 @@
     )
     (pin "1" (uuid c4c490a3-cff8-494f-a21a-d9da2c631ab8))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR015") (unit 1)
         )
@@ -6240,7 +6244,7 @@
     (pin "2" (uuid 9c75ba45-8f40-4fb0-b63e-d42a9c6bc0f2))
     (pin "1" (uuid 061a54f0-86c1-4699-b5da-72baa52f8a74))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C16") (unit 1)
         )
@@ -6266,7 +6270,7 @@
     (pin "1" (uuid 3f1c989d-d5b3-40dc-86e0-67c87eae13ad))
     (pin "2" (uuid f999af38-1c82-457a-bdcc-9e0c43b380f5))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C3") (unit 1)
         )
@@ -6292,7 +6296,7 @@
     (pin "1" (uuid a4e153d0-91d0-455c-95f5-d9d4c6792576))
     (pin "2" (uuid 4b43bcc2-feb7-436c-b01d-30705f270334))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D1") (unit 1)
         )
@@ -6329,7 +6333,7 @@
     (pin "4" (uuid 2bac93d8-e363-4973-8678-cbd0c4737f85))
     (pin "6" (uuid 9f440fdd-bf4b-4231-b1c2-8a0b2cc294a4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U2") (unit 1)
         )
@@ -6354,7 +6358,7 @@
     )
     (pin "1" (uuid dac461ed-68ea-41c6-89f9-17200e38d809))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR023") (unit 1)
         )
@@ -6379,7 +6383,7 @@
     )
     (pin "1" (uuid 5f3cdd96-dba0-48ec-a35b-cbb6c1f9d8a6))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR04") (unit 1)
         )
@@ -6404,7 +6408,7 @@
     )
     (pin "1" (uuid b64a2d6a-3703-4d11-8cc2-33ed7a065e61))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR026") (unit 1)
         )
@@ -6430,7 +6434,7 @@
     (pin "1" (uuid 58a59fb3-79ee-45d3-9f66-08e373b12151))
     (pin "2" (uuid 907d801a-6fb8-4326-9174-f5ad8f20d859))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C47") (unit 1)
         )
@@ -6456,7 +6460,7 @@
     (pin "2" (uuid d368a46e-b51f-4f45-9f72-74f5997787ab))
     (pin "1" (uuid fc7007f7-1a0a-45cc-8b16-7a5f24372406))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R32") (unit 1)
         )
@@ -6464,19 +6468,19 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 285.75 243.84 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x04_Socket") (at 283.21 238.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 44672a51-647c-45e5-ad78-5708c9c30352)
-    (property "Reference" "J2" (at 287.02 243.84 0)
+    (property "Reference" "J2" (at 284.48 238.76 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "UART" (at 287.02 246.38 0)
+    (property "Value" "UART" (at 284.48 241.3 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 285.75 243.84 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 283.21 238.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 285.75 243.84 0)
+    (property "Datasheet" "~" (at 283.21 238.76 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "3" (uuid 60ac5b06-2c26-48ce-88c0-08a525da6803))
@@ -6484,7 +6488,7 @@
     (pin "1" (uuid 0a01528a-ce8a-46ae-a92d-8085108d16c6))
     (pin "4" (uuid 858b0093-9934-4702-b48a-f6d17a794eef))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J2") (unit 1)
         )
@@ -6510,7 +6514,7 @@
     (pin "2" (uuid 108be7a3-ecbd-4c78-8824-8cf4ad8257df))
     (pin "1" (uuid c41e2f30-a5f9-4d9e-b1aa-41cfcc395d26))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C44") (unit 1)
         )
@@ -6535,7 +6539,7 @@
     )
     (pin "1" (uuid 3b8647b6-7be5-419d-a825-cb9c5a6c9fda))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR07") (unit 1)
         )
@@ -6561,7 +6565,7 @@
     (pin "1" (uuid 8f44365e-c268-44f8-9542-cfe12739f679))
     (pin "2" (uuid 10be3682-e5e3-4606-8a88-138407734be7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C7") (unit 1)
         )
@@ -6587,7 +6591,7 @@
     (pin "2" (uuid f8021dba-ce70-4d5d-9401-3574acceb462))
     (pin "1" (uuid b4d9f928-0798-4f6e-ae40-6bd30525afaf))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R5") (unit 1)
         )
@@ -6613,7 +6617,7 @@
     (pin "1" (uuid af602477-b98e-4c17-857d-7d5152a602ab))
     (pin "2" (uuid f5f2e9bd-2113-4dd2-9be3-2168077423ac))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D10") (unit 1)
         )
@@ -6621,26 +6625,26 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 172.72 72.39 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 229.87 118.11 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 4f9ffc0c-da96-4ae5-8de0-84c034e69dab)
-    (property "Reference" "J9" (at 168.91 66.04 0)
+    (property "Reference" "J9" (at 226.06 111.76 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "JTAG_Conn1" (at 162.56 77.47 0)
+    (property "Value" "JTAG_Conn1" (at 219.71 123.19 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 172.72 72.39 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 229.87 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 172.72 72.39 0)
+    (property "Datasheet" "~" (at 229.87 118.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e6f53e26-fe87-4b00-b5a8-44ccdff2d8d6))
     (pin "2" (uuid 7afbde1f-baf5-458c-9a44-5b77ab816c89))
     (pin "3" (uuid e7edc30f-80d3-49d8-905a-555a2d4dfde9))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J9") (unit 1)
         )
@@ -6665,7 +6669,7 @@
     )
     (pin "1" (uuid 02af62e9-3228-47b7-9204-01d743c4ec77))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR029") (unit 1)
         )
@@ -6691,7 +6695,7 @@
     (pin "2" (uuid 4929b925-b03a-4be3-9cf3-06ebd6b33123))
     (pin "1" (uuid b04e2b3e-4f48-49e6-a548-e0cdfcf8edeb))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R23") (unit 1)
         )
@@ -6699,24 +6703,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 242.57 31.75 270) (unit 1)
+  (symbol (lib_id "power:GND") (at 195.58 33.02 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 55ad236f-a753-4eed-b995-9f0b75d53605)
-    (property "Reference" "#PWR010" (at 236.22 31.75 0)
+    (property "Reference" "#PWR010" (at 189.23 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 238.76 31.75 90)
+    (property "Value" "GND" (at 191.77 33.02 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 242.57 31.75 0)
+    (property "Footprint" "" (at 195.58 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 242.57 31.75 0)
+    (property "Datasheet" "" (at 195.58 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a1bcfbab-68f9-4191-ae81-48e6d4a45e2d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR010") (unit 1)
         )
@@ -6724,25 +6728,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 262.89 110.49 270) (unit 1)
+  (symbol (lib_id "Device:C") (at 273.05 41.91 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 56b5419e-0433-46b0-817c-5fd36712e47d)
-    (property "Reference" "C25" (at 266.7 109.22 90)
+    (property "Reference" "C25" (at 276.86 40.64 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "0.1uF" (at 266.7 111.76 90)
+    (property "Value" "0.1uF" (at 276.86 43.18 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 259.08 111.4552 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 269.24 42.8752 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 262.89 110.49 0)
+    (property "Datasheet" "~" (at 273.05 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 6ebcfcf0-c7f0-4376-ab12-4ac41e2d8e11))
     (pin "2" (uuid 04d91776-930a-477c-b981-9606cd36848b))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C25") (unit 1)
         )
@@ -6767,7 +6771,7 @@
     )
     (pin "1" (uuid ed8265f8-c400-448c-9c92-adfd4b3f7c43))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR034") (unit 1)
         )
@@ -6850,7 +6854,7 @@
     (pin "5" (uuid 46dbfd14-432c-4113-a8ba-f4bcf43a4418))
     (pin "7" (uuid 90875f19-3a10-4034-9679-7eba3054bd7b))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "IC1") (unit 1)
         )
@@ -6876,7 +6880,7 @@
     (pin "2" (uuid a01b179a-caa6-4562-b3fe-078b1dbfb36b))
     (pin "1" (uuid 7ebb61ae-f067-4939-b230-9034b0a9323d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R4") (unit 1)
         )
@@ -6884,25 +6888,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 214.63 39.37 0) (unit 1)
+  (symbol (lib_id "Device:C") (at 167.64 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 58d1f597-c4e2-4083-9034-cfff3053b67e)
-    (property "Reference" "C20" (at 209.55 36.83 0)
+    (property "Reference" "C20" (at 162.56 38.1 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10uF" (at 209.55 41.91 0)
+    (property "Value" "10uF" (at 162.56 43.18 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 215.5952 43.18 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 168.6052 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 214.63 39.37 0)
+    (property "Datasheet" "~" (at 167.64 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 3d62076f-9439-41e3-b6fa-c7c121e12a88))
     (pin "2" (uuid 60fd1cf8-a90d-4f7b-8b33-160d65a6412f))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C20") (unit 1)
         )
@@ -6927,7 +6931,7 @@
     )
     (pin "1" (uuid eec09b09-3bc3-4551-b358-99dbe01afbe4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR021") (unit 1)
         )
@@ -6952,7 +6956,7 @@
     )
     (pin "1" (uuid 878c78d9-b0ab-4388-9e8e-47b3c4b5cce8))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR035") (unit 1)
         )
@@ -6977,7 +6981,7 @@
     )
     (pin "1" (uuid 9e72b1e9-b10f-45cc-afa7-628fa3d04a3c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR020") (unit 1)
         )
@@ -7003,7 +7007,7 @@
     (pin "1" (uuid 6b5871a5-ff04-43fd-a838-bbbd1ed1620f))
     (pin "2" (uuid a13343ab-7ff1-446d-ba25-c72467ace827))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R46") (unit 1)
         )
@@ -7028,7 +7032,7 @@
     )
     (pin "1" (uuid f1a17528-0ef7-45b3-858e-f806d98a24f3))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR013") (unit 1)
         )
@@ -7054,7 +7058,7 @@
     (pin "1" (uuid 8767da14-433b-43c6-9c97-906b43a7cde3))
     (pin "2" (uuid fff2c7cd-0f10-431f-9dc7-2a9e98fd4848))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C22") (unit 1)
         )
@@ -7080,7 +7084,7 @@
     (pin "2" (uuid e5d7735e-971a-49b8-a6fe-9e424499fba1))
     (pin "1" (uuid a72b50c3-6e3d-4cf5-bc72-522fc4b8ce4e))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R8") (unit 1)
         )
@@ -7107,7 +7111,7 @@
     (pin "1" (uuid aa79895f-1ffb-41e6-8814-0b51e10131d8))
     (pin "3" (uuid 58edccce-5931-4bea-bfc3-03393e169b4d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q8") (unit 1)
         )
@@ -7133,7 +7137,7 @@
     (pin "1" (uuid cbb4a211-05ea-4d8d-a627-0f0fe421f03e))
     (pin "2" (uuid 99fb6ad4-5284-41ac-9358-5c512e284bca))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D3") (unit 1)
         )
@@ -7166,7 +7170,7 @@
     (pin "3" (uuid 4ee0cc7d-ad1c-4d47-9a02-9e6128b2df63))
     (pin "2" (uuid a0ea6568-5dca-40d3-bb5e-e957d2dbe8fb))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D7") (unit 1)
         )
@@ -7193,7 +7197,7 @@
     (pin "1" (uuid 739250d3-bc81-4150-971a-c15d2b4ab096))
     (pin "3" (uuid 030aec55-c30f-4bbc-9b19-351da5a9de32))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q1") (unit 1)
         )
@@ -7219,7 +7223,7 @@
     (pin "1" (uuid 2ab67209-1a64-4493-9a51-7361c2cde8e1))
     (pin "2" (uuid 6add9fec-bde5-478c-9dff-fc99790c7ec1))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R17") (unit 1)
         )
@@ -7244,7 +7248,7 @@
     )
     (pin "1" (uuid 3f62a9b6-79b3-4b6a-a828-bbafa4a587f4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR028") (unit 1)
         )
@@ -7269,7 +7273,7 @@
     )
     (pin "1" (uuid d7985ab2-9f12-4a9b-83f6-0b9a23474ad2))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR036") (unit 1)
         )
@@ -7295,7 +7299,7 @@
     (pin "1" (uuid 73a31fb9-6eb7-4558-9ef8-dd837ad16f72))
     (pin "2" (uuid 517e43b9-3089-49c8-858d-da0daf2c64dd))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C41") (unit 1)
         )
@@ -7321,7 +7325,7 @@
     (pin "1" (uuid 34e913a2-86f9-428e-bce8-ff257ae0c4c6))
     (pin "2" (uuid ce5d36d8-badf-4b99-a071-0b8de24dfda0))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C46") (unit 1)
         )
@@ -7347,7 +7351,7 @@
     (pin "1" (uuid 3f5af1f6-f002-4342-bdd8-3ef227af4f93))
     (pin "2" (uuid 1b9d4c64-7650-4196-a435-eb4d0708a85d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "L3") (unit 1)
         )
@@ -7374,7 +7378,7 @@
     (pin "1" (uuid a0e20164-e4ab-41fc-a146-c7cf50ff6d4a))
     (pin "3" (uuid 5e92d0f3-4667-4b12-9de7-ea898de36033))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q3") (unit 1)
         )
@@ -7400,7 +7404,7 @@
     (pin "1" (uuid 348b8955-beaf-4aed-b24e-8e2a8cfa04ff))
     (pin "2" (uuid 7c2afd22-050e-4df5-b11c-ed57e430b5cf))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D9") (unit 1)
         )
@@ -7408,25 +7412,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 262.89 125.73 270) (unit 1)
+  (symbol (lib_id "Device:C") (at 273.05 57.15 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8c0f8d36-2b97-4768-8d50-f6897137ea36)
-    (property "Reference" "C23" (at 266.7 124.46 90)
+    (property "Reference" "C23" (at 276.86 55.88 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "0.1uF" (at 266.7 127 90)
+    (property "Value" "0.1uF" (at 276.86 58.42 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 259.08 126.6952 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 269.24 58.1152 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 262.89 125.73 0)
+    (property "Datasheet" "~" (at 273.05 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 383f0b39-849c-4f61-950d-2471983e7c34))
     (pin "2" (uuid 3746553b-c5ab-4482-a125-3f84fa77f79b))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C23") (unit 1)
         )
@@ -7434,24 +7438,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 295.91 100.33 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 248.92 101.6 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8c801c6b-90cc-43a1-a402-64d75e1b6fcf)
-    (property "Reference" "#PWR019" (at 295.91 106.68 0)
+    (property "Reference" "#PWR019" (at 248.92 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 295.91 105.41 0)
+    (property "Value" "GND" (at 248.92 106.68 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 295.91 100.33 0)
+    (property "Footprint" "" (at 248.92 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 295.91 100.33 0)
+    (property "Datasheet" "" (at 248.92 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 97026c5b-86d4-45c4-883a-acc45dca31f4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR019") (unit 1)
         )
@@ -7483,7 +7487,7 @@
     (pin "4" (uuid bb16314a-89c7-41c4-a174-bcaa0fa38d99))
     (pin "6" (uuid 46d9f0b9-d10d-4b50-a431-5d0070c6ecc7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U3") (unit 1)
         )
@@ -7491,24 +7495,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 256.54 110.49 270) (unit 1)
+  (symbol (lib_id "power:GND") (at 266.7 41.91 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8f51b3ea-6351-4f77-93bd-c687b3b0baff)
-    (property "Reference" "#PWR016" (at 250.19 110.49 0)
+    (property "Reference" "#PWR016" (at 260.35 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 252.73 110.49 90)
+    (property "Value" "GND" (at 262.89 41.91 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 256.54 110.49 0)
+    (property "Footprint" "" (at 266.7 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 256.54 110.49 0)
+    (property "Datasheet" "" (at 266.7 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 5a837bdd-3bc7-403f-a934-fd68c6239516))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR016") (unit 1)
         )
@@ -7534,7 +7538,7 @@
     (pin "1" (uuid c333905f-1b03-455c-93db-bf9994aee4ff))
     (pin "2" (uuid 41d0442d-8924-4ebf-9daa-45914d3ab29f))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C26") (unit 1)
         )
@@ -7560,7 +7564,7 @@
     (pin "1" (uuid 7d10ea10-8553-48ad-9c8b-2ea9833153b7))
     (pin "2" (uuid 4af31d7b-de81-4c98-b473-98d00bbfea99))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C10") (unit 1)
         )
@@ -7586,7 +7590,7 @@
     (pin "1" (uuid 046e07d1-5575-46c1-bd3b-fa3a3b6f3e10))
     (pin "2" (uuid a124803a-c6a9-479d-8f7c-1667cdfbc009))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C2") (unit 1)
         )
@@ -7612,7 +7616,7 @@
     (pin "1" (uuid 9aee7e1f-ba8f-4b5e-a1b6-0d91b83e08ce))
     (pin "2" (uuid 1a518258-e536-479d-a900-6ed6d5144850))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C12") (unit 1)
         )
@@ -7638,7 +7642,7 @@
     (pin "2" (uuid d339d653-8fca-4ffd-b05d-05186f17e114))
     (pin "1" (uuid a9710a5d-eda8-4817-a760-6557c8237645))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R36") (unit 1)
         )
@@ -7665,7 +7669,7 @@
     (pin "1" (uuid de64778d-96f8-4b2c-8b7d-042fdc991d05))
     (pin "3" (uuid f5e356af-0030-4c06-af3c-237d739a3bfe))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q2") (unit 1)
         )
@@ -7690,7 +7694,7 @@
     )
     (pin "1" (uuid 7108f829-12a6-4c82-8496-9047157285c8))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR03") (unit 1)
         )
@@ -7739,7 +7743,7 @@
     (pin "10" (uuid b938d90a-f457-47e5-a5f3-bb836b1cd8c9))
     (pin "7" (uuid c41bfeff-066c-4439-a3f5-899715581ec4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U10") (unit 1)
         )
@@ -7747,25 +7751,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 236.22 115.57 0) (unit 1)
+  (symbol (lib_id "Device:C") (at 278.13 83.82 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9c070793-93ee-4226-ae03-fb4cd6a2936b)
-    (property "Reference" "C19" (at 237.49 113.03 0)
+    (property "Reference" "C19" (at 279.4 81.28 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "1uF" (at 237.49 118.11 0)
+    (property "Value" "1uF" (at 279.4 86.36 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 237.1852 119.38 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 279.0952 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 236.22 115.57 0)
+    (property "Datasheet" "~" (at 278.13 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a6fbb79d-2996-41a4-9477-8d9f5257f6dd))
     (pin "2" (uuid 443cf308-10c2-4f38-9f31-e88d71b6de41))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C19") (unit 1)
         )
@@ -7791,7 +7795,7 @@
     (pin "2" (uuid 543bb705-5045-46c5-a033-3d00f0857775))
     (pin "1" (uuid cc887f4c-4c54-44b9-9a83-e0353a1c3615))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R34") (unit 1)
         )
@@ -7799,25 +7803,25 @@
     )
   )
 
-  (symbol (lib_id "Device:R_US") (at 295.91 95.25 180) (unit 1)
+  (symbol (lib_id "Device:R_US") (at 248.92 96.52 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9f20e203-3b7b-45cf-861a-b6d48ceb68c3)
-    (property "Reference" "R11" (at 297.18 91.44 0)
+    (property "Reference" "R11" (at 250.19 92.71 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "47k" (at 297.18 99.06 0)
+    (property "Value" "47k" (at 250.19 100.33 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 294.894 94.996 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 247.904 96.266 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 295.91 95.25 0)
+    (property "Datasheet" "~" (at 248.92 96.52 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid c65efb7f-e498-4b51-ba4b-50d016008eea))
     (pin "2" (uuid 1aff8dd3-8308-49e9-b3b7-c59a870a02f1))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R11") (unit 1)
         )
@@ -7843,7 +7847,7 @@
     (pin "2" (uuid 450238e5-e694-463b-977b-45eea3b2b049))
     (pin "1" (uuid c1c308e9-913f-4daa-b604-5b0c3220d922))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C45") (unit 1)
         )
@@ -7869,7 +7873,7 @@
     (pin "2" (uuid bef7940f-b4aa-47fd-8dea-96def2fda002))
     (pin "1" (uuid e94f3d5d-f479-4af4-8be8-ac6ce9d371e1))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R9") (unit 1)
         )
@@ -7902,7 +7906,7 @@
     (pin "7" (uuid 7a5a2db0-fe66-4230-a80d-8b3bc18340d2))
     (pin "EPAD" (uuid a8d4e80c-c502-43cc-9506-0d75b5a51788))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U11") (unit 1)
         )
@@ -7927,7 +7931,7 @@
     )
     (pin "1" (uuid 9b6e76d6-4ab7-4f6f-abea-334e6962cf05))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR027") (unit 1)
         )
@@ -7952,7 +7956,7 @@
     )
     (pin "1" (uuid c4715bc3-6a2c-42f7-a400-6e77bf75ca62))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR08") (unit 1)
         )
@@ -7978,7 +7982,7 @@
     (pin "1" (uuid 4ac5f828-7505-489f-b22f-b2fa38af6a60))
     (pin "2" (uuid d19debe9-f39f-4a51-9989-ca0ba5a7ae37))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D4") (unit 1)
         )
@@ -7986,25 +7990,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 251.46 265.43 270) (unit 1)
+  (symbol (lib_id "Device:C") (at 248.92 260.35 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a7b79bb2-b052-48c3-8149-a821e7f90765)
-    (property "Reference" "C15" (at 255.27 264.16 90)
+    (property "Reference" "C15" (at 252.73 259.08 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "0.1uF" (at 255.27 266.7 90)
+    (property "Value" "0.1uF" (at 252.73 261.62 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 247.65 266.3952 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 245.11 261.3152 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 251.46 265.43 0)
+    (property "Datasheet" "~" (at 248.92 260.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 33e347b0-0bd1-421a-905c-7da65312b005))
     (pin "2" (uuid 1321fdc5-72e9-4cf2-a120-f9c215082aba))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C15") (unit 1)
         )
@@ -8012,24 +8016,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 245.11 250.19 270) (unit 1)
+  (symbol (lib_id "power:GND") (at 242.57 245.11 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a88eb3c1-f58b-491b-88d9-b1f4dbad9034)
-    (property "Reference" "#PWR014" (at 238.76 250.19 0)
+    (property "Reference" "#PWR014" (at 236.22 245.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 241.3 250.19 90)
+    (property "Value" "GND" (at 238.76 245.11 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 245.11 250.19 0)
+    (property "Footprint" "" (at 242.57 245.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 245.11 250.19 0)
+    (property "Datasheet" "" (at 242.57 245.11 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 0e46f6ae-48c8-454c-9792-5ac31a2a2bf7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR014") (unit 1)
         )
@@ -8054,7 +8058,7 @@
     )
     (pin "1" (uuid 39fce4aa-1b17-4b7e-ae62-613df9630a85))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR024") (unit 1)
         )
@@ -8080,7 +8084,7 @@
     (pin "2" (uuid c49c6949-5d8b-420b-8275-01b3476e4295))
     (pin "1" (uuid 6391685c-8e78-4e5b-9732-79eca18e3551))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R16") (unit 1)
         )
@@ -8106,7 +8110,7 @@
     (pin "1" (uuid 43993463-c0d4-463b-b78c-9b582f6f7c7a))
     (pin "2" (uuid 8f8335f3-6d4d-4fda-a247-497dd09a0c7a))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J5") (unit 1)
         )
@@ -8132,7 +8136,7 @@
     (pin "1" (uuid 026b25e1-efb4-427e-b4e9-0aa14de5c5af))
     (pin "2" (uuid 3a97f361-4ea6-4e58-aef4-c87685b34e11))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C49") (unit 1)
         )
@@ -8158,7 +8162,7 @@
     (pin "1" (uuid 47c23b27-e805-4000-bcaa-7c74f9d17448))
     (pin "2" (uuid 15c806b1-55e7-4805-b437-9c6645049729))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q4") (unit 1)
         )
@@ -8189,7 +8193,7 @@
     (pin "1" (uuid bad6ac71-10d1-45e4-882d-20a88ca6d1c9))
     (pin "2" (uuid 7a8ecbef-152f-4066-b7ec-daf23908a56b))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R18") (unit 1)
         )
@@ -8215,7 +8219,7 @@
     (pin "2" (uuid f8bf0f0c-9d3d-4b06-b84b-0dc6f96974b0))
     (pin "1" (uuid 57a49499-c42a-4085-8c3a-c3a9d9135aa0))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R35") (unit 1)
         )
@@ -8241,7 +8245,7 @@
     (pin "2" (uuid 81462527-51fb-45a1-b791-5b774861d247))
     (pin "1" (uuid 2299fd7a-0a37-4cc5-84a2-8ea857a24899))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R6") (unit 1)
         )
@@ -8267,7 +8271,7 @@
     (pin "2" (uuid ba868de5-0dd1-4184-900b-ce902a2f228a))
     (pin "1" (uuid 45d4b44c-152c-45ce-b795-5574032bdb70))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R37") (unit 1)
         )
@@ -8293,7 +8297,7 @@
     (pin "1" (uuid 1c0fd290-6d3e-4b30-b46a-830489f515f7))
     (pin "2" (uuid 5419968a-a087-49a7-b955-5c92ec5c670d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C11") (unit 1)
         )
@@ -8301,25 +8305,25 @@
     )
   )
 
-  (symbol (lib_id "Device:R_US") (at 222.25 53.34 180) (unit 1)
+  (symbol (lib_id "Device:R_US") (at 175.26 54.61 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ba6b3309-289b-4cc5-866b-2400f5a3ac2b)
-    (property "Reference" "R13" (at 223.52 49.53 0)
+    (property "Reference" "R13" (at 176.53 50.8 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "47k" (at 223.52 57.15 0)
+    (property "Value" "47k" (at 176.53 58.42 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 221.234 53.086 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 174.244 54.356 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 222.25 53.34 0)
+    (property "Datasheet" "~" (at 175.26 54.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 8a3b58bd-71a2-4aeb-903d-06d1b493ee25))
     (pin "2" (uuid 2303b8f3-a07f-4716-9802-c8d902ccceae))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R13") (unit 1)
         )
@@ -8327,24 +8331,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 284.48 31.75 90) (unit 1)
+  (symbol (lib_id "power:GND") (at 237.49 33.02 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bed17cf3-1e6d-4e61-8eb2-a286da313c18)
-    (property "Reference" "#PWR02" (at 290.83 31.75 0)
+    (property "Reference" "#PWR02" (at 243.84 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 288.29 31.75 90)
+    (property "Value" "GND" (at 241.3 33.02 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 284.48 31.75 0)
+    (property "Footprint" "" (at 237.49 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 284.48 31.75 0)
+    (property "Datasheet" "" (at 237.49 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 51e2d433-26e2-41f3-9be3-0cc3c7729cf4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR02") (unit 1)
         )
@@ -8352,26 +8356,26 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 276.86 227.33 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x03_Socket") (at 279.4 220.98 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c068c22c-97ae-4bd6-82a1-7ea95596417c)
-    (property "Reference" "J8" (at 278.13 226.06 0)
+    (property "Reference" "J8" (at 280.67 219.71 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "Conn_01x03_Socket" (at 278.13 228.6 0)
+    (property "Value" "Conn_01x03_Socket" (at 280.67 222.25 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 276.86 227.33 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (at 279.4 220.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 276.86 227.33 0)
+    (property "Datasheet" "~" (at 279.4 220.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid d6bf24d7-1086-4d15-b4cb-4f1327dc793c))
     (pin "2" (uuid 20854835-d4f1-4c51-a81d-ba2328ce594e))
     (pin "3" (uuid 74eb5e86-d7ad-430c-882a-fc9e99100943))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J8") (unit 1)
         )
@@ -8397,7 +8401,7 @@
     (pin "2" (uuid 836ab29b-4f77-4773-9eda-0d2445cb4050))
     (pin "1" (uuid 266eada9-928f-4aff-ac90-3d91f1ffdc12))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R33") (unit 1)
         )
@@ -8430,7 +8434,7 @@
     (pin "7" (uuid 98a0d743-3ff2-4f5b-9edf-fd42b015b5e9))
     (pin "EPAD" (uuid 1baf51ea-28fa-4a06-afec-c60d02d9c8e2))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U7") (unit 1)
         )
@@ -8456,7 +8460,7 @@
     (pin "1" (uuid d559468b-1db0-44c8-a661-f0aca10994b4))
     (pin "2" (uuid d08f1b6b-6973-486f-8503-0fe0868a9b0a))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C5") (unit 1)
         )
@@ -8464,24 +8468,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 214.63 45.72 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 167.64 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c3f97cfe-b72a-4a52-b8b3-a6d74899b375)
-    (property "Reference" "#PWR012" (at 214.63 52.07 0)
+    (property "Reference" "#PWR012" (at 167.64 53.34 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 214.63 50.8 0)
+    (property "Value" "GND" (at 167.64 52.07 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 214.63 45.72 0)
+    (property "Footprint" "" (at 167.64 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 214.63 45.72 0)
+    (property "Datasheet" "" (at 167.64 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 9f661377-ccae-4c8a-9a10-0e344ce7610d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR012") (unit 1)
         )
@@ -8507,7 +8511,7 @@
     (pin "2" (uuid fff5bfb1-f69f-4cc4-a83f-3d129861167c))
     (pin "1" (uuid 8a232761-e11c-4f6e-9991-cd43a1c03ace))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R22") (unit 1)
         )
@@ -8532,7 +8536,7 @@
     )
     (pin "1" (uuid 034c4616-2382-4cdb-b8a6-8650251bc806))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR032") (unit 1)
         )
@@ -8558,7 +8562,7 @@
     (pin "1" (uuid 6b2c20ad-09fd-455d-a7fe-21b42821443a))
     (pin "2" (uuid 208ba97b-6889-4432-b97e-47bd97da5e60))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C40") (unit 1)
         )
@@ -8584,7 +8588,7 @@
     (pin "2" (uuid 9a0a42d1-fe47-4fee-b4f0-ba82810292c0))
     (pin "1" (uuid 5911d33b-1bf9-4915-9e75-1d97f88543fc))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R15") (unit 1)
         )
@@ -8609,7 +8613,7 @@
     )
     (pin "1" (uuid f257b142-3d38-4a5e-88ad-3c50b69c107d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR01") (unit 1)
         )
@@ -8617,25 +8621,25 @@
     )
   )
 
-  (symbol (lib_id "Switch:SW_Push") (at 251.46 260.35 0) (unit 1)
+  (symbol (lib_id "Switch:SW_Push") (at 248.92 255.27 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid ca98bb4a-063b-43b8-ba7a-38a021f9fc41)
-    (property "Reference" "SW4" (at 245.11 255.27 0)
+    (property "Reference" "SW4" (at 242.57 250.19 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 245.11 257.81 0)
+    (property "Value" "SW_Push" (at 242.57 252.73 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 251.46 255.27 0)
+    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 248.92 250.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 251.46 255.27 0)
+    (property "Datasheet" "~" (at 248.92 250.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 35bcb60e-cf7c-46d9-9929-4ad5d1a4a900))
     (pin "1" (uuid 17199798-544e-4867-ac1a-638b77ae7176))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "SW4") (unit 1)
         )
@@ -8660,7 +8664,7 @@
     )
     (pin "1" (uuid bb2f2399-97a0-4b36-98e9-d39294a8ae0d))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR030") (unit 1)
         )
@@ -8686,7 +8690,7 @@
     (pin "1" (uuid f9276ff6-0b5e-4d6c-91cb-32bf0eaeb109))
     (pin "2" (uuid 59a9ec0e-a20b-4267-b7da-7a3a5e055dbb))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q7") (unit 1)
         )
@@ -8717,7 +8721,7 @@
     (pin "2" (uuid 877237e9-82e4-4123-a63a-1ba2220f4dd5))
     (pin "1" (uuid 8be6068b-3881-4a50-9e97-ff5f9de2fc08))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C37") (unit 1)
         )
@@ -8742,7 +8746,7 @@
     )
     (pin "1" (uuid ffca506a-71ec-4d6d-8c60-759080b6b0f7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR025") (unit 1)
         )
@@ -8768,7 +8772,7 @@
     (pin "2" (uuid 2e4d9c0b-2ef4-41ed-b398-5163d2251aea))
     (pin "1" (uuid e5a224ea-e4c7-49f5-a834-b544ea1f269b))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "J1") (unit 1)
         )
@@ -8794,7 +8798,7 @@
     (pin "2" (uuid c8abbb32-f925-45a4-8203-5769ed2c3454))
     (pin "1" (uuid a2d32c42-2c0b-468b-80a0-0b1b0429ddb2))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C36") (unit 1)
         )
@@ -8820,7 +8824,7 @@
     (pin "1" (uuid 380b76cd-14f3-4a87-bf0f-1320faed5321))
     (pin "2" (uuid 994b8792-785c-42ff-90c4-47b8df84b391))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C35") (unit 1)
         )
@@ -8828,24 +8832,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 256.54 125.73 270) (unit 1)
+  (symbol (lib_id "power:GND") (at 266.7 57.15 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d6dd6f4c-1af9-4540-8d88-79c083ad79d4)
-    (property "Reference" "#PWR017" (at 250.19 125.73 0)
+    (property "Reference" "#PWR017" (at 260.35 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 252.73 125.73 90)
+    (property "Value" "GND" (at 262.89 57.15 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 256.54 125.73 0)
+    (property "Footprint" "" (at 266.7 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 256.54 125.73 0)
+    (property "Datasheet" "" (at 266.7 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid a7453b49-215d-4ce1-9c7f-5549262c04fb))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR017") (unit 1)
         )
@@ -8871,7 +8875,7 @@
     (pin "2" (uuid dd2eb148-6930-4e2d-8375-f1c4fa6a40d2))
     (pin "1" (uuid 4c3a2de8-567f-494e-8bc2-3b655cb14f95))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C38") (unit 1)
         )
@@ -8897,7 +8901,7 @@
     (pin "1" (uuid 8a82e7d8-6988-40d1-a1ac-5fb18eb078b7))
     (pin "2" (uuid ef69ac7a-3f01-4951-a79e-8b80ab6aed73))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D6") (unit 1)
         )
@@ -8923,7 +8927,7 @@
     (pin "2" (uuid e871f240-c44f-4c5f-ad9d-cab1929eaecf))
     (pin "1" (uuid 72dd3465-c096-4aab-817b-b190679bea93))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C39") (unit 1)
         )
@@ -8949,7 +8953,7 @@
     (pin "1" (uuid 182e58c7-bea6-4ba8-b1b6-0571f016bf4f))
     (pin "2" (uuid 3713f0e2-30ad-495d-ba25-173fad16e15c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q6") (unit 1)
         )
@@ -8980,7 +8984,7 @@
     (pin "1" (uuid 222dda71-5b61-4a91-bb7e-1a0a1ce960aa))
     (pin "2" (uuid 61270160-9569-4b99-9884-a64edaf2d221))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D2") (unit 1)
         )
@@ -8993,24 +8997,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 222.25 58.42 0) (unit 1)
+  (symbol (lib_id "power:GND") (at 175.26 59.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dc72b25c-f87f-482a-853d-79f631e3965c)
-    (property "Reference" "#PWR031" (at 222.25 64.77 0)
+    (property "Reference" "#PWR031" (at 175.26 66.04 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 222.25 63.5 0)
+    (property "Value" "GND" (at 175.26 64.77 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 222.25 58.42 0)
+    (property "Footprint" "" (at 175.26 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 222.25 58.42 0)
+    (property "Datasheet" "" (at 175.26 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid f21895d1-4aea-4e9c-8c33-d986dc00d1a2))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR031") (unit 1)
         )
@@ -9037,7 +9041,7 @@
     (pin "2" (uuid 6fe6a5ae-6fd8-4aa6-b8cb-b628a24c8d02))
     (pin "1" (uuid 8ca375bd-cbe4-4808-9ecb-b95ef956f176))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U5") (unit 1)
         )
@@ -9063,7 +9067,7 @@
     (pin "2" (uuid 918fa923-affb-494c-850a-6489dbb1e564))
     (pin "1" (uuid 82cad8c1-2b5d-4d21-ba2f-17ef599cc52c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R30") (unit 1)
         )
@@ -9089,7 +9093,7 @@
     (pin "2" (uuid 3b954d39-c019-40ad-a74b-9db17cea6199))
     (pin "1" (uuid 1d872f44-8782-4435-93d8-3191ddbc8784))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C43") (unit 1)
         )
@@ -9097,25 +9101,25 @@
     )
   )
 
-  (symbol (lib_id "Switch:SW_Push") (at 262.89 120.65 0) (unit 1)
+  (symbol (lib_id "Switch:SW_Push") (at 273.05 52.07 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e3f4239b-d68d-45a6-aa0b-d5b152e933e3)
-    (property "Reference" "SW1" (at 256.54 115.57 0)
+    (property "Reference" "SW1" (at 266.7 46.99 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SW_Push" (at 256.54 118.11 0)
+    (property "Value" "SW_Push" (at 266.7 49.53 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 262.89 115.57 0)
+    (property "Footprint" "footprint:SW_SPST_REED_CT05-XXXX-G1" (at 273.05 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 262.89 115.57 0)
+    (property "Datasheet" "~" (at 273.05 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid bee0d4c6-2c0f-4874-82b5-7473d901dcf5))
     (pin "1" (uuid 580dccce-eb74-403e-9408-bc71f30bdc4c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "SW1") (unit 1)
         )
@@ -9141,7 +9145,7 @@
     (pin "2" (uuid 9e9ac835-674d-4597-a70a-38ff4762cb65))
     (pin "1" (uuid 5bbdf19d-3391-4daf-875f-3d45df84f8be))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R1") (unit 1)
         )
@@ -9149,24 +9153,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 245.11 265.43 270) (unit 1)
+  (symbol (lib_id "power:GND") (at 242.57 260.35 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e574cbe2-b3f6-4994-9076-1bf5e72de27b)
-    (property "Reference" "#PWR018" (at 238.76 265.43 0)
+    (property "Reference" "#PWR018" (at 236.22 260.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 241.3 265.43 90)
+    (property "Value" "GND" (at 238.76 260.35 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 245.11 265.43 0)
+    (property "Footprint" "" (at 242.57 260.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 245.11 265.43 0)
+    (property "Datasheet" "" (at 242.57 260.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 8f0ba062-730c-4803-8db8-6766334f1c5f))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR018") (unit 1)
         )
@@ -9192,7 +9196,7 @@
     (pin "1" (uuid 49251e49-8d94-4ff4-8ec2-d4075e36217d))
     (pin "2" (uuid 6b6e772b-b892-4009-9ced-94998c80141e))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "D5") (unit 1)
         )
@@ -9223,7 +9227,7 @@
     (pin "1" (uuid 61711978-328b-4fa8-91ed-35c0d57f009b))
     (pin "2" (uuid 559dd7f0-d1f0-4261-b716-a929c60a1876))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C30") (unit 1)
         )
@@ -9231,25 +9235,25 @@
     )
   )
 
-  (symbol (lib_id "Device:C") (at 222.25 39.37 0) (unit 1)
+  (symbol (lib_id "Device:C") (at 175.26 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid e957d3af-33f9-4b3c-b5f5-d960cc89b5eb)
-    (property "Reference" "C21" (at 217.17 36.83 0)
+    (property "Reference" "C21" (at 170.18 38.1 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "0.1uF" (at 215.9 41.91 0)
+    (property "Value" "0.1uF" (at 168.91 43.18 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 223.2152 43.18 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 176.2252 44.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 222.25 39.37 0)
+    (property "Datasheet" "~" (at 175.26 40.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 5d4bba7f-12c2-4e8c-89d6-683ac568914f))
     (pin "2" (uuid 16f49210-9a4d-44c6-bc9b-0e0d4e643e99))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C21") (unit 1)
         )
@@ -9275,7 +9279,7 @@
     (pin "1" (uuid d492ac82-c159-4321-b510-ecbb7d2db4f9))
     (pin "2" (uuid 7b55bc7b-bda8-4432-892a-af0d3abf0033))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C13") (unit 1)
         )
@@ -9307,7 +9311,7 @@
     (pin "5" (uuid baafa286-1810-4eae-b55c-98e74f6c04fd))
     (pin "3" (uuid cddd911c-e935-4417-bbba-5f85b15257b7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U4") (unit 1)
         )
@@ -9333,7 +9337,7 @@
     (pin "2" (uuid d9d088a3-2985-4ada-92a3-7ba9b8a0573e))
     (pin "1" (uuid 1ac39493-ec2c-4a32-beb8-dbfbb3d6bdc9))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R3") (unit 1)
         )
@@ -9359,7 +9363,7 @@
     (pin "1" (uuid d264d3c7-dd27-4451-a741-8f2463dbe00f))
     (pin "2" (uuid f4c23f94-3827-4e79-9229-dd022a6d55c4))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R21") (unit 1)
         )
@@ -9367,25 +9371,25 @@
     )
   )
 
-  (symbol (lib_id "Device:R_US") (at 232.41 107.95 90) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Device:R_US") (at 274.32 76.2 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid f49cf66d-e329-4db5-b8db-114339c8c6c0)
-    (property "Reference" "R12" (at 232.41 101.6 90)
+    (property "Reference" "R12" (at 274.32 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 232.41 104.14 90)
+    (property "Value" "10k" (at 274.32 72.39 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 232.664 106.934 90)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 274.574 75.184 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 232.41 107.95 0)
+    (property "Datasheet" "~" (at 274.32 76.2 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 0f7eae61-701d-4c3d-af27-54a7319c406c))
     (pin "2" (uuid 6701788e-aa66-43c3-bd82-faa6e24ecb40))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R12") (unit 1)
         )
@@ -9411,7 +9415,7 @@
     (pin "2" (uuid 20545e04-34a1-46de-bdfe-2fc2083cef94))
     (pin "1" (uuid f6ebcf4c-d2ee-4d4c-bfa3-160bfd58f5dd))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R14") (unit 1)
         )
@@ -9437,7 +9441,7 @@
     (pin "2" (uuid 578d88dd-45a0-4322-b07a-df66146c0551))
     (pin "1" (uuid 839fb5ed-6f0e-44dc-8d46-370a81c8bde7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R29") (unit 1)
         )
@@ -9463,7 +9467,7 @@
     (pin "1" (uuid 4e239dde-f00c-4a49-90c0-08d280f1645c))
     (pin "2" (uuid d2bf73d8-1c5d-4814-acb6-92fb48059f6b))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "Q5") (unit 1)
         )
@@ -9494,7 +9498,7 @@
     (pin "1" (uuid 3fae988a-daef-44ed-9440-c023ec57864f))
     (pin "2" (uuid a0f015cb-1418-45d4-bafb-010009ef4d82))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C48") (unit 1)
         )
@@ -9520,7 +9524,7 @@
     (pin "1" (uuid 4d230fdc-1d52-4dbb-9425-01ef6c27af0d))
     (pin "2" (uuid 86363943-07e5-4af6-9200-5e239ee6850c))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C29") (unit 1)
         )
@@ -9545,7 +9549,7 @@
     )
     (pin "1" (uuid dde40e9b-cca1-4499-a765-954278a4387f))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "#PWR022") (unit 1)
         )
@@ -9571,7 +9575,7 @@
     (pin "1" (uuid 30520459-7a1c-4411-9847-8d362939ced0))
     (pin "2" (uuid e95d5fea-134e-4774-855d-0a2abb20a2a0))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C28") (unit 1)
         )
@@ -9597,7 +9601,7 @@
     (pin "1" (uuid d4377f13-10f2-4cbc-9788-a43a5c59e9f6))
     (pin "2" (uuid 932a9c45-3e82-4ebe-8b02-1f197169be9f))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "C4") (unit 1)
         )
@@ -9626,7 +9630,7 @@
     (pin "4" (uuid d9e34437-ee01-4147-9fc6-b4f463e1286d))
     (pin "3" (uuid c5e8d6ee-42ad-487e-8a6b-4c674cb24aaf))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "U6") (unit 1)
         )
@@ -9652,7 +9656,7 @@
     (pin "2" (uuid 691f6470-051e-41ce-94d9-798e70535bfb))
     (pin "1" (uuid 6c780e92-ac25-4415-944e-f0a77d2539d7))
     (instances
-      (project "mercury_2ir"
+      (project "main_pcb"
         (path "/4e4e191a-b19a-4761-99fb-a643d95ad916"
           (reference "R2") (unit 1)
         )

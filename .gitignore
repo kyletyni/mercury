@@ -28,7 +28,6 @@ fp-info-cache
 *.xml
 *.csv
 
-
 # ESP IDF
 code/build/
 code/sdkconfig
