@@ -1,11 +1,11 @@
 This is a custom PCB and software design I created to compete in the APEC Micromouse 
 competition in 2024. The design is based on the ESP32-S3 which is a dual core 
 microprocessor. The pcb design was done in Kicad 7.0 and the MCU was programmed using 
-the esp-idf utilizing RTOS for time sensitive task scheduling.
+the esp-idf utilizing RTOS for time dsensitive task scheduling.
 
 Here is a link to an earlier hardware design running in a maze setting with 
 control software:
-[![mouse demo](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![mouse demo](https://img.youtube.com/vi/heloENtCQyA/0.jpg)](https://www.youtube.com/watch?v=heloENtCQyA)
 
 The PCB schematic consists of IR emitters and receivers, power modules, the MCU, 
 gyro, encoders, and buttons.
