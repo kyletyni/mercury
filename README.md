@@ -3,12 +3,19 @@ competition in 2024. The design is based on the ESP32-S3 which is a dual core
 microprocessor. The pcb design was done in Kicad 7.0 and the MCU was programmed using 
 the esp-idf utilizing RTOS for time sensitive task scheduling.
 
-<img src="https://github.com/kyletyni/mercury/blob/main/images/pcb_schematic.png" width="1000">
+Here is a link to an earlier hardware design running in a maze setting with 
+control software:
+[![mouse demo](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+
+The PCB schematic consists of IR emitters and receivers, power modules, the MCU, 
+gyro, encoders, and buttons.
+<img src="https://github.com/kyletyni/mercury/blob/main/images/pcb_schematic.png" width="800">
 
 This is what the PCB looked like when it was delivered.
-<img src="https://github.com/kyletyni/mercury/blob/main/images/PCB1.jpg" width="1000">
+<img src="https://github.com/kyletyni/mercury/blob/main/images/PCB1.jpg" width="800">
 
-Assembly complete! Software is still a work in progress.
+Assembly complete! Software is still a work in progress, but all modules on the board
+function individually as expected.
 
 <div style="display:flex; justify-content:space-between;">
   <img src="https://github.com/kyletyni/mercury/blob/main/images/mouse1.jpg" width="400">
