@@ -2,17 +2,20 @@ This is a custom PCB and software design I created to compete in the APEC Microm
 The design is based on the ESP32-S3 which is a dual core microprocessor. 
 The pcb design was done in Kicad 7.0 and the MCU was programmed using the esp-idf utilizing RTOS for time sensitive task scheduling.
 
-![alt text](https://github.com/kyletyni/mercury/blob/main/images/pcb_schematic.png =300x)
+![schematic](https://github.com/kyletyni/mercury/blob/main/images/pcb_schematic.png)
  
 This is what the PCB looked like when it was delivered.
-![alt text](https://github.com/kyletyni/mercury/blob/main/images/PCB1.jpg =300x)
+<img src="https://github.com/kyletyni/mercury/blob/main/images/PCB1.jpg" width="300">
 
 Assembly complete! Software is still a work in progress.
-![alt text](https://github.com/kyletyni/mercury/blob/main/images/mouse1.jpg =300x)
-![alt text](https://github.com/kyletyni/mercury/blob/main/images/mouse2.jpg =300x)
+
+<div style="display:flex; justify-content:space-between;">
+  <img src="https://github.com/kyletyni/mercury/blob/main/images/mouse1.jpg" width="200">
+  <img src="https://github.com/kyletyni/mercury/blob/main/images/mouse2.jpg" width="200">
+</div>
 
 Layout of front and back layers of the board.
-![PCB Front](https://github.com/kyletyni/mercury/blob/main/images/pcb_front.png =150x)
-
-![PCB Back](https://github.com/kyletyni/mercury/blob/main/images/pcb_back.png =150x)
-
+<div style="display:flex; justify-content:space-between;">
+  <img src="https://github.com/kyletyni/mercury/blob/main/images/pcb_front.png" width="150">
+  <img src="https://github.com/kyletyni/mercury/blob/main/images/pcb_back.png" width="150">
+</div>
