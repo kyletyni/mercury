@@ -5,6 +5,8 @@ the esp-idf utilizing RTOS for time dsensitive task scheduling.
 
 Here is a link to an earlier hardware design running in a maze setting with 
 control software:
+<a href="https://www.youtube.com/watch?v=heloENtCQyA" target="_blank">Demo Video Link</a>
+
 [![mouse demo](https://img.youtube.com/vi/heloENtCQyA/0.jpg)](https://www.youtube.com/watch?v=heloENtCQyA)
 
 The PCB schematic consists of IR emitters and receivers, power modules, the MCU, 
