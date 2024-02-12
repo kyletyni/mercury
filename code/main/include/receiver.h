@@ -13,10 +13,15 @@
 #define DL_RECV_CHANNEL ADC_CHANNEL_3
 #define DR_RECV_CHANNEL ADC_CHANNEL_1
 
-int recv_adc_raw[4];
-int recv_voltage[4];
+#define NUM_OF_POLLS 10
 
-const char *TAG1 = "main2";
+int recv_adc_raw_val[4][NUM_OF_POLLS];
+int recv_adc_raw[4];
+uint16_t recv_adc_raw_idx[4];
+uint16_t rec_adc_raw_sum[4];
+uint16_t recv_avg_val[4];
+
+const char *TAG1 = "receiver";
 
 adc_oneshot_unit_handle_t adc1_handle;
 adc_oneshot_unit_handle_t adc2_handle;
@@ -67,6 +72,12 @@ void initialize_adc() {
     
     cali_config.chan = DR_RECV_CHANNEL;
     ESP_ERROR_CHECK(adc_cali_create_scheme_curve_fitting(&cali_config, &adc_cali_handle_DR_RECV));
+
+    for(uint8_t i = 0; i < 4; i++) {
+        recv_adc_raw_idx[i] = 0;
+        rec_adc_raw_sum[i] = 0;
+        recv_avg_val[i] = 0;
+    }
 }
 
 typedef enum {
@@ -77,59 +88,48 @@ typedef enum {
 } ir_dir;
 
 void ir_sensor_poll(ir_dir sensor) {
-    // ESP_ERROR_CHECK(adc_cali_raw_to_voltage(adc_cali_handle_FL_RECV, recv_adc_raw[FRONT_LEFT], &recv_voltage[0]));
     uint16_t avg_count = 0;
 
     switch (sensor) {
         case FRONT_LEFT:
             gpio_set_level(EMIT_FL, 1);
-
-            for (uint8_t i = 0; i < 15; i++) {
-                ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FL_RECV_CHANNEL, &recv_adc_raw[FRONT_LEFT]));
-                avg_count = avg_count + recv_adc_raw[FRONT_LEFT];
-            }
+            rec_adc_raw_sum[FRONT_LEFT] -=  recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]];
+            ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FL_RECV_CHANNEL, &recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]]));
+            rec_adc_raw_sum[FRONT_LEFT] +=  recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]];
+            recv_adc_raw_idx[FRONT_LEFT] = (recv_adc_raw_idx[FRONT_LEFT] + 1) % NUM_OF_POLLS;
+            recv_avg_val[FRONT_LEFT] = rec_adc_raw_sum[FRONT_LEFT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_FL, 0);
-
-            recv_adc_raw[FRONT_LEFT] = avg_count / 15;
             break;
-
         case FRONT_RIGHT:
             gpio_set_level(EMIT_FR, 1);
-            for (uint8_t i = 0; i < 15; i++) {
-                ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FR_RECV_CHANNEL, &recv_adc_raw[FRONT_RIGHT]));
-                avg_count = avg_count + recv_adc_raw[FRONT_RIGHT];
-            }
+            rec_adc_raw_sum[FRONT_RIGHT] -=  recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]];
+            ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FR_RECV_CHANNEL, &recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]]));
+            rec_adc_raw_sum[FRONT_RIGHT] +=  recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]];
+            recv_adc_raw_idx[FRONT_RIGHT] = (recv_adc_raw_idx[FRONT_RIGHT] + 1) % NUM_OF_POLLS;
+            recv_avg_val[FRONT_RIGHT] = rec_adc_raw_sum[FRONT_RIGHT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_FR, 0);
-
-            recv_adc_raw[FRONT_RIGHT] = avg_count / 15;
             break;
-
         case DIAGONAL_LEFT:
             gpio_set_level(EMIT_DL, 1);
-            for (uint8_t i = 0; i < 15; i++) {
-                ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DL_RECV_CHANNEL, &recv_adc_raw[DIAGONAL_LEFT]));
-                avg_count = avg_count + recv_adc_raw[DIAGONAL_LEFT];
-            }
+            rec_adc_raw_sum[DIAGONAL_LEFT] -=  recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]];
+            ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DL_RECV_CHANNEL, &recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]]));
+            rec_adc_raw_sum[DIAGONAL_LEFT] +=  recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]];
+            recv_adc_raw_idx[DIAGONAL_LEFT] = (recv_adc_raw_idx[DIAGONAL_LEFT] + 1) % NUM_OF_POLLS;
+            recv_avg_val[DIAGONAL_LEFT] = rec_adc_raw_sum[DIAGONAL_LEFT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_DL, 0);
-
-            recv_adc_raw[DIAGONAL_LEFT] = avg_count / 15;
             break;
-
         case DIAGONAL_RIGHT:
             gpio_set_level(EMIT_DR, 1);
-            for (uint8_t i = 0; i < 15; i++) {
-                ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DR_RECV_CHANNEL, &recv_adc_raw[DIAGONAL_RIGHT]));
-                avg_count = avg_count + recv_adc_raw[DIAGONAL_RIGHT];
-            }
+            rec_adc_raw_sum[DIAGONAL_RIGHT] -=  recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]];
+            ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DR_RECV_CHANNEL, &recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]]));
+            rec_adc_raw_sum[DIAGONAL_RIGHT] +=  recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]];
+            recv_adc_raw_idx[DIAGONAL_RIGHT] = (recv_adc_raw_idx[DIAGONAL_RIGHT] + 1) % NUM_OF_POLLS;
+            recv_avg_val[DIAGONAL_RIGHT] = rec_adc_raw_sum[DIAGONAL_RIGHT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_DR, 0);
-
-            recv_adc_raw[DIAGONAL_RIGHT] = avg_count / 15;
             break;
-        
         default:
             break;
     }
-
     return;
 }
 

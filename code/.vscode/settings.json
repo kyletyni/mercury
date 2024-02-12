@@ -1,6 +1,13 @@
 {
     "idf.adapterTargetName": "esp32s3",
     "files.associations": {
-        "freertos.h": "c"
+        "freertos.h": "c",
+        "type_traits": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "xhash": "cpp",
+        "xmemory": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp"
     }
 }

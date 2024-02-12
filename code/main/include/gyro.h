@@ -36,6 +36,9 @@ typedef struct {
 	float yaw;
 } POSE_t;
 
+float mouse_yaw;
+float mouse_yaw_capture;
+float yaw_change = 0;
 
 MPU6050 mpu;
 
@@ -84,7 +87,7 @@ void getYawPitchRoll() {
 	ESP_LOGI(GYRO_TAG, "roll:%f pitch:%f yaw:%f",_roll, _pitch, _yaw);
 #endif
 	//printf("ypr roll:%3.1f pitch:%3.1f yaw:%3.1f\n",ypr[2] * RAD_TO_DEG, ypr[1] * RAD_TO_DEG, ypr[0] * RAD_TO_DEG);
-	ESP_LOGI(GYRO_TAG, "roll:%f pitch:%f yaw:%f",ypr[2] * RAD_TO_DEG, ypr[1] * RAD_TO_DEG, ypr[0] * RAD_TO_DEG);
+	//ESP_LOGI(GYRO_TAG, "roll:%f pitch:%f yaw:%f",ypr[2] * RAD_TO_DEG, ypr[1] * RAD_TO_DEG, ypr[0] * RAD_TO_DEG);
 }
 
 // display real acceleration, adjusted to remove gravity
@@ -107,9 +110,12 @@ void getWorldAccel() {
 	printf("aworld x:%d y:%d z:%d\n", aaWorld.x, aaWorld.y, aaWorld.z);
 }
 
-void mpu6500(void *pvParameters){
+void mpu6500(void *pvParameters) {
     // init gyro
     mpu.initialize();
+	float yaw;
+	float prev_yaw;
+	bool first_time = true;
 
 	// Get Device ID
 	uint8_t buffer[1];
@@ -141,21 +147,39 @@ void mpu6500(void *pvParameters){
 	mpu.CalibrateGyro(6);
 	mpu.setDMPEnabled(true);
 
+	TickType_t xFrequency = pdMS_TO_TICKS(3); // convert to ms
+    TickType_t xLastWakeTime;
+    xLastWakeTime = xTaskGetTickCount();
     
-	while(1){
+	while(1) {
+	    xLastWakeTime = xTaskGetTickCount();
+
 		if (mpu.dmpGetCurrentFIFOPacket(fifoBuffer)) {
 			getYawPitchRoll();
-			float _roll = ypr[2] * RAD_TO_DEG;
-			float _pitch = ypr[1] * RAD_TO_DEG;
-			float _yaw = ypr[0] * RAD_TO_DEG;
+			yaw = ypr[0] * RAD_TO_DEG;
 
+			if (first_time) {
+				first_time = false;
+				prev_yaw = yaw;
+			}
+
+			yaw_change = yaw - prev_yaw;
+
+			mouse_yaw = yaw;
+			prev_yaw = yaw;
+			// float _roll = ypr[2] * RAD_TO_DEG;
+			// float _pitch = ypr[1] * RAD_TO_DEG;
 
 			//getQuaternion();
 			// getEuler();
 			//getRealAccel();
 			//getWorldAccel();
 
-            vTaskDelay(100/portTICK_PERIOD_MS);
+			vTaskDelayUntil(&xLastWakeTime, xFrequency);
+			TickType_t xElapsedTime = (xTaskGetTickCount() - xLastWakeTime);
+			if (xElapsedTime > xFrequency) {
+				ESP_LOGW(GYRO_TAG, "WARNING: 'gyroTask' exceeded deadline: %ld ms!", xElapsedTime);
+			}
 		}
     }
 
