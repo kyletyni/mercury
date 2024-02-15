@@ -5,6 +5,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
+#include "driver/uart.h"
 
 #define BTN1 GPIO_NUM_5
 #define BTN2 GPIO_NUM_6
@@ -13,7 +14,13 @@
 #define BLUE_LED GPIO_NUM_48
 #define GREEN_LED GPIO_NUM_47
 
+#define UART_NUM UART_NUM_0
+#define TXD_PIN GPIO_NUM_44
+#define RXD_PIN GPIO_NUM_43
+#define BUF_SIZE (1024)
+
 const char *user_tag = "user";
+QueueHandle_t uart_queue;
 
 void init_user_io() {
 
@@ -49,6 +56,21 @@ void init_user_io() {
     io_conf.pin_bit_mask = (1ULL << GREEN_LED);
     ESP_ERROR_CHECK(gpio_config(&io_conf));
     gpio_set_level(GREEN_LED, 0);
+}
+
+void init_uart() 
+{
+    uart_config_t uart_config = {
+        .baud_rate = 115200,
+        .data_bits = UART_DATA_8_BITS,
+        .parity    = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+    };
+
+    ESP_ERROR_CHECK(uart_driver_install(UART_NUM, BUF_SIZE * 2, 0, 0, NULL, 0));
+    ESP_ERROR_CHECK(uart_param_config(UART_NUM, &uart_config));
+    ESP_ERROR_CHECK(uart_set_pin(UART_NUM, TXD_PIN, RXD_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
 }
 
     

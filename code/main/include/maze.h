@@ -2,6 +2,9 @@
 #define MAZE_H
 
 #include <stdint.h>
+#include <string.h>
+#include "esp_log.h"
+#include "receiver.h"
 
 #define MAZE_SIZE 16
 #define MAZE_HEIGHT 16
@@ -13,6 +16,7 @@
 #define SOUTH_WALL 0b00000010
 #define WEST_WALL  0b00000001
 
+const char *MAZE_TAG = "maze";
 
 typedef enum { NORTH = 0, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST, HEADING_COUNT, BLOCKED} Heading;
 
@@ -42,7 +46,7 @@ inline Heading behind_from(const Heading heading) {
 
 typedef enum {
     ABSENT = 0,
-    PRESENT = 1,
+    WALL = 1,
     UNKNOWN = 2,
     VIRTUAL = 3
 } WallState;
@@ -57,8 +61,8 @@ typedef struct {
 typedef enum { AHEAD, RIGHT, BACK, LEFT } Direction;
 
 typedef enum {
-  MASK_OPEN = 0x01,    // open maze for search
-  MASK_CLOSED = 0x03,  // closed maze for fast run
+  MASK_OPEN = 0x01,    // used for search
+  MASK_CLOSED = 0x03  // used for speed
 } MazeMask;
 
 /* Position in the maze as an (x,y) coordinate pair. */
@@ -87,13 +91,13 @@ Pos neighbor(Pos pos, Heading heading) {
             neighbor_pos.x = pos.x - 1;
             break;
         default:
-            return (Pos){0b11111111, 0b11111111};
+            return (Pos){0xFF, 0xFF};
             break;
     }
     if (is_in_maze(neighbor_pos))
         return neighbor_pos;
     else 
-        return (Pos){0b11111111, 0b11111111};
+        return (Pos){0xFF, 0xFF};
 }
 
 typedef struct {
@@ -103,8 +107,9 @@ typedef struct {
 	Pos m_mouse_pos;
 	Heading m_mouse_heading;
 
-	Pos* m_goals;
-	uint8_t m_num_goals;
+	Pos m_goal;
+
+    MazeMask m_mask;
 } Maze;
 
 
@@ -112,21 +117,55 @@ typedef struct {
 void initializeMaze(Maze* maze, Pos start);
 void destroyMaze(Maze* maze);
 
-bool is_absent(Maze* maze, Pos cell, Heading heading) {
+// void set_goal_pos();
+
+void reset_maze(Maze* maze) {
+    maze->m_mouse_pos = (Pos){0, 0};
+
+    for (uint8_t row = 0; row < MAZE_HEIGHT; row++) {
+        for (uint8_t col = 0; col < MAZE_WIDTH; col++) {
+            if (row > 0) {
+                maze->m_walls[row][col].south = UNKNOWN;
+            } else {
+                maze->m_walls[row][col].south = WALL;
+            }
+
+            if (row < MAZE_HEIGHT - 1) {
+                maze->m_walls[row][col].north = UNKNOWN;
+            } else {
+                maze->m_walls[row][col].north = WALL;
+            }
+
+            if (col > 0) {
+                maze->m_walls[row][col].west = UNKNOWN;
+            } else {
+                maze->m_walls[row][col].west = WALL;
+            }
+
+            if (col < MAZE_WIDTH - 1) {
+                maze->m_walls[row][col].east = UNKNOWN;
+            } else {
+                maze->m_walls[row][col].east = WALL;
+            }
+        }
+    }
+}
+
+bool is_available(Maze* maze, Pos cell, Heading heading) {
     bool result = false;
-    WallInfo walls = maze->m_walls[cell.x][cell.y];
+    WallInfo walls = maze->m_walls[cell.y][cell.x];
     switch (heading) {
       case NORTH:
-        result = (walls.north) == ABSENT;
+        result = (walls.north & maze->m_mask) == ABSENT;
         break;
       case EAST:
-        result = (walls.east) == ABSENT;
+        result = (walls.east & maze->m_mask) == ABSENT;
         break;
       case SOUTH:
-        result = (walls.south) == ABSENT;
+        result = (walls.south & maze->m_mask) == ABSENT;
         break;
       case WEST:
-        result = (walls.west) == ABSENT;
+        result = (walls.west & maze->m_mask) == ABSENT;
         break;
       default:
         result = false;
@@ -139,33 +178,37 @@ bool is_absent(Maze* maze, Pos cell, Heading heading) {
 void flood(Maze* maze) {
     for (uint8_t i = 0; i < MAZE_WIDTH; i++) {
 		for (uint8_t j = 0; j < MAZE_HEIGHT; j++) {
-			maze->m_cost[i][j] = MAX_COST;
+			maze->m_cost[j][i] = MAX_COST;
 		}
 	}
 
-    for (uint8_t i = 0; i < maze->m_num_goals; i++) {
-		maze->m_cost[maze->m_goals[i].y][maze->m_goals[i].x] = 0;
-	}
+    // for (uint8_t i = 0; i < maze->m_num_goals; i++) {
+		// maze->m_cost[maze->m_goals[i].y][maze->m_goals[i].x] = 0;
+	// }
+    maze->m_cost[maze->m_goal.y][maze->m_goal.x] = 0;
 
 	uint8_t head = 0;
 	uint8_t tail = 0;
-	Pos queue[MAX_COST / 2];
+	Pos queue[MAX_COST];
     
-	queue[tail] = maze->m_goals[0];
+	// queue[tail] = maze->m_goals[0];
+    queue[tail] = maze->m_goal;
+    ESP_LOGI(MAZE_TAG, "x %d y %d", maze->m_goal.x, maze->m_goal.y);
 	tail++;
 
     while (tail - head > 0)	{
 		Pos here = queue[head];
-        uint16_t newCost = maze->m_cost[here.x][here.y] + 1;
+        head++;
+        uint16_t newCost = maze->m_cost[here.y][here.x] + 1;
 
         for (uint8_t h = NORTH; h < HEADING_COUNT; h += 2) {
             Heading heading = (Heading)(h);
-            if (is_absent(maze, here, heading)) {
+            if (is_available(maze, here, heading)) {
                 Pos nextCell = neighbor(here, heading);
-                if (maze->m_cost[nextCell.x][nextCell.y] > newCost) {
-                    maze->m_cost[nextCell.x][nextCell.y] = newCost;
-                    queue[tail] = nextCell;
-                    tail++;
+                    if (is_in_maze(nextCell) && maze->m_cost[nextCell.y][nextCell.x] > newCost) {
+                        maze->m_cost[nextCell.y][nextCell.x] = newCost;
+                        queue[tail] = nextCell;
+                        tail++;
                 }
             }
         }
@@ -181,42 +224,50 @@ Heading heading_to_smallest(Maze* maze, Pos pos, Heading start_heading)
     uint8_t cost = MAX_COST;
     Pos next_cell;
 
-    if (is_absent(maze, pos, next_heading)) {
+    if (is_available(maze, pos, next_heading)) {
         next_cell = neighbor(pos, next_heading);
-        cost = maze->m_cost[next_cell.y][next_cell.x];
-        if (is_in_maze(next_cell) && cost < best_cost) {
-            best_cost = cost;
-            best_heading = next_heading;
+        if (is_in_maze(next_cell)) {
+            cost = maze->m_cost[next_cell.y][next_cell.x];
+            if (cost < best_cost) {
+                best_cost = cost;
+                best_heading = next_heading;
+            }
         }
     }
 
     next_heading = right90_from(start_heading);
-    if (is_absent(maze, pos, next_heading)) {
+    if (is_available(maze, pos, next_heading)) {
         next_cell = neighbor(pos, next_heading);
-        cost = maze->m_cost[next_cell.y][next_cell.x];
-        if (is_in_maze(next_cell) && cost < best_cost) {
-            best_cost = cost;
-            best_heading = next_heading;
+        if (is_in_maze(next_cell)) {
+            cost = maze->m_cost[next_cell.y][next_cell.x];
+            if (cost < best_cost) {
+                best_cost = cost;
+                best_heading = next_heading;
+            }
         }
     }
 
     next_heading = left90_from(start_heading);
-    if (is_absent(maze, pos, next_heading)) {
+    if (is_available(maze, pos, next_heading)) {
         next_cell = neighbor(pos, next_heading);
-        cost = maze->m_cost[next_cell.y][next_cell.x];
-        if (is_in_maze(next_cell) && cost < best_cost) {
-            best_cost = cost;
-            best_heading = next_heading;
+        if (is_in_maze(next_cell)) {
+            cost = maze->m_cost[next_cell.y][next_cell.x];
+            if (cost < best_cost) {
+                best_cost = cost;
+                best_heading = next_heading;
+            }
         }
     }
 
     next_heading = behind_from(start_heading);
-    if (is_absent(maze, pos, next_heading)) {
+    if (is_available(maze, pos, next_heading)) {
         next_cell = neighbor(pos, next_heading);
-        cost = maze->m_cost[next_cell.y][next_cell.x];
-        if (is_in_maze(next_cell) && cost < best_cost) {
-            best_cost = cost;
-            best_heading = next_heading;
+        if (is_in_maze(next_cell)) {
+            cost = maze->m_cost[next_cell.y][next_cell.x];
+            if (cost < best_cost) {
+                best_cost = cost;
+                best_heading = next_heading;
+            }
         }
     }
 
@@ -236,6 +287,169 @@ bool has_unknown_walls(Maze* maze, Pos cell) {
 /// @brief returns true if all the walls of the cell have been seen, false otherwise
 bool cell_is_visited(Maze* maze, Pos cell) {
     return !has_unknown_walls(maze, cell);
+}
+
+void print_maze_state(Maze* maze) {
+	char buffer[300] = {'\0'};
+
+    strcpy(buffer, "+");
+
+	for (uint8_t x = 0; x < MAZE_WIDTH; x++)
+	{
+		if (maze->m_walls[MAZE_HEIGHT - 1][x].north == WALL)
+			strcat(buffer, "---+");
+		else
+			strcat(buffer, "   +");
+	}
+    
+    ESP_LOGI(MAZE_TAG, "%s", buffer);
+
+    
+	for(int8_t y = MAZE_HEIGHT - 1; y >= 0; y--)
+	{
+		strcpy(buffer, "|");
+		for (uint8_t x = 0; x < MAZE_WIDTH; x++)
+		{
+			char num_buf[6];
+			if (x == maze->m_mouse_pos.x && y == maze->m_mouse_pos.y)
+			{
+				if(maze->m_mouse_heading == NORTH) {
+					sprintf(num_buf, " N ");
+				} else if (maze->m_mouse_heading == SOUTH) {
+					sprintf(num_buf, " S ");
+				} else if (maze->m_mouse_heading == WEST) {
+					sprintf(num_buf, " W ");
+				} else if (maze->m_mouse_heading == EAST) {
+					sprintf(num_buf, " E ");
+				} else {
+				sprintf(num_buf, "%3d", maze->m_cost[y][x]);
+                }
+
+				if (maze->m_walls[y][x].east == WALL)
+				{
+					strcat(num_buf, "|");
+				}
+				else
+					strcat(num_buf, " ");
+			}
+			else if (maze->m_walls[y][x].east == WALL)
+			{
+				sprintf(num_buf, "%3d|", maze->m_cost[y][x]);
+			}
+			else
+			{
+				sprintf(num_buf, "%3d ", maze->m_cost[y][x]);
+			}
+			strcat(buffer, num_buf);
+		}
+
+        ESP_LOGI(MAZE_TAG, "%s", buffer);
+	
+		strcpy(buffer, "+");
+		for (uint8_t x = 0; x < MAZE_SIZE; x++)
+		{
+			if (maze->m_walls[y][x].south == WALL)
+				strcat(buffer, "---+");
+			else
+				strcat(buffer, "   +");
+		}
+        ESP_LOGI(MAZE_TAG, "%s", buffer);
+    }
+}
+
+void scan_new_walls(Maze* maze) {
+    uint8_t x = maze->m_mouse_pos.x;
+	uint8_t y = maze->m_mouse_pos.y;
+        
+	switch (maze->m_mouse_heading)
+	{
+        case NORTH:
+            if (left_wall_present) {
+                maze->m_walls[y][x].west = WALL;
+                if (x > 0) {
+                    maze->m_walls[y][x - 1].east = WALL;
+                }
+            }
+            if (right_wall_present) {
+                maze->m_walls[y][x].east = WALL;
+                if (x < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y][x + 1].west = WALL;
+                }
+            }
+            if (front_wall_present) {
+                maze->m_walls[y][x].north = WALL;
+                if (y < MAZE_HEIGHT - 1) {   
+                    maze->m_walls[y + 1][x].south = WALL;
+                }
+            }
+            break;
+        case SOUTH:
+            if (left_wall_present) {
+                maze->m_walls[y][x].east = WALL;
+                if (x < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y][x + 1].west = WALL;
+                }
+            }
+            if (right_wall_present) {
+                maze->m_walls[y][x].west = WALL;
+                if (x > 0) {
+                    maze->m_walls[y][x - 1].east = WALL;
+                }
+            }
+            if (front_wall_present) {
+                maze->m_walls[y][x].south = WALL;
+                if (y > 0) {
+                    maze->m_walls[y - 1][x].north = WALL;
+                }
+            }
+            break;
+        case EAST:
+            if (left_wall_present) {
+                maze->m_walls[y][x].north = WALL;
+                if (y < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y + 1][x].south = WALL;
+                }
+            }
+            if (right_wall_present) {
+                maze->m_walls[y][x].south = WALL;
+                if (y > 0) {
+                    maze->m_walls[y - 1][x].north = WALL;
+                }
+            }
+            if (front_wall_present) {
+                maze->m_walls[y][x].east = WALL;
+                if (x < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y][x + 1].west = WALL;
+                }
+            }
+            break;
+        case WEST:
+
+            if (left_wall_present) {
+                maze->m_walls[y][x].south = WALL;
+                if (y > 0) {
+                    maze->m_walls[y - 1][x].north = WALL;
+                }
+            }
+            if (right_wall_present)
+            {
+                maze->m_walls[y][x].north = WALL;
+                if (y < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y + 1][x].south = WALL;
+                }
+            }
+            if (front_wall_present)
+            {
+                maze->m_walls[y][x].west = WALL;
+                if (x > 0) {
+                    maze->m_walls[y][x - 1].east = WALL;
+                }
+            }
+    		break;
+
+        default:
+            break;
+    }
 }
 
 

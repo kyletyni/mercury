@@ -18,8 +18,18 @@
 int recv_adc_raw_val[4][NUM_OF_POLLS];
 int recv_adc_raw[4];
 uint16_t recv_adc_raw_idx[4];
-uint16_t rec_adc_raw_sum[4];
-uint16_t recv_avg_val[4];
+float rec_adc_raw_sum[4];
+int recv_avg_val[4];
+
+float front_sensor_sum;
+float front_sensor_diff;
+
+typedef enum {
+    SM_SIDE_BASED = 0,
+    SM_FRONT_BASED
+} SteeringMode;
+
+SteeringMode steering_mode = SM_SIDE_BASED;
 
 const char *TAG1 = "receiver";
 
@@ -29,6 +39,15 @@ adc_cali_handle_t adc_cali_handle_FL_RECV = NULL;
 adc_cali_handle_t adc_cali_handle_FR_RECV = NULL;
 adc_cali_handle_t adc_cali_handle_DL_RECV = NULL;
 adc_cali_handle_t adc_cali_handle_DR_RECV = NULL;
+
+bool right_wall_present;
+bool left_wall_present;
+bool front_wall_present;
+
+bool steering_enabled;
+float cross_track_error;
+float cross_track_error_prev;
+
 
 void initialize_adc() {
     /********************** ADC Unit Init **********************/
@@ -88,49 +107,81 @@ typedef enum {
 } ir_dir;
 
 void ir_sensor_poll(ir_dir sensor) {
-    uint16_t avg_count = 0;
+    uint16_t raw_val = 0;
 
     switch (sensor) {
         case FRONT_LEFT:
             gpio_set_level(EMIT_FL, 1);
-            rec_adc_raw_sum[FRONT_LEFT] -=  recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]];
+            rec_adc_raw_sum[FRONT_LEFT] -=  FRONT_LEFT_SCALE * recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]];
             ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FL_RECV_CHANNEL, &recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]]));
-            rec_adc_raw_sum[FRONT_LEFT] +=  recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]];
+            rec_adc_raw_sum[FRONT_LEFT] +=  FRONT_LEFT_SCALE * recv_adc_raw_val[FRONT_LEFT][recv_adc_raw_idx[FRONT_LEFT]];
             recv_adc_raw_idx[FRONT_LEFT] = (recv_adc_raw_idx[FRONT_LEFT] + 1) % NUM_OF_POLLS;
             recv_avg_val[FRONT_LEFT] = rec_adc_raw_sum[FRONT_LEFT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_FL, 0);
             break;
         case FRONT_RIGHT:
             gpio_set_level(EMIT_FR, 1);
-            rec_adc_raw_sum[FRONT_RIGHT] -=  recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]];
+            rec_adc_raw_sum[FRONT_RIGHT] -=  FRONT_RIGHT_SCALE * recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]];
             ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, FR_RECV_CHANNEL, &recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]]));
-            rec_adc_raw_sum[FRONT_RIGHT] +=  recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]];
+            rec_adc_raw_sum[FRONT_RIGHT] +=  FRONT_RIGHT_SCALE * recv_adc_raw_val[FRONT_RIGHT][recv_adc_raw_idx[FRONT_RIGHT]];
             recv_adc_raw_idx[FRONT_RIGHT] = (recv_adc_raw_idx[FRONT_RIGHT] + 1) % NUM_OF_POLLS;
             recv_avg_val[FRONT_RIGHT] = rec_adc_raw_sum[FRONT_RIGHT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_FR, 0);
             break;
         case DIAGONAL_LEFT:
             gpio_set_level(EMIT_DL, 1);
-            rec_adc_raw_sum[DIAGONAL_LEFT] -=  recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]];
+            rec_adc_raw_sum[DIAGONAL_LEFT] -=  DIAG_LEFT_SCALE * recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]];
             ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DL_RECV_CHANNEL, &recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]]));
-            rec_adc_raw_sum[DIAGONAL_LEFT] +=  recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]];
+            rec_adc_raw_sum[DIAGONAL_LEFT] +=  DIAG_LEFT_SCALE * recv_adc_raw_val[DIAGONAL_LEFT][recv_adc_raw_idx[DIAGONAL_LEFT]];
             recv_adc_raw_idx[DIAGONAL_LEFT] = (recv_adc_raw_idx[DIAGONAL_LEFT] + 1) % NUM_OF_POLLS;
             recv_avg_val[DIAGONAL_LEFT] = rec_adc_raw_sum[DIAGONAL_LEFT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_DL, 0);
             break;
         case DIAGONAL_RIGHT:
             gpio_set_level(EMIT_DR, 1);
-            rec_adc_raw_sum[DIAGONAL_RIGHT] -=  recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]];
+            rec_adc_raw_sum[DIAGONAL_RIGHT] -=  DIAG_RIGHT_SCALE * recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]];
             ESP_ERROR_CHECK(adc_oneshot_read(adc2_handle, DR_RECV_CHANNEL, &recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]]));
-            rec_adc_raw_sum[DIAGONAL_RIGHT] +=  recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]];
+            rec_adc_raw_sum[DIAGONAL_RIGHT] +=  DIAG_RIGHT_SCALE * recv_adc_raw_val[DIAGONAL_RIGHT][recv_adc_raw_idx[DIAGONAL_RIGHT]];
             recv_adc_raw_idx[DIAGONAL_RIGHT] = (recv_adc_raw_idx[DIAGONAL_RIGHT] + 1) % NUM_OF_POLLS;
             recv_avg_val[DIAGONAL_RIGHT] = rec_adc_raw_sum[DIAGONAL_RIGHT] / NUM_OF_POLLS;
             gpio_set_level(EMIT_DR, 0);
             break;
         default:
             break;
-    }
+    }    
     return;
 }
 
+void calc_cross_track_error()
+{
+    front_sensor_sum = recv_avg_val[FRONT_LEFT] + recv_avg_val[FRONT_RIGHT];
+    front_sensor_diff = recv_avg_val[FRONT_LEFT] - recv_avg_val[FRONT_RIGHT];
+
+    right_wall_present = recv_avg_val[DIAGONAL_RIGHT] > RIGHT_THRESHOLD;
+    left_wall_present = recv_avg_val[DIAGONAL_LEFT] > LEFT_THRESHOLD;
+    front_wall_present = front_sensor_sum > FRONT_THRESHOLD;
+
+    // calculate cross track error
+    static int error = 0;
+	int right_error = SIDE_NOMINAL - recv_avg_val[DIAGONAL_RIGHT];
+	int left_error = SIDE_NOMINAL - recv_avg_val[DIAGONAL_LEFT];
+
+    // if (steering_mode)
+
+    error = 0;
+    if (left_wall_present && right_wall_present)
+    {
+        error = right_error - left_error;
+    }
+    else if (left_wall_present)
+    {
+        error = -2 * left_error;
+    }
+    else if (right_wall_present)
+    {
+        error = 2 * right_error;
+    }
+
+    cross_track_error = error;  
+}
 #endif

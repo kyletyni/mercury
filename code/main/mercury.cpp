@@ -18,8 +18,8 @@
 #include "receiver.h"
 #include "maze.h"
 #include "user.h"
-
 #include "gyro.h"
+#include "config.h"
 
 #define BLUE_LED GPIO_NUM_48
 #define GREEN_LED GPIO_NUM_47
@@ -51,19 +51,22 @@ extern "C" void app_main(void)
 
     init_user_io();
     ESP_LOGI(TAG, "LED pins initialized successfully");
+
+    // init_uart();
+    //ESP_LOGI(TAG, "UART initialized successfully");
     
-    ESP_LOGI(TAG, "Initializing ADC");
     initialize_adc();
     ESP_LOGI(TAG, "ADC initialized successfully");
     
     init_motors();
     ESP_LOGI(TAG, "Motor PWM initialized successfully");
+    
 
     // xTaskCreate(&button_task, "button_task", 4096, NULL, 10, NULL);
 
     ESP_LOGI(TAG, "Spawning Tasks for Core 0");
-    xTaskCreatePinnedToCore(sensorPollTask, "sensorPollTask", 4096, NULL, 2, NULL, 0);
     xTaskCreatePinnedToCore(&mpu6500, "gyroTask", 4096, NULL, 1, NULL, 0);
+    xTaskCreatePinnedToCore(sensorPollTask, "sensorPollTask", 4096, NULL, 2, NULL, 0);
 
     ESP_LOGI(TAG, "Creating Tasks for Core 1");
     xTaskCreatePinnedToCore(motorControlTask, "motorControlTask", 4096, NULL, 2, NULL, 1);
@@ -89,21 +92,25 @@ void sensorPollTask(void *pvParameters)
 
         // NOTE: RIGHT Encoder Counts DOWN when dir is FORWARD, counts UP when dir is BACKWARD
         // NOTE: LEFT Encoder Counts UP when dir is FORWARD, counts DOWN when dir is BACKWARD
-        // ESP_LOGI(TAG, "core0 L: %4d, L_total: %6ld, R: %4d, R_total: %6ld", raw_count_left, total_count_left, raw_count_right, total_count_right);
         
         /******************* Continuously Poll IR Sensors *******************/
         ir_sensor_poll(FRONT_LEFT);
         ir_sensor_poll(DIAGONAL_LEFT);
         ir_sensor_poll(DIAGONAL_RIGHT);
         ir_sensor_poll(FRONT_RIGHT);
+        // ESP_LOGI(TAG, "L: %4d, L_total: %6ld, R: %4d, R_total: %6ld", raw_count_left, total_count_left, raw_count_right, total_count_right);
 
         // calculate cross track error
-
+        calc_cross_track_error();
 
         // if no walls, we use gyro
 
-
-        // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d", recv_avg_val[FRONT_RIGHT], recv_avg_val[DIAGONAL_RIGHT], recv_avg_val[DIAGONAL_LEFT], recv_avg_val[FRONT_LEFT]);
+        if (count % 50 == 0) {
+            // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d", recv_avg_val[FRONT_RIGHT], recv_avg_val[DIAGONAL_RIGHT], recv_avg_val[DIAGONAL_LEFT], recv_avg_val[FRONT_LEFT]);
+            count = 1;
+        } else {
+            count++;
+        }
 
         vTaskDelayUntil(&xLastWakeTime, xFrequency);
         TickType_t xElapsedTime = (xTaskGetTickCount() - xLastWakeTime);
@@ -132,6 +139,7 @@ void motorControlTask(void *pvParameters)
 
     int count = 0;
     controller_output_enabled = true;
+    steering_enabled = false;
 
     while (true)
     {
@@ -142,7 +150,22 @@ void motorControlTask(void *pvParameters)
         Profile_Update(&rotation);
 
         fwd_output = forward_controller();
-        rot_output = rotation_controller(0.f);
+
+        // calculate rotational adjustment
+        static float rot_adjust = 0.f;
+
+        if (steering_enabled) {
+            rot_adjust = (STEERING_KP * cross_track_error) + (STEERING_KD * cross_track_error - cross_track_error_prev);
+            rot_adjust *= LOOP_INTERVAL;
+            if (rot_adjust < -STEERING_ADJUSTMENT_LIMIT)
+                rot_adjust = -STEERING_ADJUSTMENT_LIMIT;
+            else if (rot_adjust > STEERING_ADJUSTMENT_LIMIT)
+                rot_adjust = STEERING_ADJUSTMENT_LIMIT;
+        } else {
+            rot_adjust = 0.f;
+        }
+
+        rot_output = rotation_controller(rot_adjust);
 
         left_output_v = 0.f;
         right_output_v = 0.f;
@@ -156,12 +179,15 @@ void motorControlTask(void *pvParameters)
 
         float left_ff = left_ff_voltage(left_speed);
         float right_ff = right_ff_voltage(right_speed);
-        
+
         // print logic
         if (count % 60 == 0) {
             count = 1;
-            ESP_LOGI(TAG, "a %.2f r %.2f y %.2f", mouse_angle, rotation.position, rot_output);
-        } else {
+            // ESP_LOGI(TAG, "mous %.2f fwd %.2f gyr %.2f", mouse_distance, forward.position, mouse_yaw);
+            // ESP_LOGI(TAG, "a %.2f r %.2f y %.2f", mouse_angle, rotation.position, rot_output);
+            // ESP_LOGI(TAG, "a %.2f y %.2f, R: %d, F: %d, L: %d", rot_adjust, rot_output, right_wall_present, front_wall_present, left_wall_present);
+        } 
+        else {
             count++;
         }
 
@@ -190,20 +216,59 @@ void operatorTask(void *pvParameters)
     ESP_LOGI(TAG, "rot_kp %.2f rot_kd: %.2f", ROT_KP, ROT_KD);
 
     bool test_fwd = true;
+    Maze maze;
+
+    while (!gyro_init) {
+        vTaskDelay(2);
+    }
+
+    reset_maze(&maze);
+    maze.m_goal = (Pos){7, 7};
+    maze.m_mask = MASK_OPEN;
+    flood(&maze);
+
+    Heading bestHeading = SOUTH;
 
     while (true) 
     {
-        vTaskDelay(500);
+        vTaskDelay(1000);
+
+        if (maze.m_mouse_pos.x != maze.m_goal.x || maze.m_mouse_pos.y != maze.m_goal.y)
+        {
+            scan_new_walls(&maze);
+            ESP_LOGI(TAG, "L %d F %d R %d", left_wall_present, front_wall_present, right_wall_present);
+
+            flood(&maze);
+            bestHeading = heading_to_smallest(&maze, maze.m_mouse_pos, maze.m_mouse_heading);
+
+            if (bestHeading == NORTH) {
+                maze.m_mouse_pos.y++;
+            } else if (bestHeading == EAST) {
+                maze.m_mouse_pos.x++;
+            } else if (bestHeading == WEST) {
+                maze.m_mouse_pos.x--;
+            } else if (bestHeading == SOUTH) {
+                maze.m_mouse_pos.y--;
+            } else {
+                ESP_LOGI(TAG, "bad heading");
+            }
+            maze.m_mouse_heading = bestHeading;
+        }
+
+        print_maze_state(&maze);
+        ESP_LOGI(TAG, "h %d", bestHeading);
+
         if (test_fwd) {
             // Profile_Start(&forward, 300.f, 300.f, 0.f, 1000.f);
             // set_motor_dir(MOTOR_RIGHT, BACKWARD);
             
-            Profile_Start(&forward, 0.f, 0.f, 0.f, 0.f);
+            // Profile_Start(&forward, 180.f * 3, 400.f, 0.f, 1000.f);
             
-            Profile_Start(&rotation, 90.f, 300.f, 0.f, 2000.f);
-            while(rotation.state != PS_DONE) {
-                vTaskDelay(2);
-            }
+            // Profile_Start(&rotation, 90.f, 300.f, 0.f, 2000.f);
+            // while(rotation.state != PS_DONE) 
+            // {
+                // vTaskDelay(2);
+            // }
 
             // test_fwd = false;
         }

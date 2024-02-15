@@ -8,6 +8,8 @@
         "xhash": "cpp",
         "xmemory": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "future": "cpp",
+        "system_error": "cpp"
     }
 }

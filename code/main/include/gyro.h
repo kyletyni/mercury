@@ -40,6 +40,8 @@ float mouse_yaw;
 float mouse_yaw_capture;
 float yaw_change = 0;
 
+bool gyro_init = false;
+
 MPU6050 mpu;
 
 // MPU control/status vars
@@ -147,7 +149,10 @@ void mpu6500(void *pvParameters) {
 	mpu.CalibrateGyro(6);
 	mpu.setDMPEnabled(true);
 
-	TickType_t xFrequency = pdMS_TO_TICKS(3); // convert to ms
+	gyro_init = true;
+	ESP_LOGI(GYRO_TAG, "DMP Initialization successfully");
+
+	TickType_t xFrequency = pdMS_TO_TICKS(4); // convert to ms
     TickType_t xLastWakeTime;
     xLastWakeTime = xTaskGetTickCount();
     
@@ -166,6 +171,7 @@ void mpu6500(void *pvParameters) {
 			yaw_change = yaw - prev_yaw;
 
 			mouse_yaw = yaw;
+			// mouse_yaw += yaw_change;
 			prev_yaw = yaw;
 			// float _roll = ypr[2] * RAD_TO_DEG;
 			// float _pitch = ypr[1] * RAD_TO_DEG;
