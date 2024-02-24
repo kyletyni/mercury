@@ -44,7 +44,6 @@ bool right_wall_present;
 bool left_wall_present;
 bool front_wall_present;
 
-bool steering_enabled;
 float cross_track_error;
 float cross_track_error_prev;
 

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
+#include <freertos/queue.h>
 #include "driver/i2c.h"
 #include "driver/gpio.h"
 #include "config.h"
@@ -43,7 +44,7 @@ int32_t total_count_right_prev = 0;
 
 float fwd_change;
 float fwd_change_prev;
-float enc_rot_change;
+volatile float enc_rot_change;
 float delta_left;
 float delta_right;
 
@@ -167,16 +168,19 @@ void update_encoders(void)
 
 void update_distances(void) 
 {
-    delta_left = (total_count_left - total_count_left_prev) * MM_PER_COUNT_RIGHT;
-    delta_right = -(total_count_right - total_count_right_prev) * MM_PER_COUNT_LEFT;
-    fwd_change = 0.5f * (delta_left + delta_right);
-    enc_rot_change = (delta_left - delta_right) * DEG_PER_MM_DIFFERENCE;
-    
-    total_count_right_prev = total_count_right;
-    total_count_left_prev  = total_count_left;
+        // if (xSemaphoreTake(encoderCountMutex, portMAX_DELAY)) {
+            delta_left = (total_count_left - total_count_left_prev) * MM_PER_COUNT_RIGHT;
+            delta_right = -(total_count_right - total_count_right_prev) * MM_PER_COUNT_LEFT;
+            fwd_change += 0.5f * (delta_left + delta_right);
+            enc_rot_change += (delta_left - delta_right) * DEG_PER_MM_DIFFERENCE;
+            
+            total_count_right_prev = total_count_right;
+            total_count_left_prev  = total_count_left;
 
-    mouse_distance += fwd_change;
-    mouse_angle += enc_rot_change;
+            mouse_distance += 0.5f * (delta_left + delta_right);
+            mouse_angle += (delta_left - delta_right) * DEG_PER_MM_DIFFERENCE;
+        // xSemaphoreGive(encoderCountMutex);
+    
 }
 
 

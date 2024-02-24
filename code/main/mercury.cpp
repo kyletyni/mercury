@@ -20,6 +20,7 @@
 #include "user.h"
 #include "gyro.h"
 #include "config.h"
+#include "motion.h"
 
 #define BLUE_LED GPIO_NUM_48
 #define GREEN_LED GPIO_NUM_47
@@ -52,7 +53,7 @@ extern "C" void app_main(void)
     init_user_io();
     ESP_LOGI(TAG, "LED pins initialized successfully");
 
-    // init_uart();
+    init_uart();
     //ESP_LOGI(TAG, "UART initialized successfully");
     
     initialize_adc();
@@ -106,7 +107,7 @@ void sensorPollTask(void *pvParameters)
         // if no walls, we use gyro
 
         if (count % 50 == 0) {
-            // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d", recv_avg_val[FRONT_RIGHT], recv_avg_val[DIAGONAL_RIGHT], recv_avg_val[DIAGONAL_LEFT], recv_avg_val[FRONT_LEFT]);
+            // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d, FRONT: %.2f", recv_avg_val[FRONT_RIGHT], recv_avg_val[DIAGONAL_RIGHT], recv_avg_val[DIAGONAL_LEFT], recv_avg_val[FRONT_LEFT], front_sensor_sum);
             count = 1;
         } else {
             count++;
@@ -167,24 +168,21 @@ void motorControlTask(void *pvParameters)
 
         rot_output = rotation_controller(rot_adjust);
 
-        left_output_v = 0.f;
-        right_output_v = 0.f;
-
         left_output_v = fwd_output + rot_output;
         right_output_v = fwd_output - rot_output;
 
         float tangent_velocity = rotation.velocity * MOUSE_RADIUS * RADIANS_PER_DEGREE;
-        float left_speed = forward.velocity - tangent_velocity;
-        float right_speed = forward.velocity + tangent_velocity;
+        float left_speed = forward.velocity + tangent_velocity;
+        float right_speed = forward.velocity - tangent_velocity;
 
         float left_ff = left_ff_voltage(left_speed);
         float right_ff = right_ff_voltage(right_speed);
 
         // print logic
-        if (count % 60 == 0) {
+        if (count % 40 == 0) {
             count = 1;
             // ESP_LOGI(TAG, "mous %.2f fwd %.2f gyr %.2f", mouse_distance, forward.position, mouse_yaw);
-            // ESP_LOGI(TAG, "a %.2f r %.2f y %.2f", mouse_angle, rotation.position, rot_output);
+            // ESP_LOGI(TAG, "a %.2f r %.2f g %.2f", mouse_angle, rotation.position, mouse_yaw);
             // ESP_LOGI(TAG, "a %.2f y %.2f, R: %d, F: %d, L: %d", rot_adjust, rot_output, right_wall_present, front_wall_present, left_wall_present);
         } 
         else {
@@ -216,23 +214,25 @@ void operatorTask(void *pvParameters)
     ESP_LOGI(TAG, "rot_kp %.2f rot_kd: %.2f", ROT_KP, ROT_KD);
 
     bool test_fwd = true;
-    Maze maze;
+    // Maze maze;
 
     while (!gyro_init) {
         vTaskDelay(2);
     }
 
-    reset_maze(&maze);
-    maze.m_goal = (Pos){7, 7};
+    // reset_maze(&maze);
+    // maze.m_goal = (Pos){7, 7};
     maze.m_mask = MASK_OPEN;
     flood(&maze);
+    maze.m_mouse_heading = NORTH;
 
-    Heading bestHeading = SOUTH;
+    Heading bestHeading = NORTH;
 
     while (true) 
     {
-        vTaskDelay(1000);
+        vTaskDelay(2);
 
+        /*
         if (maze.m_mouse_pos.x != maze.m_goal.x || maze.m_mouse_pos.y != maze.m_goal.y)
         {
             scan_new_walls(&maze);
@@ -254,23 +254,91 @@ void operatorTask(void *pvParameters)
             }
             maze.m_mouse_heading = bestHeading;
         }
+        */
 
-        print_maze_state(&maze);
-        ESP_LOGI(TAG, "h %d", bestHeading);
-
+        // print_maze_state(&maze);
         if (test_fwd) {
+            // if (left_wall_present) {
+            // gpio_set_level(RED_LED, 0);
+            // } else {
+            // gpio_set_level(RED_LED, 1);
+            // }
+
+            // if (right_wall_present) {
+            // gpio_set_level(GREEN_LED, 0);
+            // } else {
+            // gpio_set_level(GREEN_LED, 1);
+            // }
+
+            // if (front_wall_present) {
+            // gpio_set_level(BLUE_LED, 0);
+            // } else {
+            // gpio_set_level(BLUE_LED, 1);
+            // }
+            // move_forward()
+            // move_forward(FULL_CELL, SEARCH_VELOCITY, 0, SEARCH_ACCELERATION);
+            // turn_smooth(SS90EL);
+            search((Pos){0, 2}, true);
+            turn_IP180();
+            maze.m_mouse_heading = behind_from(maze.m_mouse_heading);
+            
+            search((Pos){0, 0}, false);
+            test_fwd = false;
+            // controller_output_enabled = true;
+
+            // reset_maze(&maze);
+            // flood(&maze);
+            // ESP_LOGI(TAG, "controler output is off");
+            // search((Pos){2, 0});
+            // gpio_set_level(BLUE_LED, 0);
+            // // print_maze_state(&maze);
+
+            // turn_IP180();
+            // maze.m_mouse_heading = behind_from(maze.m_mouse_heading);
+
+            // // print_maze_state(&maze);
+            // ESP_LOGI(TAG, "search finished");
+            // vTaskDelay(500);
+            // gpio_set_level(BLUE_LED, 1);
+            // ESP_LOGI(TAG, "heading back");   
+            // search((Pos){0, 0});    
+            // gpio_set_level(BLUE_LED, 0);
+            // ESP_LOGI(TAG, "back at start");
+            // test_fwd = false;
+        }
+
+
+        if (false) 
+        {
+            steering_enabled = false;
+            Profile_Start(&forward, -BACK_TO_CENTER_DIST, SEARCH_VELOCITY / 4, 0.f, SEARCH_ACCELERATION / 3);
+            while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
+            vTaskDelay(200);
+
+            Profile_Start(&forward, BACK_TO_CENTER_DIST + HALF_CELL, SEARCH_VELOCITY / 2, SEARCH_VELOCITY / 2, SEARCH_ACCELERATION);
+            while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
+            
+            ESP_LOGI(TAG, "stopped at center");
+
+            steering_enabled = false;
+
+            // Profile_Start(&forward, FULL_CELL, SEARCH_VELOCITY, 0.f, SEARCH_ACCELERATION);
+            // while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
+            // mouse_distance -= FULL_CELL;
+
             // Profile_Start(&forward, 300.f, 300.f, 0.f, 1000.f);
             // set_motor_dir(MOTOR_RIGHT, BACKWARD);
             
-            // Profile_Start(&forward, 180.f * 3, 400.f, 0.f, 1000.f);
-            
+            // Profile_Start(&forward, 180.f * 2, 400.f, 0.f, 1500.f);
+
             // Profile_Start(&rotation, 90.f, 300.f, 0.f, 2000.f);
-            // while(rotation.state != PS_DONE) 
+            // while(rotation.state != PS_DONE || forward.state != PS_DONE) 
             // {
-                // vTaskDelay(2);
+            //     vTaskDelay(2);
             // }
 
-            // test_fwd = false;
+            set_target_velocity(&forward, 0);
+            test_fwd = false;
         }
     }
 }

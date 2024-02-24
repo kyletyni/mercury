@@ -134,17 +134,25 @@ void Profile_Stop(Profile* profile) {
     profile->target_velocity = 0;
 }
 
-void Profile_Finish(Profile* profile) {
+void Profile_Finish(Profile* profile) 
+{
     profile->velocity = profile->target_velocity;
     profile->state = PS_DONE;
 }
 
-bool Profile_Is_Finished(Profile* profile) {
+bool Profile_Is_Finished(Profile* profile) 
+{
     return profile->state == PS_DONE;
 }
 
-float Profile_Get_Braking_Dist(Profile* profile) {
+float Profile_Get_Braking_Dist(Profile* profile) 
+{
     return fabsf(profile->velocity * profile->velocity - profile->final_velocity * profile->final_velocity) * 0.5 * profile->one_over_acc;
+}
+
+void set_target_velocity(Profile* profile, float vel) 
+{
+	profile->target_velocity = vel;
 }
 
 

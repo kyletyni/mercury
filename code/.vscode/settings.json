@@ -10,6 +10,8 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "future": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "random": "cpp",
+        "xlocale": "cpp"
     }
 }

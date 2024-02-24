@@ -55,7 +55,7 @@ void init_user_io() {
     // configure the GREEN led
     io_conf.pin_bit_mask = (1ULL << GREEN_LED);
     ESP_ERROR_CHECK(gpio_config(&io_conf));
-    gpio_set_level(GREEN_LED, 0);
+    gpio_set_level(GREEN_LED, 1);
 }
 
 void init_uart() 

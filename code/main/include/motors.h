@@ -9,7 +9,6 @@
 #include "config.h"
 #include "gyro.h"
 
-
 #define MR_PWMA_GPIO GPIO_NUM_38
 #define MR_PWMA_CHANNEL LEDC_CHANNEL_0
 
@@ -51,6 +50,7 @@ float left_motor_voltage;
 float right_motor_voltage;
 
 bool controller_output_enabled;
+bool steering_enabled = false;
 
 static void set_motor_pwm_dc(ledc_channel_t channel, float duty);
 void set_motor_dir(MotorSide side, MotorDir dir);
@@ -203,11 +203,9 @@ float forward_controller(void)
 {
     static float output_prev = 0.f;
     float increment = forward.velocity * LOOP_INTERVAL;
-    fwd_error += increment - fwd_change * 2;
-    
-    // TODO: FIX ME difference of 2 for task frequency of fwd_change update and fwd_error
-    
-    fwd_change_prev = fwd_change;
+    fwd_error += increment - fwd_change;
+    fwd_change = 0;
+    // fwd_change_prev = fwd_change;
     float diff = fwd_error - fwd_error_prev;
     fwd_error_prev = fwd_error;
     float output = (FWD_KP * fwd_error + FWD_KD * diff) * 0.8f + 0.2f * output_prev;
@@ -220,12 +218,16 @@ float rotation_controller(float adjustment)
 {
     static float output_prev = 0.f;
     float increment = rotation.velocity * LOOP_INTERVAL;
-    rot_error += increment - enc_rot_change * 2;
+    // if (xSemaphoreTake(encoderCountMutex, portMAX_DELAY)) {
+    rot_error += increment - enc_rot_change;
+    enc_rot_change = 0;
+        // xSemaphoreGive(encoderCountMutex);
+    // }
     // rot_error += increment - yaw_change * 1.5;
     rot_error += adjustment;
     float diff = rot_error - rot_error_prev;
     rot_error_prev = rot_error;
-    float output = ROT_KP * rot_error + ROT_KD * diff;
+    float output = (ROT_KP * rot_error + ROT_KD * diff) * 0.9f + 0.1f * output_prev;;
     return output;
 };
 

@@ -4548,7 +4548,7 @@
     (effects (font (size 3.5 3.5)) (justify left bottom))
     (uuid 5f35daa5-4573-4a86-8368-15ba0df4334a)
   )
-  (text "6V Motor Regualtors" (at 306.07 20.32 0)
+  (text "6V Motor Regulators" (at 306.07 20.32 0)
     (effects (font (size 3.5 3.5)) (justify left bottom))
     (uuid 819cb5fd-929c-4b8f-8a8e-6cad9d89878e)
   )

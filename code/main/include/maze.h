@@ -41,7 +41,7 @@ inline Heading ahead_from(const Heading heading) {
 }
 
 inline Heading behind_from(const Heading heading) {
-  return (Heading)((heading + 4) % HEADING_COUNT);
+  return (Heading)((heading + HEADING_COUNT / 2) % HEADING_COUNT);
 }
 
 typedef enum {
@@ -112,6 +112,7 @@ typedef struct {
     MazeMask m_mask;
 } Maze;
 
+Maze maze;
 
 // Maze Functions
 void initializeMaze(Maze* maze, Pos start);
@@ -121,6 +122,7 @@ void destroyMaze(Maze* maze);
 
 void reset_maze(Maze* maze) {
     maze->m_mouse_pos = (Pos){0, 0};
+    maze->m_mouse_heading = NORTH;
 
     for (uint8_t row = 0; row < MAZE_HEIGHT; row++) {
         for (uint8_t col = 0; col < MAZE_WIDTH; col++) {
@@ -193,9 +195,9 @@ void flood(Maze* maze) {
     
 	// queue[tail] = maze->m_goals[0];
     queue[tail] = maze->m_goal;
-    ESP_LOGI(MAZE_TAG, "x %d y %d", maze->m_goal.x, maze->m_goal.y);
 	tail++;
 
+    ESP_LOGI(MAZE_TAG, "floodfill start");
     while (tail - head > 0)	{
 		Pos here = queue[head];
         head++;
@@ -213,6 +215,7 @@ void flood(Maze* maze) {
             }
         }
     }
+    ESP_LOGI(MAZE_TAG, "floodfill end");
 }
 
 /// @brief returns the heading with the smallest neighboring cost value 
@@ -276,7 +279,7 @@ Heading heading_to_smallest(Maze* maze, Pos pos, Heading start_heading)
 
 /// @brief returns true if any walls in a cell have not been seen
 bool has_unknown_walls(Maze* maze, Pos cell) {
-    WallInfo walls_here = maze->m_walls[cell.x][cell.y];
+    WallInfo walls_here = maze->m_walls[cell.y][cell.x];
     if (walls_here.north == UNKNOWN || walls_here.east == UNKNOWN || walls_here.south == UNKNOWN || walls_here.west == UNKNOWN) {
         return true;
     } else {
@@ -360,23 +363,27 @@ void print_maze_state(Maze* maze) {
 void scan_new_walls(Maze* maze) {
     uint8_t x = maze->m_mouse_pos.x;
 	uint8_t y = maze->m_mouse_pos.y;
+
+    bool left_wall = left_wall_present;
+    bool right_wall = right_wall_present;
+    bool front_wall = front_wall_present;
         
 	switch (maze->m_mouse_heading)
 	{
         case NORTH:
-            if (left_wall_present) {
+            if (left_wall) {
                 maze->m_walls[y][x].west = WALL;
                 if (x > 0) {
                     maze->m_walls[y][x - 1].east = WALL;
                 }
             }
-            if (right_wall_present) {
+            if (right_wall) {
                 maze->m_walls[y][x].east = WALL;
                 if (x < MAZE_HEIGHT - 1) {
                     maze->m_walls[y][x + 1].west = WALL;
                 }
             }
-            if (front_wall_present) {
+            if (front_wall) {
                 maze->m_walls[y][x].north = WALL;
                 if (y < MAZE_HEIGHT - 1) {   
                     maze->m_walls[y + 1][x].south = WALL;
@@ -384,19 +391,19 @@ void scan_new_walls(Maze* maze) {
             }
             break;
         case SOUTH:
-            if (left_wall_present) {
+            if (left_wall) {
                 maze->m_walls[y][x].east = WALL;
                 if (x < MAZE_HEIGHT - 1) {
                     maze->m_walls[y][x + 1].west = WALL;
                 }
             }
-            if (right_wall_present) {
+            if (right_wall) {
                 maze->m_walls[y][x].west = WALL;
                 if (x > 0) {
                     maze->m_walls[y][x - 1].east = WALL;
                 }
             }
-            if (front_wall_present) {
+            if (front_wall) {
                 maze->m_walls[y][x].south = WALL;
                 if (y > 0) {
                     maze->m_walls[y - 1][x].north = WALL;
@@ -404,19 +411,19 @@ void scan_new_walls(Maze* maze) {
             }
             break;
         case EAST:
-            if (left_wall_present) {
+            if (left_wall) {
                 maze->m_walls[y][x].north = WALL;
                 if (y < MAZE_HEIGHT - 1) {
                     maze->m_walls[y + 1][x].south = WALL;
                 }
             }
-            if (right_wall_present) {
+            if (right_wall) {
                 maze->m_walls[y][x].south = WALL;
                 if (y > 0) {
                     maze->m_walls[y - 1][x].north = WALL;
                 }
             }
-            if (front_wall_present) {
+            if (front_wall) {
                 maze->m_walls[y][x].east = WALL;
                 if (x < MAZE_HEIGHT - 1) {
                     maze->m_walls[y][x + 1].west = WALL;
@@ -425,20 +432,20 @@ void scan_new_walls(Maze* maze) {
             break;
         case WEST:
 
-            if (left_wall_present) {
+            if (left_wall) {
                 maze->m_walls[y][x].south = WALL;
                 if (y > 0) {
                     maze->m_walls[y - 1][x].north = WALL;
                 }
             }
-            if (right_wall_present)
+            if (right_wall)
             {
                 maze->m_walls[y][x].north = WALL;
                 if (y < MAZE_HEIGHT - 1) {
                     maze->m_walls[y + 1][x].south = WALL;
                 }
             }
-            if (front_wall_present)
+            if (front_wall)
             {
                 maze->m_walls[y][x].west = WALL;
                 if (x > 0) {
