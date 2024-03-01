@@ -66,7 +66,7 @@ extern "C" void app_main(void)
     // xTaskCreate(&button_task, "button_task", 4096, NULL, 10, NULL);
 
     ESP_LOGI(TAG, "Spawning Tasks for Core 0");
-    xTaskCreatePinnedToCore(&mpu6500, "gyroTask", 4096, NULL, 1, NULL, 0);
+    // xTaskCreatePinnedToCore(&mpu6500, "gyroTask", 4096, NULL, 1, NULL, 0);
     xTaskCreatePinnedToCore(sensorPollTask, "sensorPollTask", 4096, NULL, 2, NULL, 0);
 
     ESP_LOGI(TAG, "Creating Tasks for Core 1");
@@ -99,15 +99,20 @@ void sensorPollTask(void *pvParameters)
         ir_sensor_poll(DIAGONAL_LEFT);
         ir_sensor_poll(DIAGONAL_RIGHT);
         ir_sensor_poll(FRONT_RIGHT);
-        // ESP_LOGI(TAG, "L: %4d, L_total: %6ld, R: %4d, R_total: %6ld", raw_count_left, total_count_left, raw_count_right, total_count_right);
-
+        
         // calculate cross track error
         calc_cross_track_error();
 
-        // if no walls, we use gyro
+        // if no walls, we should use gyro
 
-        if (count % 50 == 0) {
-            // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d, FRONT: %.2f", recv_avg_val[FRONT_RIGHT], recv_avg_val[DIAGONAL_RIGHT], recv_avg_val[DIAGONAL_LEFT], recv_avg_val[FRONT_LEFT], front_sensor_sum);
+        if (count % 40 == 0) {
+            // if(!Profile_Is_Finished(&forward)) {
+                // ESP_LOGI(TAG, "DL: %4d, DR: %4d, POS: %.2f", recv_avg_val[DIAGONAL_LEFT], recv_avg_val[DIAGONAL_RIGHT], forward.position    );
+            // }
+            // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d, FRONT: %.2f, DE: %.2f", recv_avg_val[FRONT_RIGHT], recv_avg_val[DIAGONAL_RIGHT], recv_avg_val[DIAGONAL_LEFT], recv_avg_val[FRONT_LEFT], front_sensor_sum, front_dist_error);
+            // ESP_LOGI(TAG, "FR: %.2f, DR: %.2f, DL: %.2f, FL: %.2f, FRONT: %.2f", rec_adc_raw_sum[FRONT_RIGHT], rec_adc_raw_sum[DIAGONAL_RIGHT], rec_adc_raw_sum[DIAGONAL_LEFT], rec_adc_raw_sum[FRONT_LEFT], front_sensor_sum);
+            // ESP_LOGI(TAG, "FR: %4d, DR: %4d, DL: %4d, FL: %4d, FRONT: %.2f", recv_adc_raw[FRONT_RIGHT], recv_adc_raw[DIAGONAL_RIGHT], recv_adc_raw[DIAGONAL_LEFT], recv_adc_raw[FRONT_LEFT], front_sensor_sum);
+
             count = 1;
         } else {
             count++;
@@ -150,13 +155,23 @@ void motorControlTask(void *pvParameters)
         Profile_Update(&forward);
         Profile_Update(&rotation);
 
-        fwd_output = forward_controller();
+
+        if (steering_mode == SM_FRONT_BASED) {
+            fwd_output = front_dist_controller();
+        } else {
+            fwd_output = forward_controller();
+        }
 
         // calculate rotational adjustment
         static float rot_adjust = 0.f;
 
         if (steering_enabled) {
-            rot_adjust = (STEERING_KP * cross_track_error) + (STEERING_KD * cross_track_error - cross_track_error_prev);
+            if (steering_mode == SM_SIDE_BASED) {
+                rot_adjust = (STEERING_KP * cross_track_error) + (STEERING_KD * cross_track_error - cross_track_error_prev);
+            } else {
+                rot_adjust = (FRONT_STEERING_KP * front_align_error);
+
+            }
             rot_adjust *= LOOP_INTERVAL;
             if (rot_adjust < -STEERING_ADJUSTMENT_LIMIT)
                 rot_adjust = -STEERING_ADJUSTMENT_LIMIT;
@@ -167,7 +182,6 @@ void motorControlTask(void *pvParameters)
         }
 
         rot_output = rotation_controller(rot_adjust);
-
         left_output_v = fwd_output + rot_output;
         right_output_v = fwd_output - rot_output;
 
@@ -181,10 +195,10 @@ void motorControlTask(void *pvParameters)
         // print logic
         if (count % 40 == 0) {
             count = 1;
-            // ESP_LOGI(TAG, "mous %.2f fwd %.2f gyr %.2f", mouse_distance, forward.position, mouse_yaw);
+            // ESP_LOGI(TAG, "f_err %.2f f %.2f", front_dist_error, front_sensor_sum);
             // ESP_LOGI(TAG, "a %.2f r %.2f g %.2f", mouse_angle, rotation.position, mouse_yaw);
             // ESP_LOGI(TAG, "a %.2f y %.2f, R: %d, F: %d, L: %d", rot_adjust, rot_output, right_wall_present, front_wall_present, left_wall_present);
-        } 
+        }
         else {
             count++;
         }
@@ -211,134 +225,244 @@ void operatorTask(void *pvParameters)
     TickType_t xFrequency = pdMS_TO_TICKS(1); // convert to ms
     TickType_t xLastWakeTime = xTaskGetTickCount();
 
-    ESP_LOGI(TAG, "rot_kp %.2f rot_kd: %.2f", ROT_KP, ROT_KD);
-
     bool test_fwd = true;
-    // Maze maze;
 
-    while (!gyro_init) {
-        vTaskDelay(2);
-    }
+    // while (!gyro_init) {
+    //     vTaskDelay(2);
+    // }
 
-    // reset_maze(&maze);
-    // maze.m_goal = (Pos){7, 7};
+    user_select_mode = SEARCH_MODE_SELECT;
+
     maze.m_mask = MASK_OPEN;
+    reset_maze(&maze);
     flood(&maze);
     maze.m_mouse_heading = NORTH;
-
+    maze.m_mouse_pos = (Pos){0, 0};
     Heading bestHeading = NORTH;
 
     while (true) 
     {
-        vTaskDelay(2);
+        if (user_active_mode == SELECT_MODE_ACTIVE) {
+            gpio_set_level(RED_LED, 1);
 
-        /*
-        if (maze.m_mouse_pos.x != maze.m_goal.x || maze.m_mouse_pos.y != maze.m_goal.y)
-        {
-            scan_new_walls(&maze);
-            ESP_LOGI(TAG, "L %d F %d R %d", left_wall_present, front_wall_present, right_wall_present);
 
-            flood(&maze);
-            bestHeading = heading_to_smallest(&maze, maze.m_mouse_pos, maze.m_mouse_heading);
-
-            if (bestHeading == NORTH) {
-                maze.m_mouse_pos.y++;
-            } else if (bestHeading == EAST) {
-                maze.m_mouse_pos.x++;
-            } else if (bestHeading == WEST) {
-                maze.m_mouse_pos.x--;
-            } else if (bestHeading == SOUTH) {
-                maze.m_mouse_pos.y--;
-            } else {
-                ESP_LOGI(TAG, "bad heading");
+            if (gpio_get_level(BTN2) == 0) {
+                user_select_mode = (UserSelectMode)((user_select_mode + 1) % SELECT_MENU_SIZE);
+                vTaskDelay(100 / portTICK_PERIOD_MS);
             }
-            maze.m_mouse_heading = bestHeading;
-        }
-        */
 
-        // print_maze_state(&maze);
-        if (test_fwd) {
-            // if (left_wall_present) {
-            // gpio_set_level(RED_LED, 0);
-            // } else {
-            // gpio_set_level(RED_LED, 1);
-            // }
+            if (gpio_get_level(BTN1) == 0) {
+                user_active_mode = (UserActiveMode)((user_active_mode + 1) % ACTIVE_MODE_SIZE);
+                vTaskDelay(100 / portTICK_PERIOD_MS);
+                continue;
+            }
 
-            // if (right_wall_present) {
-            // gpio_set_level(GREEN_LED, 0);
-            // } else {
-            // gpio_set_level(GREEN_LED, 1);
-            // }
-
-            // if (front_wall_present) {
-            // gpio_set_level(BLUE_LED, 0);
-            // } else {
-            // gpio_set_level(BLUE_LED, 1);
-            // }
-            // move_forward()
-            // move_forward(FULL_CELL, SEARCH_VELOCITY, 0, SEARCH_ACCELERATION);
-            // turn_smooth(SS90EL);
-            search((Pos){0, 2}, true);
-            turn_IP180();
-            maze.m_mouse_heading = behind_from(maze.m_mouse_heading);
+            switch (user_select_mode)
+            {
+                case SEARCH_MODE_SELECT:
+                    gpio_set_level(GREEN_LED, 0);
+                    gpio_set_level(BLUE_LED, 1);
+                    break;
+                case SPEED_MODE_SELECT:
+                    gpio_set_level(GREEN_LED, 1);
+                    gpio_set_level(BLUE_LED, 0);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            gpio_set_level(RED_LED, 0);
             
-            search((Pos){0, 0}, false);
-            test_fwd = false;
-            // controller_output_enabled = true;
+            if (gpio_get_level(BTN1) == 0) {
+                user_active_mode = (UserActiveMode)((user_active_mode + 1) % ACTIVE_MODE_SIZE);
+                vTaskDelay(200 / portTICK_PERIOD_MS);
+                continue;
+            }
 
-            // reset_maze(&maze);
-            // flood(&maze);
-            // ESP_LOGI(TAG, "controler output is off");
-            // search((Pos){2, 0});
-            // gpio_set_level(BLUE_LED, 0);
-            // // print_maze_state(&maze);
+            // check for arming based on front right and diag right sensor vals
+            if (recv_avg_val[DIAGONAL_RIGHT] > 150 && recv_avg_val[FRONT_RIGHT] > 250)
+            {
+                ESP_LOGI(TAG, "armed and starting");
+                while(true)
+                {
+                    gpio_set_level(RED_LED, 1);
+                    gpio_set_level(BLUE_LED, 1);
+                    gpio_set_level(GREEN_LED, 1);
 
-            // turn_IP180();
-            // maze.m_mouse_heading = behind_from(maze.m_mouse_heading);
+                    if (user_select_mode == SEARCH_MODE_SELECT) {
+                        ESP_LOGI(TAG, "starting search");
+                        vTaskDelay(2000);
 
-            // // print_maze_state(&maze);
-            // ESP_LOGI(TAG, "search finished");
-            // vTaskDelay(500);
-            // gpio_set_level(BLUE_LED, 1);
-            // ESP_LOGI(TAG, "heading back");   
-            // search((Pos){0, 0});    
-            // gpio_set_level(BLUE_LED, 0);
-            // ESP_LOGI(TAG, "back at start");
-            // test_fwd = false;
+                        // while (true)
+                        // {
+                        //     if (left_wall_present) {
+                        //         gpio_set_level(RED_LED, 0);
+                        //     } else {
+                        //         gpio_set_level(RED_LED, 1);
+                        //     }
+
+                        //     if (right_wall_present) {
+                        //         gpio_set_level(GREEN_LED, 0);
+                        //     } else {
+                        //         gpio_set_level(GREEN_LED, 1);
+                        //     }
+
+                        //     if (front_wall_present) {
+                        //         gpio_set_level(BLUE_LED, 0);
+                        //     } else {
+                        //         gpio_set_level(BLUE_LED, 1);
+                        //     }
+                        //   vTaskDelay(2);
+                        // }
+
+                        // align_with_front_wall();
+                        maze.m_mask = MASK_OPEN;
+                        search((Pos){7, 7}, true);
+
+                        // print_maze_state(&maze);
+
+                        vTaskDelay(1000);
+
+                        maze.m_goal = (Pos){0, 0};
+                        flood(&maze);
+                        Heading bestHeading = heading_to_smallest(&maze, maze.m_mouse_pos, maze.m_mouse_heading);
+                        uint8_t headingChange = ((bestHeading - maze.m_mouse_heading) >> 1) & 0x3;
+                        maze.m_mouse_heading = bestHeading;
+
+                        
+                        // print_maze_state(&maze);
+
+                        switch (headingChange) {
+                            case RIGHT:
+                                turn_IP(90.f, 287.f, 2850.f);
+                                break;
+
+                            case LEFT:
+                                turn_IP(-90.f, 287.f, 2850.f);
+                                break;
+
+                            case BACK:
+                                turn_IP(180.f, 287.f, 2850.f);
+                                break;
+
+                            default:
+                                break;
+                        }
+                        search((Pos){0, 0}, false);
+
+
+                        maze.m_mouse_pos = (Pos){0, 0};
+                        maze.m_mouse_heading = NORTH;
+                        user_active_mode = SELECT_MODE_ACTIVE;
+                        break;
+                    } else if (user_select_mode == SPEED_MODE_SELECT) {
+                        // speed mode, must perform search before utilizing this mode
+                        gpio_set_level(RED_LED, 1);
+                        gpio_set_level(BLUE_LED, 1);
+                        gpio_set_level(GREEN_LED, 1);
+
+                        ESP_LOGI(TAG, "starting search");
+                        vTaskDelay(2000);
+
+                        // align_with_front_wall();
+                        maze.m_mask = MASK_OPEN;
+                        basic_search((Pos){7, 7}, true);
+
+                        print_maze_state(&maze);
+                        vTaskDelay(1000);
+
+                        maze.m_goal = (Pos){0, 0};
+                        flood(&maze);
+                        Heading bestHeading = heading_to_smallest(&maze, maze.m_mouse_pos, maze.m_mouse_heading);
+                        uint8_t headingChange = ((bestHeading - maze.m_mouse_heading) >> 1) & 0x3;
+                        maze.m_mouse_heading = bestHeading;
+
+                        
+                        // print_maze_state(&maze);
+
+                        switch (headingChange) {
+                            case RIGHT:
+                                turn_IP(90.f, 287.f, 2850.f);
+                                break;
+
+                            case LEFT:
+                                turn_IP(-90.f, 287.f, 2850.f);
+                                break;
+
+                            case BACK:
+                                turn_IP(180.f, 287.f, 2850.f);
+                                break;
+
+                            default:
+                                break;
+                        }
+                        search((Pos){0, 0}, false);
+
+
+                        maze.m_mouse_pos = (Pos){0, 0};
+                        maze.m_mouse_heading = NORTH;
+                        user_active_mode = SELECT_MODE_ACTIVE;
+                        break;
+                    }
+                        
+
+                        // ESP_LOGI(TAG, "starting speed");
+                        // maze.m_mask = MASK_CLOSED;
+
+                        // int num_moves = generate_speed_moves((Pos){7, 7});
+                        // float end_speed = 0.f;
+                        
+                        // Profile_Start(&forward, -HALF_CELL, SEARCH_VELOCITY / 4, 0.f, SEARCH_ACCELERATION / 3);
+                        // while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
+                        // vTaskDelay(200);
+
+                        // for(uint8_t i = 0; i < num_moves; i++)
+                        // {
+                        //     // check next movement for end speed
+                        //     if (i + 1 < num_moves) {
+                        //         if (speed_movements[i + 1].type != SS_FWD) {
+                        //             end_speed = SEARCH_TURN_SPEED;   
+                        //         }
+                        //     }
+
+                        //     if (speed_movements[i].type == SS_FWD)
+                        //     {
+                        //         if (i == 0) {
+                        //             move_forward(speed_movements[i].num * FULL_CELL - BACK_TO_CENTER_DIST, SPEED_VELOCITY, SEARCH_TURN_SPEED, SPEED_ACCELERATION);
+                        //         } else {
+                        //             move_forward(speed_movements[i].num * FULL_CELL, SPEED_VELOCITY, SEARCH_TURN_SPEED, SPEED_ACCELERATION);
+                        //         }
+                        //     } else if (speed_movements[i].type == SS90EL) {
+                        //         for (uint8_t j = 0; j < speed_movements[i].num; j++) {
+                        //             turn_smooth(SS90EL);
+                        //         }
+                        //     } else if (speed_movements[i].type == SS90ER) {
+                        //         for (uint8_t j = 0; j < speed_movements[i].num; j++) {
+                        //             turn_smooth(SS90ER);
+                        //         }
+                        //     } else {
+                        //         // shouldn't get here
+                        //     }
+                        // }
+
+                        // stop_at_center();
+                    
+                    // vTaskDelay(1500);
+
+                    // search((Pos){0, 0}, false);
+
+                    vTaskDelay(2);
+                    // break;
+                }
+            }
         }
 
+        vTaskDelay(100 / portTICK_PERIOD_MS);
 
-        if (false) 
-        {
-            steering_enabled = false;
-            Profile_Start(&forward, -BACK_TO_CENTER_DIST, SEARCH_VELOCITY / 4, 0.f, SEARCH_ACCELERATION / 3);
-            while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
-            vTaskDelay(200);
+        // search((Pos){0, 2}, true);
+        // vTaskDelay(300);
+        // search((Pos){0, 0}, false);
 
-            Profile_Start(&forward, BACK_TO_CENTER_DIST + HALF_CELL, SEARCH_VELOCITY / 2, SEARCH_VELOCITY / 2, SEARCH_ACCELERATION);
-            while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
-            
-            ESP_LOGI(TAG, "stopped at center");
 
-            steering_enabled = false;
-
-            // Profile_Start(&forward, FULL_CELL, SEARCH_VELOCITY, 0.f, SEARCH_ACCELERATION);
-            // while(!Profile_Is_Finished(&forward)) { vTaskDelay(1); }
-            // mouse_distance -= FULL_CELL;
-
-            // Profile_Start(&forward, 300.f, 300.f, 0.f, 1000.f);
-            // set_motor_dir(MOTOR_RIGHT, BACKWARD);
-            
-            // Profile_Start(&forward, 180.f * 2, 400.f, 0.f, 1500.f);
-
-            // Profile_Start(&rotation, 90.f, 300.f, 0.f, 2000.f);
-            // while(rotation.state != PS_DONE || forward.state != PS_DONE) 
-            // {
-            //     vTaskDelay(2);
-            // }
-
-            set_target_velocity(&forward, 0);
-            test_fwd = false;
-        }
     }
 }

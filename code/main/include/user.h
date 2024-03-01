@@ -22,8 +22,22 @@
 const char *user_tag = "user";
 QueueHandle_t uart_queue;
 
-void init_user_io() {
+typedef enum {
+    SEARCH_MODE_SELECT = 0,
+    SPEED_MODE_SELECT = 1,
+    SELECT_MENU_SIZE = 2
+} UserSelectMode;
 
+typedef enum {
+    SELECT_MODE_ACTIVE = 0,
+    RUNNING_MODE_ACTIVE = 1,
+    ACTIVE_MODE_SIZE = 2
+} UserActiveMode;
+
+UserSelectMode user_select_mode = SEARCH_MODE_SELECT;
+UserActiveMode user_active_mode = SELECT_MODE_ACTIVE;
+
+void init_user_io() {
     // Configure BTN1
     gpio_config_t io_conf = {
         .pin_bit_mask = (1ULL << BTN1),
@@ -57,6 +71,7 @@ void init_user_io() {
     ESP_ERROR_CHECK(gpio_config(&io_conf));
     gpio_set_level(GREEN_LED, 1);
 }
+
 
 void init_uart() 
 {

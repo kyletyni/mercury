@@ -32,28 +32,30 @@ SemaphoreHandle_t encoderCountMutex;
 
 uint8_t count_buffer[4];
 
-uint16_t raw_count_left = 0;
-uint16_t raw_count_right = 0;
-uint16_t raw_count_left_prev = 0;
-uint16_t raw_count_right_prev = 0;
+volatile uint16_t raw_count_left = 0;
+volatile uint16_t raw_count_right = 0;
+volatile uint16_t raw_count_left_prev = 0;
+volatile uint16_t raw_count_right_prev = 0;
 
-int32_t total_count_left = 0;
-int32_t total_count_left_prev = 0;
-int32_t total_count_right = 0;
-int32_t total_count_right_prev = 0;
+volatile int32_t total_count_left = 0;
+volatile int32_t total_count_left_prev = 0;
+volatile int32_t total_count_right = 0;
+volatile int32_t total_count_right_prev = 0;
 
-float fwd_change;
-float fwd_change_prev;
+volatile float fwd_change;
+volatile float fwd_change_prev;
 volatile float enc_rot_change;
-float delta_left;
-float delta_right;
+volatile float delta_left;
+volatile float delta_right;
 
 float mouse_distance;
 float mouse_angle;
 
-int raw_left_delta;
-int raw_right_delta;
-int enc_direction;
+volatile int raw_left_delta;
+volatile int raw_right_delta;
+volatile int enc_direction;
+
+bool encoder_init = false;
 
 
 static esp_err_t encoder_register_read(i2c_port_t i2c_port, uint8_t reg_addr, uint8_t *data, size_t len);
@@ -110,6 +112,8 @@ extern "C" esp_err_t i2c_master_init(void)
     ESP_ERROR_CHECK(encoder_register_read(I2C_NUM_1, AS5600_RAW_ANGLE_H, &count_buffer[2], 2));
 
     encoderCountMutex = xSemaphoreCreateMutex();   
+
+    encoder_init = true;
 }
 
 
@@ -121,6 +125,11 @@ static esp_err_t encoder_register_read(i2c_port_t i2c_port, uint8_t reg_addr, ui
 
 void reset_encoder_count(void)
 {
+    // while (!encoder_init) {
+    //     ESP_LOGI(ENC_TAG, "encoder not init");
+    //     vTaskDelay(1);
+    // }
+    
     // make sure i2c is initialized before beginning angle calc
     ESP_ERROR_CHECK(encoder_register_read(I2C_NUM_0, AS5600_RAW_ANGLE_H, &count_buffer[0], 2));
     ESP_ERROR_CHECK(encoder_register_read(I2C_NUM_1, AS5600_RAW_ANGLE_H, &count_buffer[2], 2));
@@ -144,15 +153,22 @@ void reset_encoder_count(void)
 void update_encoders(void)
 {
     // make sure i2c is initialized before beginning angle calc
-    ESP_ERROR_CHECK(encoder_register_read(I2C_NUM_0, AS5600_RAW_ANGLE_H, &count_buffer[0], 2));
-    ESP_ERROR_CHECK(encoder_register_read(I2C_NUM_1, AS5600_RAW_ANGLE_H, &count_buffer[2], 2));
+    esp_err_t read1 = encoder_register_read(I2C_NUM_0, AS5600_RAW_ANGLE_H, &count_buffer[0], 2);
+    esp_err_t read2 = encoder_register_read(I2C_NUM_1, AS5600_RAW_ANGLE_H, &count_buffer[2], 2);
 
     // lock encoder count variables so that they are not read from while being updated
     // if (xSemaphoreTake(encoderCountMutex, portMAX_DELAY)) {
     raw_count_left_prev = raw_count_left;
     raw_count_right_prev = raw_count_right;
-    raw_count_left = ((0b00001111 & count_buffer[0]) << 8) | count_buffer[1];
-    raw_count_right = ((0b00001111 & count_buffer[2]) << 8) | count_buffer[3];
+    if (read1 == ESP_OK)
+        raw_count_left = ((0b00001111 & count_buffer[0]) << 8) | count_buffer[1];
+    else 
+        raw_count_left = raw_count_left_prev;
+
+    if (read2 == ESP_OK)
+        raw_count_right = ((0b00001111 & count_buffer[2]) << 8) | count_buffer[3];
+    else 
+        raw_count_right = raw_count_right_prev;
 
     // calculate total for left encoder
     raw_left_delta = raw_count_left - raw_count_left_prev;

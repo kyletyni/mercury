@@ -6,6 +6,7 @@
 #include "driver/gpio.h"
 #include "driver/ledc.h"
 #include "profile.h"
+#include "receiver.h"
 #include "config.h"
 #include "gyro.h"
 
@@ -126,8 +127,8 @@ void set_motor_voltage(MotorSide side, float voltage)
     }
 
 	voltage = fabsf(voltage);
-    if (voltage > 5.5f) {
-        voltage = 5.5f;
+    if (voltage > FF_VOLTAGE * 1600.f) {
+        voltage = FF_VOLTAGE * 1600.f;
     }
 
 
@@ -213,6 +214,15 @@ float forward_controller(void)
     
     return output;
 };
+
+float front_dist_controller(void)
+{
+    static float prev_error = 0.f;
+    float error = (FRONT_REFERENCE - front_sensor_sum) * 0.002f;
+    error += (error - prev_error) * 0.001f;
+    prev_error = error;
+    return error;
+}
 
 float rotation_controller(float adjustment) 
 {

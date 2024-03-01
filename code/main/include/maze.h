@@ -151,6 +151,8 @@ void reset_maze(Maze* maze) {
             }
         }
     }
+    maze->m_walls[0][0].east = WALL;
+    maze->m_walls[0][1].west = WALL;
 }
 
 bool is_available(Maze* maze, Pos cell, Heading heading) {
@@ -360,13 +362,22 @@ void print_maze_state(Maze* maze) {
     }
 }
 
+
 void scan_new_walls(Maze* maze) {
     uint8_t x = maze->m_mouse_pos.x;
 	uint8_t y = maze->m_mouse_pos.y;
 
-    bool left_wall = left_wall_present;
-    bool right_wall = right_wall_present;
-    bool front_wall = front_wall_present;
+    next_cell_left_wall = left_wall_present;
+    next_cell_right_wall = right_wall_present;
+    next_cell_front_wall = front_wall_present;
+
+    bool left_wall = next_cell_left_wall;
+    bool right_wall = next_cell_right_wall;
+    bool front_wall = next_cell_front_wall;
+
+    cur_cell_front_wall = next_cell_front_wall;
+    cur_cell_left_wall = next_cell_left_wall;
+    cur_cell_right_wall = next_cell_right_wall;
         
 	switch (maze->m_mouse_heading)
 	{
@@ -376,17 +387,32 @@ void scan_new_walls(Maze* maze) {
                 if (x > 0) {
                     maze->m_walls[y][x - 1].east = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].west = ABSENT;
+                if (x > 0) {
+                    maze->m_walls[y][x - 1].east = ABSENT;
+                }
             }
             if (right_wall) {
                 maze->m_walls[y][x].east = WALL;
                 if (x < MAZE_HEIGHT - 1) {
                     maze->m_walls[y][x + 1].west = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].east = ABSENT;
+                if (x < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y][x + 1].west = ABSENT;
+                }
             }
             if (front_wall) {
                 maze->m_walls[y][x].north = WALL;
                 if (y < MAZE_HEIGHT - 1) {   
                     maze->m_walls[y + 1][x].south = WALL;
+                }
+            } else {
+                maze->m_walls[y][x].north = ABSENT;
+                if (y < MAZE_HEIGHT - 1) {   
+                    maze->m_walls[y + 1][x].south = ABSENT;
                 }
             }
             break;
@@ -396,17 +422,32 @@ void scan_new_walls(Maze* maze) {
                 if (x < MAZE_HEIGHT - 1) {
                     maze->m_walls[y][x + 1].west = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].east = ABSENT;
+                if (x < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y][x + 1].west = ABSENT;
+                }
             }
             if (right_wall) {
                 maze->m_walls[y][x].west = WALL;
                 if (x > 0) {
                     maze->m_walls[y][x - 1].east = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].west = ABSENT;
+                if (x > 0) {
+                    maze->m_walls[y][x - 1].east = ABSENT;
+                }
             }
             if (front_wall) {
                 maze->m_walls[y][x].south = WALL;
                 if (y > 0) {
                     maze->m_walls[y - 1][x].north = WALL;
+                }
+            } else {
+                maze->m_walls[y][x].south = ABSENT;
+                if (y > 0) {
+                    maze->m_walls[y - 1][x].north = ABSENT;
                 }
             }
             break;
@@ -416,17 +457,32 @@ void scan_new_walls(Maze* maze) {
                 if (y < MAZE_HEIGHT - 1) {
                     maze->m_walls[y + 1][x].south = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].north = ABSENT;
+                if (y < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y + 1][x].south = ABSENT;
+                }
             }
             if (right_wall) {
                 maze->m_walls[y][x].south = WALL;
                 if (y > 0) {
                     maze->m_walls[y - 1][x].north = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].south = ABSENT;
+                if (y > 0) {
+                    maze->m_walls[y - 1][x].north = ABSENT;
+                }
             }
             if (front_wall) {
                 maze->m_walls[y][x].east = WALL;
                 if (x < MAZE_HEIGHT - 1) {
                     maze->m_walls[y][x + 1].west = WALL;
+                }
+            } else {
+                maze->m_walls[y][x].east = ABSENT;
+                if (x < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y][x + 1].west = ABSENT;
                 }
             }
             break;
@@ -437,12 +493,22 @@ void scan_new_walls(Maze* maze) {
                 if (y > 0) {
                     maze->m_walls[y - 1][x].north = WALL;
                 }
+            } else {
+                maze->m_walls[y][x].south = ABSENT;
+                if (y > 0) {
+                    maze->m_walls[y - 1][x].north = ABSENT;
+                }    
             }
             if (right_wall)
             {
                 maze->m_walls[y][x].north = WALL;
                 if (y < MAZE_HEIGHT - 1) {
                     maze->m_walls[y + 1][x].south = WALL;
+                }
+            } else {
+                maze->m_walls[y][x].north = ABSENT;
+                if (y < MAZE_HEIGHT - 1) {
+                    maze->m_walls[y + 1][x].south = ABSENT;
                 }
             }
             if (front_wall)
@@ -451,7 +517,12 @@ void scan_new_walls(Maze* maze) {
                 if (x > 0) {
                     maze->m_walls[y][x - 1].east = WALL;
                 }
-            }
+            } else {
+                maze->m_walls[y][x].west = ABSENT;
+                if (x > 0) {
+                    maze->m_walls[y][x - 1].east = ABSENT;
+                }
+            } 
     		break;
 
         default:
